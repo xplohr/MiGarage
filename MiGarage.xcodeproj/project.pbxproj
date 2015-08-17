@@ -413,6 +413,7 @@
 				048A97DF1B8143E300E3F263 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		048A97E01B8143E300E3F263 /* Build configuration list for PBXNativeTarget "MiGarageTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				048A97E21B8143E300E3F263 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

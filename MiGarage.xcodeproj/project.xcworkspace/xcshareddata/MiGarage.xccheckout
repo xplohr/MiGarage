@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6CE7CC94-2B2D-42B5-BE25-E8662ABCA878</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MiGarage</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5B4B8963308A1A8175968B5DE0921F7D641F8ED4</key>
+		<string>https://github.com/xplohr/MiGarage.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MiGarage.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5B4B8963308A1A8175968B5DE0921F7D641F8ED4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/xplohr/MiGarage.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5B4B8963308A1A8175968B5DE0921F7D641F8ED4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5B4B8963308A1A8175968B5DE0921F7D641F8ED4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MiGarage</string>
+		</dict>
+	</array>
+</dict>
+</plist>
