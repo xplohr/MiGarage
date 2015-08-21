@@ -80,11 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				048A97C01B8143E200E3F263 /* AppDelegate.swift */,
-				048A97C51B8143E200E3F263 /* ViewController.swift */,
-				048A97C71B8143E200E3F263 /* Main.storyboard */,
+				04E824F61B85589C0014A081 /* Model */,
+				04E824F71B8558A20014A081 /* View */,
+				04E824F81B8558AB0014A081 /* Controller */,
 				048A97CA1B8143E200E3F263 /* Images.xcassets */,
-				048A97CC1B8143E200E3F263 /* LaunchScreen.xib */,
-				048A97C21B8143E200E3F263 /* MiGarage.xcdatamodeld */,
 				048A97BE1B8143E200E3F263 /* Supporting Files */,
 			);
 			path = MiGarage;
@@ -93,6 +92,8 @@
 		048A97BE1B8143E200E3F263 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				048A97C71B8143E200E3F263 /* Main.storyboard */,
+				048A97CC1B8143E200E3F263 /* LaunchScreen.xib */,
 				048A97BF1B8143E200E3F263 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -113,6 +114,29 @@
 				048A97D81B8143E300E3F263 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04E824F61B85589C0014A081 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				048A97C21B8143E200E3F263 /* MiGarage.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		04E824F71B8558A20014A081 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		04E824F81B8558AB0014A081 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				048A97C51B8143E200E3F263 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

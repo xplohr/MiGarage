@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MiGarage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,47 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Garage" translatesAutoresizingMaskIntoConstraints="NO" id="XWf-qg-j0Q">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XWf-qg-j0Q" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="9fa-cv-34L"/>
+                            <constraint firstItem="XWf-qg-j0Q" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="JSx-3c-bfQ"/>
+                            <constraint firstItem="XWf-qg-j0Q" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="LJW-bl-8xa"/>
+                            <constraint firstAttribute="trailing" secondItem="XWf-qg-j0Q" secondAttribute="trailing" id="wmu-Z1-jd2"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="XWf-qg-j0Q"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="9fa-cv-34L"/>
+                                <exclude reference="JSx-3c-bfQ"/>
+                                <exclude reference="LJW-bl-8xa"/>
+                                <exclude reference="wmu-Z1-jd2"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="XWf-qg-j0Q"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="9fa-cv-34L"/>
+                                <include reference="JSx-3c-bfQ"/>
+                                <include reference="LJW-bl-8xa"/>
+                                <include reference="wmu-Z1-jd2"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Garage" width="375" height="647"/>
+    </resources>
 </document>
