@@ -24,7 +24,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="MiGarage" id="2nd-6m-z4V">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UEu-Cz-lQ9"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UEu-Cz-lQ9">
+                                            <connections>
+                                                <segue destination="23g-mr-ifq" kind="presentation" id="Sqf-dR-vWx"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -142,8 +146,126 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="gXs-AR-eZz">
+            <objects>
+                <viewController id="23g-mr-ifq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aH7-Ig-jFZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="SCg-rM-JfV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TJC-Ff-mtV">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarBlueprint" translatesAutoresizingMaskIntoConstraints="NO" id="ZcG-Z0-PHa">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nY3-2T-Tjn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Add Vehicle" id="5ay-f4-ivZ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3oL-OJ-Lce"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="jce-EN-Dsv"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nNw-Zi-wMy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="vehicleInfoCell" textLabel="XT8-o0-l53" detailTextLabel="5Yg-Q0-jxM" style="IBUITableViewCellStyleValue1" id="MI3-fm-68v">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MI3-fm-68v" id="BU7-1D-bvF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XT8-o0-l53">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.79607843140000001" green="0.72549019609999998" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Yg-Q0-jxM">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZcG-Z0-PHa" secondAttribute="trailing" id="2FC-GY-NId"/>
+                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="leading" secondItem="nY3-2T-Tjn" secondAttribute="leading" id="9zi-dh-OSL"/>
+                            <constraint firstItem="ZcG-Z0-PHa" firstAttribute="top" secondItem="TJC-Ff-mtV" secondAttribute="top" id="Bwo-Ov-fyd"/>
+                            <constraint firstItem="ZcG-Z0-PHa" firstAttribute="bottom" secondItem="SCg-rM-JfV" secondAttribute="top" id="P03-HH-haP"/>
+                            <constraint firstItem="nY3-2T-Tjn" firstAttribute="trailing" secondItem="ZcG-Z0-PHa" secondAttribute="trailing" id="QEX-Xs-gZ1"/>
+                            <constraint firstItem="nY3-2T-Tjn" firstAttribute="top" secondItem="aH7-Ig-jFZ" secondAttribute="bottom" id="QRe-ta-4Uk"/>
+                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="top" secondItem="nY3-2T-Tjn" secondAttribute="bottom" id="W00-1d-Fsg"/>
+                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="bottom" secondItem="SCg-rM-JfV" secondAttribute="top" id="fzw-fz-J3t"/>
+                            <constraint firstItem="nY3-2T-Tjn" firstAttribute="leading" secondItem="ZcG-Z0-PHa" secondAttribute="leading" id="gyf-q9-G7V"/>
+                            <constraint firstItem="nY3-2T-Tjn" firstAttribute="trailing" secondItem="nNw-Zi-wMy" secondAttribute="trailing" id="vUP-wa-3Zi"/>
+                            <constraint firstItem="nY3-2T-Tjn" firstAttribute="leading" secondItem="TJC-Ff-mtV" secondAttribute="leading" id="vtN-UZ-apJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ZcG-Z0-PHa"/>
+                                <exclude reference="nY3-2T-Tjn"/>
+                                <exclude reference="nNw-Zi-wMy"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2FC-GY-NId"/>
+                                <exclude reference="Bwo-Ov-fyd"/>
+                                <exclude reference="P03-HH-haP"/>
+                                <exclude reference="QEX-Xs-gZ1"/>
+                                <exclude reference="QRe-ta-4Uk"/>
+                                <exclude reference="gyf-q9-G7V"/>
+                                <exclude reference="vUP-wa-3Zi"/>
+                                <exclude reference="vtN-UZ-apJ"/>
+                                <exclude reference="9zi-dh-OSL"/>
+                                <exclude reference="W00-1d-Fsg"/>
+                                <exclude reference="fzw-fz-J3t"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ZcG-Z0-PHa"/>
+                                <include reference="nY3-2T-Tjn"/>
+                                <include reference="nNw-Zi-wMy"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2FC-GY-NId"/>
+                                <include reference="Bwo-Ov-fyd"/>
+                                <include reference="P03-HH-haP"/>
+                                <include reference="QEX-Xs-gZ1"/>
+                                <include reference="QRe-ta-4Uk"/>
+                                <include reference="gyf-q9-G7V"/>
+                                <include reference="vUP-wa-3Zi"/>
+                                <include reference="vtN-UZ-apJ"/>
+                                <include reference="9zi-dh-OSL"/>
+                                <include reference="W00-1d-Fsg"/>
+                                <include reference="fzw-fz-J3t"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYg-0R-AOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="424.5" y="1080"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="CarBlueprint" width="375" height="647"/>
         <image name="CarIcon" width="47" height="47"/>
         <image name="Garage" width="375" height="647"/>
     </resources>
