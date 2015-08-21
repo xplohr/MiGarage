@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,34 +20,121 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Garage" translatesAutoresizingMaskIntoConstraints="NO" id="XWf-qg-j0Q">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXS-9n-jj4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="MiGarage" id="2nd-6m-z4V">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UEu-Cz-lQ9"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZN9-ZD-mX5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="vehicleCell" rowHeight="50" id="pZz-YR-PAI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pZz-YR-PAI" id="emV-Xk-bV3">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9MD-yJ-wEV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="5" width="38" height="38.5"/>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Year-Make-Model" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV0-kC-Ep1">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="54" y="30" width="311" height="16"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aag-qY-MF8">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="54" y="6" width="311" height="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="9MD-yJ-wEV"/>
+                                                    <exclude reference="YV0-kC-Ep1"/>
+                                                    <exclude reference="Aag-qY-MF8"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="9MD-yJ-wEV"/>
+                                                    <include reference="YV0-kC-Ep1"/>
+                                                    <include reference="Aag-qY-MF8"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.79607843137254897" green="0.72549019607843135" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZN9-ZD-mX5" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="06Y-KK-FBb"/>
+                            <constraint firstItem="vXS-9n-jj4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="6tl-T0-K6A"/>
+                            <constraint firstItem="vXS-9n-jj4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="8rO-QO-AnU"/>
                             <constraint firstItem="XWf-qg-j0Q" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="9fa-cv-34L"/>
+                            <constraint firstItem="ZN9-ZD-mX5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="EDT-Pw-cSd"/>
                             <constraint firstItem="XWf-qg-j0Q" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="JSx-3c-bfQ"/>
+                            <constraint firstItem="ZN9-ZD-mX5" firstAttribute="top" secondItem="vXS-9n-jj4" secondAttribute="bottom" id="Jsi-oY-6aQ"/>
+                            <constraint firstItem="vXS-9n-jj4" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="LJF-on-UOq"/>
                             <constraint firstItem="XWf-qg-j0Q" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="LJW-bl-8xa"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZN9-ZD-mX5" secondAttribute="bottom" id="XTE-ar-kqG"/>
                             <constraint firstAttribute="trailing" secondItem="XWf-qg-j0Q" secondAttribute="trailing" id="wmu-Z1-jd2"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="XWf-qg-j0Q"/>
+                                <exclude reference="vXS-9n-jj4"/>
+                                <exclude reference="ZN9-ZD-mX5"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="9fa-cv-34L"/>
                                 <exclude reference="JSx-3c-bfQ"/>
                                 <exclude reference="LJW-bl-8xa"/>
                                 <exclude reference="wmu-Z1-jd2"/>
+                                <exclude reference="6tl-T0-K6A"/>
+                                <exclude reference="8rO-QO-AnU"/>
+                                <exclude reference="LJF-on-UOq"/>
+                                <exclude reference="06Y-KK-FBb"/>
+                                <exclude reference="EDT-Pw-cSd"/>
+                                <exclude reference="Jsi-oY-6aQ"/>
+                                <exclude reference="XTE-ar-kqG"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="XWf-qg-j0Q"/>
+                                <include reference="vXS-9n-jj4"/>
+                                <include reference="ZN9-ZD-mX5"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="9fa-cv-34L"/>
                                 <include reference="JSx-3c-bfQ"/>
                                 <include reference="LJW-bl-8xa"/>
                                 <include reference="wmu-Z1-jd2"/>
+                                <include reference="6tl-T0-K6A"/>
+                                <include reference="8rO-QO-AnU"/>
+                                <include reference="LJF-on-UOq"/>
+                                <include reference="06Y-KK-FBb"/>
+                                <include reference="EDT-Pw-cSd"/>
+                                <include reference="Jsi-oY-6aQ"/>
+                                <include reference="XTE-ar-kqG"/>
                             </mask>
                         </variation>
                     </view>
@@ -56,6 +144,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CarIcon" width="47" height="47"/>
         <image name="Garage" width="375" height="647"/>
     </resources>
 </document>
