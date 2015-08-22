@@ -2,13 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Garage View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MiGarage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="GarageViewController" customModule="MiGarage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -36,7 +37,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="vehicleCell" rowHeight="50" id="pZz-YR-PAI">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="vehicleCell" rowHeight="50" id="pZz-YR-PAI" customClass="VehicleListCell" customModule="MiGarage" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pZz-YR-PAI" id="emV-Xk-bV3">
@@ -83,8 +84,16 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.79607843137254897" green="0.72549019607843135" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="makeModelLabel" destination="YV0-kC-Ep1" id="ZoY-Y7-qJz"/>
+                                            <outlet property="nameLabel" destination="Aag-qY-MF8" id="cED-vI-FNH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="Ayr-HN-LXL"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="uFm-TO-jQd"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -108,17 +117,17 @@
                                 <exclude reference="ZN9-ZD-mX5"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="XTE-ar-kqG"/>
+                                <exclude reference="6tl-T0-K6A"/>
+                                <exclude reference="8rO-QO-AnU"/>
+                                <exclude reference="LJF-on-UOq"/>
                                 <exclude reference="9fa-cv-34L"/>
                                 <exclude reference="JSx-3c-bfQ"/>
                                 <exclude reference="LJW-bl-8xa"/>
                                 <exclude reference="wmu-Z1-jd2"/>
-                                <exclude reference="6tl-T0-K6A"/>
-                                <exclude reference="8rO-QO-AnU"/>
-                                <exclude reference="LJF-on-UOq"/>
                                 <exclude reference="06Y-KK-FBb"/>
                                 <exclude reference="EDT-Pw-cSd"/>
                                 <exclude reference="Jsi-oY-6aQ"/>
-                                <exclude reference="XTE-ar-kqG"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -128,20 +137,23 @@
                                 <include reference="ZN9-ZD-mX5"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="XTE-ar-kqG"/>
+                                <include reference="6tl-T0-K6A"/>
+                                <include reference="8rO-QO-AnU"/>
+                                <include reference="LJF-on-UOq"/>
                                 <include reference="9fa-cv-34L"/>
                                 <include reference="JSx-3c-bfQ"/>
                                 <include reference="LJW-bl-8xa"/>
                                 <include reference="wmu-Z1-jd2"/>
-                                <include reference="6tl-T0-K6A"/>
-                                <include reference="8rO-QO-AnU"/>
-                                <include reference="LJF-on-UOq"/>
                                 <include reference="06Y-KK-FBb"/>
                                 <include reference="EDT-Pw-cSd"/>
                                 <include reference="Jsi-oY-6aQ"/>
-                                <include reference="XTE-ar-kqG"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ZN9-ZD-mX5" id="zpN-TE-EDs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,6 +167,7 @@
                         <viewControllerLayoutGuide type="bottom" id="SCg-rM-JfV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TJC-Ff-mtV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarBlueprint" translatesAutoresizingMaskIntoConstraints="NO" id="ZcG-Z0-PHa">
@@ -224,14 +237,14 @@
                                 <exclude reference="nNw-Zi-wMy"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2FC-GY-NId"/>
-                                <exclude reference="Bwo-Ov-fyd"/>
-                                <exclude reference="P03-HH-haP"/>
                                 <exclude reference="QEX-Xs-gZ1"/>
                                 <exclude reference="QRe-ta-4Uk"/>
                                 <exclude reference="gyf-q9-G7V"/>
                                 <exclude reference="vUP-wa-3Zi"/>
                                 <exclude reference="vtN-UZ-apJ"/>
+                                <exclude reference="2FC-GY-NId"/>
+                                <exclude reference="Bwo-Ov-fyd"/>
+                                <exclude reference="P03-HH-haP"/>
                                 <exclude reference="9zi-dh-OSL"/>
                                 <exclude reference="W00-1d-Fsg"/>
                                 <exclude reference="fzw-fz-J3t"/>
@@ -244,14 +257,14 @@
                                 <include reference="nNw-Zi-wMy"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2FC-GY-NId"/>
-                                <include reference="Bwo-Ov-fyd"/>
-                                <include reference="P03-HH-haP"/>
                                 <include reference="QEX-Xs-gZ1"/>
                                 <include reference="QRe-ta-4Uk"/>
                                 <include reference="gyf-q9-G7V"/>
                                 <include reference="vUP-wa-3Zi"/>
                                 <include reference="vtN-UZ-apJ"/>
+                                <include reference="2FC-GY-NId"/>
+                                <include reference="Bwo-Ov-fyd"/>
+                                <include reference="P03-HH-haP"/>
                                 <include reference="9zi-dh-OSL"/>
                                 <include reference="W00-1d-Fsg"/>
                                 <include reference="fzw-fz-J3t"/>
@@ -261,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYg-0R-AOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424.5" y="1080"/>
+            <point key="canvasLocation" x="570" y="1086"/>
         </scene>
     </scenes>
     <resources>
