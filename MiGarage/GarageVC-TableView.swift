@@ -10,6 +10,7 @@ import UIKit
 
 extension GarageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cellReuseIdentifier = MiGarageUtility.ReuseIdentifiers.VehicleCell
         let vehicle = fetchedResultsController.fetchedObjects![indexPath.row] as! Vehicle
         var cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier) as! VehicleListCell
@@ -21,6 +22,7 @@ extension GarageViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return fetchedResultsController.fetchedObjects!.count
     }
     

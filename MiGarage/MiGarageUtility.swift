@@ -13,5 +13,15 @@ class MiGarageUtility {
     struct ReuseIdentifiers {
     
         static let VehicleCell = "vehicleCell"
+        static let VehicleTextCell = "vehicleTextCell"
+        static let AddVehicleCell = "vehicleInfoCell"
+        static let AddVehicleNotesCell = "vehicleNotesCell"
+        static let AddVehicleMenuCell = "addVehicleMenuCell"
+    }
+    
+    struct SegueIdentifiers {
+    
+        static let AddVehicleMenu = "showAddVehicleMenu"
+        static let AddVehicleText = "showAddVehicleText"
     }
 }
