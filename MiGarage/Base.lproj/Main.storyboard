@@ -117,17 +117,17 @@
                                 <exclude reference="ZN9-ZD-mX5"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="XTE-ar-kqG"/>
+                                <exclude reference="6tl-T0-K6A"/>
+                                <exclude reference="8rO-QO-AnU"/>
+                                <exclude reference="LJF-on-UOq"/>
                                 <exclude reference="9fa-cv-34L"/>
                                 <exclude reference="LJW-bl-8xa"/>
                                 <exclude reference="lHq-rt-YhD"/>
                                 <exclude reference="wmu-Z1-jd2"/>
-                                <exclude reference="6tl-T0-K6A"/>
-                                <exclude reference="8rO-QO-AnU"/>
-                                <exclude reference="LJF-on-UOq"/>
                                 <exclude reference="06Y-KK-FBb"/>
                                 <exclude reference="EDT-Pw-cSd"/>
                                 <exclude reference="Jsi-oY-6aQ"/>
-                                <exclude reference="XTE-ar-kqG"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -137,17 +137,17 @@
                                 <include reference="ZN9-ZD-mX5"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="XTE-ar-kqG"/>
+                                <include reference="6tl-T0-K6A"/>
+                                <include reference="8rO-QO-AnU"/>
+                                <include reference="LJF-on-UOq"/>
                                 <include reference="9fa-cv-34L"/>
                                 <include reference="LJW-bl-8xa"/>
                                 <include reference="lHq-rt-YhD"/>
                                 <include reference="wmu-Z1-jd2"/>
-                                <include reference="6tl-T0-K6A"/>
-                                <include reference="8rO-QO-AnU"/>
-                                <include reference="LJF-on-UOq"/>
                                 <include reference="06Y-KK-FBb"/>
                                 <include reference="EDT-Pw-cSd"/>
                                 <include reference="Jsi-oY-6aQ"/>
-                                <include reference="XTE-ar-kqG"/>
                             </mask>
                         </variation>
                     </view>
@@ -276,33 +276,6 @@
                                             <outlet property="vehicleText" destination="vEx-2p-G0w" id="Rd4-zM-QKS"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="vehicleNotesCell" textLabel="imv-p6-YEK" detailTextLabel="24L-4w-g1V" style="IBUITableViewCellStyleValue1" id="R7L-12-wQY">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R7L-12-wQY" id="iSg-Fg-UQ3">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="imv-p6-YEK">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.79607843140000001" green="0.72549019609999998" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Edit" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24L-4w-g1V">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    </variation>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
                                 </prototypes>
                                 <sections/>
                                 <connections>
@@ -332,14 +305,14 @@
                                 <exclude reference="nNw-Zi-wMy"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="QRe-ta-4Uk"/>
+                                <exclude reference="vUP-wa-3Zi"/>
+                                <exclude reference="vtN-UZ-apJ"/>
                                 <exclude reference="bf3-5s-hZO"/>
                                 <exclude reference="eUD-c2-nPV"/>
                                 <exclude reference="mrz-xe-oas"/>
                                 <exclude reference="wBp-rL-8Lw"/>
                                 <exclude reference="xEP-mW-2Fb"/>
-                                <exclude reference="QRe-ta-4Uk"/>
-                                <exclude reference="vUP-wa-3Zi"/>
-                                <exclude reference="vtN-UZ-apJ"/>
                                 <exclude reference="9zi-dh-OSL"/>
                                 <exclude reference="W00-1d-Fsg"/>
                                 <exclude reference="fzw-fz-J3t"/>
@@ -352,14 +325,14 @@
                                 <include reference="nNw-Zi-wMy"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="QRe-ta-4Uk"/>
+                                <include reference="vUP-wa-3Zi"/>
+                                <include reference="vtN-UZ-apJ"/>
                                 <include reference="bf3-5s-hZO"/>
                                 <include reference="eUD-c2-nPV"/>
                                 <include reference="mrz-xe-oas"/>
                                 <include reference="wBp-rL-8Lw"/>
                                 <include reference="xEP-mW-2Fb"/>
-                                <include reference="QRe-ta-4Uk"/>
-                                <include reference="vUP-wa-3Zi"/>
-                                <include reference="vtN-UZ-apJ"/>
                                 <include reference="9zi-dh-OSL"/>
                                 <include reference="W00-1d-Fsg"/>
                                 <include reference="fzw-fz-J3t"/>
@@ -376,6 +349,7 @@
             <objects>
                 <tableViewController id="XgB-Mt-frU" customClass="AddVehicleMenuViewController" customModule="MiGarage" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YkR-Sd-U7g">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -406,6 +380,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cM2-7m-RHo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hnc-kL-f24">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-Qg-SpG">

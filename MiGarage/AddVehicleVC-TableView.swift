@@ -24,9 +24,6 @@ extension AddVehicleViewController: UITableViewDataSource, UITableViewDelegate {
         case 3:
             cell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.VehicleTextCell) as! UITableViewCell
             
-        case 4:
-            cell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.AddVehicleNotesCell) as! UITableViewCell
-            
         default:
             cell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.AddVehicleCell) as! UITableViewCell
         }

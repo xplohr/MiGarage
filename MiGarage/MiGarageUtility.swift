@@ -15,7 +15,6 @@ class MiGarageUtility {
         static let VehicleCell = "vehicleCell"
         static let VehicleTextCell = "vehicleTextCell"
         static let AddVehicleCell = "vehicleInfoCell"
-        static let AddVehicleNotesCell = "vehicleNotesCell"
         static let AddVehicleMenuCell = "addVehicleMenuCell"
     }
     
