@@ -10,5 +10,17 @@ import UIKit
 
 extension AddVehicleMenuViewController {
     
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.AddVehicleMenuCell) as! UITableViewCell
+        
+        cell.textLabel?.text = menuChoices[indexPath.row]
+        
+        return cell
+    }
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return menuChoices.count
+    }
 }

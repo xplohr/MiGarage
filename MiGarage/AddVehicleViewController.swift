@@ -17,4 +17,14 @@ class AddVehicleViewController: UIViewController {
     
     @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == MiGarageUtility.SegueIdentifiers.AddVehicleMenu {
+            
+            var destination = segue.destinationViewController as! AddVehicleMenuViewController
+            destination.menuChoices = setupMenuChoices(sender as! Int)
+            destination.title = setupTitle(sender as! Int)
+        }
+    }
 }

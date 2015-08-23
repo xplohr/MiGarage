@@ -11,4 +11,9 @@ import UIKit
 class AddVehicleMenuViewController: UITableViewController {
     
     var menuChoices: [String] = []
+    
+    override func viewDidLoad() {
+        
+        tableView.reloadData()
+    }
 }

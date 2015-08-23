@@ -27,7 +27,7 @@
                                     <navigationItem title="MiGarage" id="2nd-6m-z4V">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UEu-Cz-lQ9">
                                             <connections>
-                                                <segue destination="23g-mr-ifq" kind="presentation" id="Sqf-dR-vWx"/>
+                                                <segue destination="gNU-Nf-HpT" kind="presentation" id="Sqf-dR-vWx"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -158,7 +158,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Add Vehicle View Controller-->
+        <!--Add Vehicle-->
         <scene sceneID="gXs-AR-eZz">
             <objects>
                 <viewController id="23g-mr-ifq" customClass="AddVehicleViewController" customModule="MiGarage" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,24 +172,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarBlueprint" translatesAutoresizingMaskIntoConstraints="NO" id="ZcG-Z0-PHa">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="780"/>
+                                </variation>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nY3-2T-Tjn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Add Vehicle" id="5ay-f4-ivZ">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3oL-OJ-Lce">
-                                            <connections>
-                                                <action selector="cancelButtonTapped:" destination="23g-mr-ifq" id="72w-Jd-Jtj"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="jce-EN-Dsv">
-                                            <connections>
-                                                <action selector="doneButtonTapped:" destination="23g-mr-ifq" id="TJm-CT-T2o"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nNw-Zi-wMy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -286,63 +272,64 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="leading" secondItem="nY3-2T-Tjn" secondAttribute="leading" id="9zi-dh-OSL"/>
-                            <constraint firstItem="nY3-2T-Tjn" firstAttribute="top" secondItem="aH7-Ig-jFZ" secondAttribute="bottom" id="QRe-ta-4Uk"/>
-                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="top" secondItem="nY3-2T-Tjn" secondAttribute="bottom" id="W00-1d-Fsg"/>
-                            <constraint firstItem="ZcG-Z0-PHa" firstAttribute="trailing" secondItem="nNw-Zi-wMy" secondAttribute="trailing" id="bf3-5s-hZO"/>
+                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="bottom" secondItem="SCg-rM-JfV" secondAttribute="top" id="8QW-hd-PU2"/>
+                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="top" secondItem="aH7-Ig-jFZ" secondAttribute="bottom" id="WFO-qZ-egz"/>
                             <constraint firstItem="ZcG-Z0-PHa" firstAttribute="bottom" secondItem="SCg-rM-JfV" secondAttribute="top" id="eUD-c2-nPV"/>
-                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="bottom" secondItem="SCg-rM-JfV" secondAttribute="top" id="fzw-fz-J3t"/>
-                            <constraint firstItem="ZcG-Z0-PHa" firstAttribute="leading" secondItem="nY3-2T-Tjn" secondAttribute="leading" id="mrz-xe-oas"/>
-                            <constraint firstItem="nY3-2T-Tjn" firstAttribute="trailing" secondItem="nNw-Zi-wMy" secondAttribute="trailing" id="vUP-wa-3Zi"/>
-                            <constraint firstItem="nY3-2T-Tjn" firstAttribute="leading" secondItem="TJC-Ff-mtV" secondAttribute="leading" id="vtN-UZ-apJ"/>
+                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="leading" secondItem="TJC-Ff-mtV" secondAttribute="leading" id="iWC-B1-5OX"/>
+                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="leading" secondItem="ZcG-Z0-PHa" secondAttribute="leading" id="roY-OM-IaD"/>
                             <constraint firstAttribute="trailing" secondItem="ZcG-Z0-PHa" secondAttribute="trailing" id="wBp-rL-8Lw"/>
-                            <constraint firstItem="ZcG-Z0-PHa" firstAttribute="top" secondItem="nY3-2T-Tjn" secondAttribute="top" id="xEP-mW-2Fb"/>
+                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="trailing" secondItem="ZcG-Z0-PHa" secondAttribute="trailing" id="ww1-Yb-2dT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ZcG-Z0-PHa"/>
-                                <exclude reference="nY3-2T-Tjn"/>
                                 <exclude reference="nNw-Zi-wMy"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="QRe-ta-4Uk"/>
-                                <exclude reference="vUP-wa-3Zi"/>
-                                <exclude reference="vtN-UZ-apJ"/>
-                                <exclude reference="bf3-5s-hZO"/>
                                 <exclude reference="eUD-c2-nPV"/>
-                                <exclude reference="mrz-xe-oas"/>
                                 <exclude reference="wBp-rL-8Lw"/>
-                                <exclude reference="xEP-mW-2Fb"/>
-                                <exclude reference="9zi-dh-OSL"/>
-                                <exclude reference="W00-1d-Fsg"/>
-                                <exclude reference="fzw-fz-J3t"/>
+                                <exclude reference="8QW-hd-PU2"/>
+                                <exclude reference="WFO-qZ-egz"/>
+                                <exclude reference="iWC-B1-5OX"/>
+                                <exclude reference="roY-OM-IaD"/>
+                                <exclude reference="ww1-Yb-2dT"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="ZcG-Z0-PHa"/>
-                                <include reference="nY3-2T-Tjn"/>
                                 <include reference="nNw-Zi-wMy"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="QRe-ta-4Uk"/>
-                                <include reference="vUP-wa-3Zi"/>
-                                <include reference="vtN-UZ-apJ"/>
-                                <include reference="bf3-5s-hZO"/>
                                 <include reference="eUD-c2-nPV"/>
-                                <include reference="mrz-xe-oas"/>
                                 <include reference="wBp-rL-8Lw"/>
-                                <include reference="xEP-mW-2Fb"/>
-                                <include reference="9zi-dh-OSL"/>
-                                <include reference="W00-1d-Fsg"/>
-                                <include reference="fzw-fz-J3t"/>
+                                <include reference="8QW-hd-PU2"/>
+                                <include reference="WFO-qZ-egz"/>
+                                <include reference="iWC-B1-5OX"/>
+                                <include reference="roY-OM-IaD"/>
+                                <include reference="ww1-Yb-2dT"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Vehicle" id="oEc-E7-wpV">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ice-2X-lDY">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="23g-mr-ifq" id="8UQ-tV-zo0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="mrJ-TH-V4e">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="23g-mr-ifq" id="bR7-gk-gWy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="XgB-Mt-frU" kind="show" identifier="showAddVehicleMenu" id="9zD-kP-O08"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYg-0R-AOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="219" y="1093.5"/>
+            <point key="canvasLocation" x="339" y="1165.5"/>
         </scene>
         <!--Add Vehicle Menu View Controller-->
         <scene sceneID="Zhk-o7-jIx">
@@ -369,7 +356,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buX-bM-ZF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2209.5" y="1093.5"/>
+            <point key="canvasLocation" x="1279.5" y="1165.5"/>
         </scene>
         <!--Add Vehicle Text View Controller-->
         <scene sceneID="xrf-Qb-w5O">
@@ -426,43 +413,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbN-tR-Ikf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2209.5" y="1820.25"/>
+            <point key="canvasLocation" x="1279.5" y="1894.5"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="BQp-gC-qnD">
+        <scene sceneID="Sgu-d2-8YX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QtX-d1-Rhp" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gNU-Nf-HpT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z7v-6a-ojP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SQi-kO-fRM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="XgB-Mt-frU" kind="relationship" relationship="rootViewController" id="l08-Bl-hzs"/>
+                        <segue destination="23g-mr-ifq" kind="relationship" relationship="rootViewController" id="trJ-62-xRe"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="79o-J3-Eo3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbJ-2z-4Gp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1291.5" y="1093.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="QLg-eU-vZr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R1J-iJ-kpF" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="87u-gB-cPg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="kik-gL-G1X" kind="relationship" relationship="rootViewController" id="nLh-x7-V0G"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ygc-Zv-7l9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1291.5" y="1820.25"/>
+            <point key="canvasLocation" x="-579" y="1165.5"/>
         </scene>
     </scenes>
     <resources>

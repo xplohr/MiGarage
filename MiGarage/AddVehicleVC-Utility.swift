@@ -59,4 +59,22 @@ extension AddVehicleViewController {
             return []
         }
     }
+    
+    func setupTitle(selection: Int) -> String? {
+        
+        switch selection {
+            
+        case 0: // Make
+            return "Select Make"
+            
+        case 1: // Model
+            return "Select Model"
+            
+        case 2: // Year
+            return "Select Year"
+            
+        default:
+            return nil
+        }
+    }
 }
