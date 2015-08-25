@@ -22,5 +22,6 @@ class MiGarageUtility {
     
         static let AddVehicleMenu = "showAddVehicleMenu"
         static let AddVehicleText = "showAddVehicleText"
+        static let AddVehicleSelectedMenu = "selectedAddVehicleMenuItem"
     }
 }

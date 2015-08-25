@@ -46,7 +46,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9MD-yJ-wEV">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="5" width="38" height="38.5"/>
+                                                        <rect key="frame" x="8" y="5" width="38" height="39"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Year-Make-Model" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV0-kC-Ep1">
@@ -172,9 +172,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarBlueprint" translatesAutoresizingMaskIntoConstraints="NO" id="ZcG-Z0-PHa">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="20" width="400" height="780"/>
-                                </variation>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nNw-Zi-wMy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -229,20 +226,22 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="vEx-2p-G0w" firstAttribute="trailing" secondItem="YdH-TH-L6d" secondAttribute="trailing" id="0Iw-2i-HYb"/>
-                                                <constraint firstItem="vEx-2p-G0w" firstAttribute="leading" secondItem="M9K-4Y-ERc" secondAttribute="leadingMargin" constant="98" id="Y14-fd-UEa"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="vEx-2p-G0w" secondAttribute="bottom" constant="-1.5" id="kMn-vl-3GN"/>
-                                                <constraint firstItem="vEx-2p-G0w" firstAttribute="top" secondItem="M9K-4Y-ERc" secondAttribute="topMargin" constant="-1" id="q2D-Tq-PRT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vEx-2p-G0w" secondAttribute="bottom" constant="-1.5" id="7Zu-VP-gCt"/>
+                                                <constraint firstItem="vEx-2p-G0w" firstAttribute="leading" secondItem="M9K-4Y-ERc" secondAttribute="leadingMargin" constant="91" id="WBz-Uq-5H3"/>
+                                                <constraint firstItem="vEx-2p-G0w" firstAttribute="top" secondItem="M9K-4Y-ERc" secondAttribute="topMargin" constant="-1" id="uVq-v1-OS5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vEx-2p-G0w" secondAttribute="trailing" constant="74" id="xoQ-4E-fW6">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="-8"/>
+                                                </constraint>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="vEx-2p-G0w"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="0Iw-2i-HYb"/>
-                                                    <exclude reference="Y14-fd-UEa"/>
-                                                    <exclude reference="kMn-vl-3GN"/>
-                                                    <exclude reference="q2D-Tq-PRT"/>
+                                                    <exclude reference="7Zu-VP-gCt"/>
+                                                    <exclude reference="WBz-Uq-5H3"/>
+                                                    <exclude reference="uVq-v1-OS5"/>
+                                                    <exclude reference="xoQ-4E-fW6"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -250,10 +249,10 @@
                                                     <include reference="vEx-2p-G0w"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="0Iw-2i-HYb"/>
-                                                    <include reference="Y14-fd-UEa"/>
-                                                    <include reference="kMn-vl-3GN"/>
-                                                    <include reference="q2D-Tq-PRT"/>
+                                                    <include reference="7Zu-VP-gCt"/>
+                                                    <include reference="WBz-Uq-5H3"/>
+                                                    <include reference="uVq-v1-OS5"/>
+                                                    <include reference="xoQ-4E-fW6"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -273,12 +272,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nNw-Zi-wMy" firstAttribute="bottom" secondItem="SCg-rM-JfV" secondAttribute="top" id="8QW-hd-PU2"/>
+                            <constraint firstItem="ZcG-Z0-PHa" firstAttribute="top" secondItem="TJC-Ff-mtV" secondAttribute="top" constant="20" symbolic="YES" id="I94-SD-XRH"/>
+                            <constraint firstAttribute="trailing" secondItem="ZcG-Z0-PHa" secondAttribute="trailing" id="TkB-c4-UkX"/>
+                            <constraint firstItem="ZcG-Z0-PHa" firstAttribute="bottom" secondItem="SCg-rM-JfV" secondAttribute="top" id="VOo-39-p9e"/>
                             <constraint firstItem="nNw-Zi-wMy" firstAttribute="top" secondItem="aH7-Ig-jFZ" secondAttribute="bottom" id="WFO-qZ-egz"/>
-                            <constraint firstItem="ZcG-Z0-PHa" firstAttribute="bottom" secondItem="SCg-rM-JfV" secondAttribute="top" id="eUD-c2-nPV"/>
                             <constraint firstItem="nNw-Zi-wMy" firstAttribute="leading" secondItem="TJC-Ff-mtV" secondAttribute="leading" id="iWC-B1-5OX"/>
-                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="leading" secondItem="ZcG-Z0-PHa" secondAttribute="leading" id="roY-OM-IaD"/>
-                            <constraint firstAttribute="trailing" secondItem="ZcG-Z0-PHa" secondAttribute="trailing" id="wBp-rL-8Lw"/>
-                            <constraint firstItem="nNw-Zi-wMy" firstAttribute="trailing" secondItem="ZcG-Z0-PHa" secondAttribute="trailing" id="ww1-Yb-2dT"/>
+                            <constraint firstItem="ZcG-Z0-PHa" firstAttribute="trailing" secondItem="nNw-Zi-wMy" secondAttribute="trailing" id="o51-Ok-vtw"/>
+                            <constraint firstItem="ZcG-Z0-PHa" firstAttribute="leading" secondItem="nNw-Zi-wMy" secondAttribute="leading" id="syF-8C-DP8"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -286,13 +286,14 @@
                                 <exclude reference="nNw-Zi-wMy"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="eUD-c2-nPV"/>
-                                <exclude reference="wBp-rL-8Lw"/>
+                                <exclude reference="I94-SD-XRH"/>
+                                <exclude reference="TkB-c4-UkX"/>
+                                <exclude reference="VOo-39-p9e"/>
+                                <exclude reference="o51-Ok-vtw"/>
+                                <exclude reference="syF-8C-DP8"/>
                                 <exclude reference="8QW-hd-PU2"/>
                                 <exclude reference="WFO-qZ-egz"/>
                                 <exclude reference="iWC-B1-5OX"/>
-                                <exclude reference="roY-OM-IaD"/>
-                                <exclude reference="ww1-Yb-2dT"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -301,13 +302,14 @@
                                 <include reference="nNw-Zi-wMy"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="eUD-c2-nPV"/>
-                                <include reference="wBp-rL-8Lw"/>
+                                <include reference="I94-SD-XRH"/>
+                                <include reference="TkB-c4-UkX"/>
+                                <include reference="VOo-39-p9e"/>
+                                <include reference="o51-Ok-vtw"/>
+                                <include reference="syF-8C-DP8"/>
                                 <include reference="8QW-hd-PU2"/>
                                 <include reference="WFO-qZ-egz"/>
                                 <include reference="iWC-B1-5OX"/>
-                                <include reference="roY-OM-IaD"/>
-                                <include reference="ww1-Yb-2dT"/>
                             </mask>
                         </variation>
                     </view>
@@ -324,12 +326,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="vehicleTable" destination="nNw-Zi-wMy" id="CwN-GS-PxV"/>
                         <segue destination="XgB-Mt-frU" kind="show" identifier="showAddVehicleMenu" id="9zD-kP-O08"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYg-0R-AOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="339" y="1165.5"/>
+            <point key="canvasLocation" x="349" y="1152"/>
         </scene>
         <!--Add Vehicle Menu View Controller-->
         <scene sceneID="Zhk-o7-jIx">
@@ -345,6 +348,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rVM-yA-VX5" id="5Ty-0T-2A2">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="9dU-Kf-5Zn" kind="unwind" unwindAction="unwindToViewController:" id="UBw-tM-xVa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -355,6 +361,7 @@
                     <navigationItem key="navigationItem" id="OEk-Lm-wnh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buX-bM-ZF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9dU-Kf-5Zn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1279.5" y="1165.5"/>
         </scene>

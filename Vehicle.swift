@@ -19,16 +19,34 @@ class Vehicle: NSManagedObject {
     
     lazy var nameForLabel: String = {
         
-        if !self.nickname.isEmpty {
+        /*if !self.nickname.isEmpty {
             return self.nickname
         } else {
             return "\(self.make)"
-        }
+        }*/
+        return "\(self.make)"
     }()
     
     lazy var modelForLabel: String = {
         
         return "\(self.year) \(self.make) \(self.model)"
     }()
+    
+    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+        
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+    }
+    
+    init(vehicleData: AddVehicleViewController.VehicleInfo, context: NSManagedObjectContext) {
+        
+        let entity = NSEntityDescription.entityForName("Vehicle", inManagedObjectContext: context)!
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+        
+        make = vehicleData.make!
+        model = vehicleData.model!
+        year = vehicleData.year!
+        //nickname = vehicleData.nickname!
+        //notes = vehicleData.notes!
+    }
 
 }

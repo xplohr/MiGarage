@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension AddVehicleViewController {
+extension AddVehicleViewController: AddVehicleMenuDelegate {
     
     func setupTableCell(indexPath: NSIndexPath, cell: UITableViewCell) -> UITableViewCell {
         
@@ -65,16 +65,40 @@ extension AddVehicleViewController {
         switch selection {
             
         case 0: // Make
-            return "Select Make"
+            return "Make"
             
         case 1: // Model
-            return "Select Model"
+            return "Model"
             
         case 2: // Year
-            return "Select Year"
+            return "Year"
             
         default:
             return nil
+        }
+    }
+    
+    func didSelectMenuItem(vehicleInfo: String, selection: String) {
+        
+        switch vehicleInfo {
+            
+        case "Make":
+            var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: 0, inSection: 0))!
+            cell.detailTextLabel?.text = selection
+            newVehicle?.make = selection
+            
+        case "Model":
+            var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0))!
+            cell.detailTextLabel?.text = selection
+            newVehicle?.model = selection
+            
+        case "Year":
+            var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: 2, inSection: 0))!
+            cell.detailTextLabel?.text = selection
+            newVehicle?.year = selection.toInt()
+            
+        default:
+            break
         }
     }
 }

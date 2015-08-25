@@ -23,4 +23,14 @@ extension AddVehicleMenuViewController {
         
         return menuChoices.count
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        var cell = tableView.cellForRowAtIndexPath(indexPath)!
+        cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        
+        delegate?.didSelectMenuItem(title!, selection: menuChoices[indexPath.row])
+    }
 }

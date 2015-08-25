@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol AddVehicleMenuDelegate {
+    
+    func didSelectMenuItem(vehicleInfo: String, selection: String)
+}
+
 class AddVehicleMenuViewController: UITableViewController {
     
     var menuChoices: [String] = []
+    var delegate: AddVehicleMenuDelegate?
     
     override func viewDidLoad() {
         

@@ -31,4 +31,9 @@ extension GarageViewController: UITableViewDataSource, UITableViewDelegate {
         
         // Show vehicle details
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return 50
+    }
 }
