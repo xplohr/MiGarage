@@ -31,6 +31,6 @@ extension AddVehicleMenuViewController {
         var cell = tableView.cellForRowAtIndexPath(indexPath)!
         cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         
-        delegate?.didSelectMenuItem(title!, selection: menuChoices[indexPath.row])
+        delegate?.didSelectMenuItem(self, vehicleInfo: title!, selection: menuChoices[indexPath.row])
     }
 }

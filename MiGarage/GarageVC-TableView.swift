@@ -30,6 +30,8 @@ extension GarageViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         // Show vehicle details
+        let vehicle = fetchedResultsController.fetchedObjects![indexPath.row] as! Vehicle
+        performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.VehicleDetails, sender: vehicle)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

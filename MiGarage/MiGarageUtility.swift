@@ -20,8 +20,10 @@ class MiGarageUtility {
     
     struct SegueIdentifiers {
     
+        static let VehicleDetails = "showVehicleDetails"
         static let AddVehicleMenu = "showAddVehicleMenu"
         static let AddVehicleText = "showAddVehicleText"
         static let AddVehicleSelectedMenu = "selectedAddVehicleMenuItem"
+        static let ShowNotesView = "showNotesField"
     }
 }

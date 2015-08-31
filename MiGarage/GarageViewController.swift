@@ -28,12 +28,32 @@ class GarageViewController: UIViewController {
         fetchedResultsController.performFetch(nil)
         fetchedResultsController.delegate = self
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        fetchedResultsController.performFetch(nil)
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == MiGarageUtility.SegueIdentifiers.VehicleDetails && sender != nil) {
+            
+            let navController = segue.destinationViewController as!  UINavigationController
+            let destination = navController.topViewController as! AddVehicleViewController
+            destination.vehicleData = sender as? Vehicle
+        }
+    }
 
+    @IBAction func AddButtonTapped(sender: UIBarButtonItem) {
+        
+        performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.VehicleDetails, sender: nil)
+    }
 
 }
 

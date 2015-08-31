@@ -20,11 +20,19 @@ class AddVehicleViewController: UIViewController {
         var notes: String?
     }
     
-    var newVehicle: VehicleInfo?
+    var newVehicle: VehicleInfo? = VehicleInfo()
+    var vehicleData: Vehicle?
     
     override func viewDidLoad() {
         
-        newVehicle = VehicleInfo()
+        if vehicleData != nil {
+            
+            newVehicle?.make = vehicleData?.make
+            newVehicle?.model = vehicleData?.model
+            newVehicle?.year = vehicleData?.year
+            newVehicle?.nickname = vehicleData?.nickname
+            newVehicle?.notes = vehicleData?.notes
+        }
     }
     
     @IBOutlet weak var vehicleTable: UITableView!
@@ -44,6 +52,8 @@ class AddVehicleViewController: UIViewController {
             return
         }
         
+        newVehicle?.nickname = getNicknameValue()
+        
         let vehicleData = Vehicle(vehicleData: newVehicle!, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
         CoreDataStackManager.sharedInstance().saveContext()
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
@@ -53,10 +63,16 @@ class AddVehicleViewController: UIViewController {
         
         if segue.identifier == MiGarageUtility.SegueIdentifiers.AddVehicleMenu {
             
-            var destination = segue.destinationViewController as! AddVehicleMenuViewController
+            let destination = segue.destinationViewController as! AddVehicleMenuViewController
             destination.menuChoices = setupMenuChoices(sender as! Int)
             destination.title = setupTitle(sender as! Int)
             destination.delegate = self
+        }
+        else if segue.identifier == MiGarageUtility.SegueIdentifiers.ShowNotesView {
+            
+            let destination = segue.destinationViewController as! AddVehicleTextViewController
+            destination.delegate = self
+            destination.vehicleNotes = newVehicle?.notes
         }
     }
 }

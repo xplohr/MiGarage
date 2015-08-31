@@ -45,8 +45,8 @@ class Vehicle: NSManagedObject {
         make = vehicleData.make!
         model = vehicleData.model!
         year = vehicleData.year!
-        //nickname = vehicleData.nickname!
-        //notes = vehicleData.notes!
+        nickname = vehicleData.nickname!
+        notes = vehicleData.notes!
     }
 
 }

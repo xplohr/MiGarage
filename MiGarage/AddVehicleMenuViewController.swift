@@ -10,7 +10,7 @@ import UIKit
 
 protocol AddVehicleMenuDelegate {
     
-    func didSelectMenuItem(vehicleInfo: String, selection: String)
+    func didSelectMenuItem(addVehicleMenu: AddVehicleMenuViewController, vehicleInfo: String, selection: String)
 }
 
 class AddVehicleMenuViewController: UITableViewController {

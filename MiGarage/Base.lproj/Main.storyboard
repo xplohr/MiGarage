@@ -27,7 +27,7 @@
                                     <navigationItem title="MiGarage" id="2nd-6m-z4V">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UEu-Cz-lQ9">
                                             <connections>
-                                                <segue destination="gNU-Nf-HpT" kind="presentation" id="Sqf-dR-vWx"/>
+                                                <action selector="AddButtonTapped:" destination="vXZ-lx-hvc" id="q5s-d8-lom"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -153,6 +153,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ZN9-ZD-mX5" id="zpN-TE-EDs"/>
+                        <segue destination="gNU-Nf-HpT" kind="presentation" identifier="showVehicleDetails" id="l0K-uY-OGK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -328,11 +329,12 @@
                     <connections>
                         <outlet property="vehicleTable" destination="nNw-Zi-wMy" id="CwN-GS-PxV"/>
                         <segue destination="XgB-Mt-frU" kind="show" identifier="showAddVehicleMenu" id="9zD-kP-O08"/>
+                        <segue destination="kik-gL-G1X" kind="presentation" identifier="showNotesField" modalTransitionStyle="partialCurl" id="UIY-W3-qmd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYg-0R-AOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="349" y="1152"/>
+            <point key="canvasLocation" x="526.5" y="1165.5"/>
         </scene>
         <!--Add Vehicle Menu View Controller-->
         <scene sceneID="Zhk-o7-jIx">
@@ -377,39 +379,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-Qg-SpG">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejy-jW-4em">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="ll3-mO-Zxo"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Vehicle Notes" id="wSB-F0-qsm">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vpS-3L-uVW">
+                                            <connections>
+                                                <action selector="cancelButtonTapped:" destination="kik-gL-G1X" id="esy-8k-R6Y"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="3bA-C2-zUh">
+                                            <connections>
+                                                <action selector="saveButtonTapped:" destination="kik-gL-G1X" id="AlN-5U-4j4"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ll3-mO-Zxo"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ll3-mO-Zxo"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" usesAttributedText="YES" allowsEditingTextAttributes="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-Qg-SpG">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="kik-gL-G1X" id="EMe-pS-fJi"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2ge-Qg-SpG" firstAttribute="bottom" secondItem="cM2-7m-RHo" secondAttribute="top" id="9C6-Le-HoH"/>
-                            <constraint firstItem="2ge-Qg-SpG" firstAttribute="leading" secondItem="Hnc-kL-f24" secondAttribute="leading" id="NOK-YZ-pQF"/>
-                            <constraint firstItem="2ge-Qg-SpG" firstAttribute="top" secondItem="RoJ-QI-zun" secondAttribute="bottom" id="d0M-Na-dyk"/>
-                            <constraint firstAttribute="trailing" secondItem="2ge-Qg-SpG" secondAttribute="trailing" id="udP-ee-aqu"/>
+                            <constraint firstItem="2ge-Qg-SpG" firstAttribute="leading" secondItem="Hnc-kL-f24" secondAttribute="leadingMargin" constant="-11" id="7yN-OD-FgE"/>
+                            <constraint firstItem="ejy-jW-4em" firstAttribute="centerX" secondItem="2ge-Qg-SpG" secondAttribute="centerX" id="Dgq-Lm-bsc"/>
+                            <constraint firstAttribute="trailing" secondItem="ejy-jW-4em" secondAttribute="trailing" id="YCp-cS-UOz"/>
+                            <constraint firstItem="cM2-7m-RHo" firstAttribute="top" secondItem="2ge-Qg-SpG" secondAttribute="bottom" constant="5" id="bdi-Zo-KeE"/>
+                            <constraint firstItem="ejy-jW-4em" firstAttribute="top" secondItem="RoJ-QI-zun" secondAttribute="bottom" id="h62-b3-TEj"/>
+                            <constraint firstItem="ejy-jW-4em" firstAttribute="leading" secondItem="Hnc-kL-f24" secondAttribute="leading" id="nLB-po-Eow"/>
+                            <constraint firstItem="2ge-Qg-SpG" firstAttribute="top" secondItem="ejy-jW-4em" secondAttribute="bottom" constant="5" id="pVa-jl-ToC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="ejy-jW-4em"/>
                                 <exclude reference="2ge-Qg-SpG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9C6-Le-HoH"/>
-                                <exclude reference="NOK-YZ-pQF"/>
-                                <exclude reference="d0M-Na-dyk"/>
-                                <exclude reference="udP-ee-aqu"/>
+                                <exclude reference="Dgq-Lm-bsc"/>
+                                <exclude reference="YCp-cS-UOz"/>
+                                <exclude reference="h62-b3-TEj"/>
+                                <exclude reference="nLB-po-Eow"/>
+                                <exclude reference="7yN-OD-FgE"/>
+                                <exclude reference="pVa-jl-ToC"/>
+                                <exclude reference="bdi-Zo-KeE"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="ejy-jW-4em"/>
                                 <include reference="2ge-Qg-SpG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9C6-Le-HoH"/>
-                                <include reference="NOK-YZ-pQF"/>
-                                <include reference="d0M-Na-dyk"/>
-                                <include reference="udP-ee-aqu"/>
+                                <include reference="Dgq-Lm-bsc"/>
+                                <include reference="YCp-cS-UOz"/>
+                                <include reference="h62-b3-TEj"/>
+                                <include reference="nLB-po-Eow"/>
+                                <include reference="7yN-OD-FgE"/>
+                                <include reference="pVa-jl-ToC"/>
+                                <include reference="bdi-Zo-KeE"/>
                             </mask>
                         </variation>
                     </view>
