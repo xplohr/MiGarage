@@ -36,6 +36,9 @@
 		043D0DD81B86EC50005122BC /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBB1B86EC50005122BC /* TransitionManager.swift */; };
 		043D0DD91B86EC50005122BC /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBC1B86EC50005122BC /* TransitionZoom.swift */; };
 		043D0DDA1B86EC50005122BC /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBD1B86EC50005122BC /* UnwindSegue.swift */; };
+		0478CFB51B9540E900F39D6D /* EdmundsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB41B9540E900F39D6D /* EdmundsClient.swift */; };
+		0478CFB71B95789700F39D6D /* EdmundsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB61B95789700F39D6D /* EdmundsConstants.swift */; };
+		0478CFB91B957F5C00F39D6D /* MiGarageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB81B957F5C00F39D6D /* MiGarageError.swift */; };
 		048591761B93C7A00011AE33 /* AddVehicleVC-PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048591751B93C7A00011AE33 /* AddVehicleVC-PopupView.swift */; };
 		048A97C11B8143E200E3F263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A97C01B8143E200E3F263 /* AppDelegate.swift */; };
 		048A97C41B8143E200E3F263 /* MiGarage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 048A97C21B8143E200E3F263 /* MiGarage.xcdatamodeld */; };
@@ -100,6 +103,9 @@
 		043D0DBB1B86EC50005122BC /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		043D0DBC1B86EC50005122BC /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		043D0DBD1B86EC50005122BC /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		0478CFB41B9540E900F39D6D /* EdmundsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdmundsClient.swift; sourceTree = "<group>"; };
+		0478CFB61B95789700F39D6D /* EdmundsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdmundsConstants.swift; sourceTree = "<group>"; };
+		0478CFB81B957F5C00F39D6D /* MiGarageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiGarageError.swift; sourceTree = "<group>"; };
 		048591751B93C7A00011AE33 /* AddVehicleVC-PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddVehicleVC-PopupView.swift"; sourceTree = "<group>"; };
 		048A97BB1B8143E200E3F263 /* MiGarage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiGarage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048A97BF1B8143E200E3F263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -182,9 +188,35 @@
 			path = Spring;
 			sourceTree = "<group>";
 		};
+		0478CFAF1B953D6400F39D6D /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				0478CFB01B953D7300F39D6D /* Edmunds */,
+				0478CFB11B953D7D00F39D6D /* Flickr */,
+			);
+			name = Clients;
+			sourceTree = "<group>";
+		};
+		0478CFB01B953D7300F39D6D /* Edmunds */ = {
+			isa = PBXGroup;
+			children = (
+				0478CFB41B9540E900F39D6D /* EdmundsClient.swift */,
+				0478CFB61B95789700F39D6D /* EdmundsConstants.swift */,
+			);
+			name = Edmunds;
+			sourceTree = "<group>";
+		};
+		0478CFB11B953D7D00F39D6D /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Flickr;
+			sourceTree = "<group>";
+		};
 		048A97B21B8143E200E3F263 = {
 			isa = PBXGroup;
 			children = (
+				0478CFAF1B953D6400F39D6D /* Clients */,
 				043D0D9F1B86EC50005122BC /* Spring */,
 				048A97BD1B8143E200E3F263 /* MiGarage */,
 				048A97D61B8143E300E3F263 /* MiGarageTests */,
@@ -207,6 +239,7 @@
 				048A97C01B8143E200E3F263 /* AppDelegate.swift */,
 				04F8AF3B1B87E73F007C632D /* CoreDataStackManager.swift */,
 				04D001411B87F10700F0393A /* MiGarageUtility.swift */,
+				0478CFB81B957F5C00F39D6D /* MiGarageError.swift */,
 				04E824F61B85589C0014A081 /* Model */,
 				04E824F71B8558A20014A081 /* View */,
 				04E824F81B8558AB0014A081 /* Controller */,
@@ -412,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0478CFB91B957F5C00F39D6D /* MiGarageError.swift in Sources */,
 				04D001441B87F45E00F0393A /* Vehicle.swift in Sources */,
 				04F8AF351B87DDE7007C632D /* VehicleListCell.swift in Sources */,
 				043D0DC41B86EC50005122BC /* DesignableLabel.swift in Sources */,
@@ -431,12 +465,14 @@
 				048A97C61B8143E200E3F263 /* GarageViewController.swift in Sources */,
 				048591761B93C7A00011AE33 /* AddVehicleVC-PopupView.swift in Sources */,
 				043D0DCF1B86EC50005122BC /* SoundPlayer.swift in Sources */,
+				0478CFB51B9540E900F39D6D /* EdmundsClient.swift in Sources */,
 				04D001491B8825D800F0393A /* AddVehicleVC-TableView.swift in Sources */,
 				043D0DC81B86EC50005122BC /* DesignableView.swift in Sources */,
 				043D0DC51B86EC50005122BC /* DesignableTabBarController.swift in Sources */,
 				04D0014F1B88436F00F0393A /* AddVehicleMenuVC-TableView.swift in Sources */,
 				043D0DC21B86EC50005122BC /* DesignableButton.swift in Sources */,
 				048A97C41B8143E200E3F263 /* MiGarage.xcdatamodeld in Sources */,
+				0478CFB71B95789700F39D6D /* EdmundsConstants.swift in Sources */,
 				04D0014C1B8842BE00F0393A /* AddVehicleMenuViewController.swift in Sources */,
 				043D0DD91B86EC50005122BC /* TransitionZoom.swift in Sources */,
 				043D0DC61B86EC50005122BC /* DesignableTextField.swift in Sources */,
