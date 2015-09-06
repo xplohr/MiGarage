@@ -33,6 +33,14 @@ class AddVehicleViewController: UIViewController {
             newVehicle?.nickname = vehicleData?.nickname
             newVehicle?.notes = vehicleData?.notes
         }
+        
+        EdmundsClient.sharedInstance().getEdmundsDataForMenus() {
+            
+            success, data, error in
+            
+            println("\(success)")
+            // Process data into menus
+        }
     }
     
     @IBOutlet weak var vehicleTable: UITableView!

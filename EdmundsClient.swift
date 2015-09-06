@@ -20,7 +20,7 @@ class EdmundsClient: NSObject {
         return Singleton.sharedInstance
     }
     
-    func sendRequest(request: NSURLRequest, completionHandler: (success: Bool, data: NSArray?, error: NSError?) -> Void) {
+    func sendRequest(request: NSURLRequest, completionHandler: (success: Bool, data: [[String: AnyObject]]?, error: NSError?) -> Void) {
         
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) {
@@ -40,7 +40,7 @@ class EdmundsClient: NSObject {
                 var parsingError: NSError?
                 let parsedResults: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
                 
-                if let makesDictionary = parsedResults.valueForKey(JSONKeys.Makes_Array) as? NSArray {
+                if let makesDictionary = parsedResults.valueForKey(JSONKeys.Makes_Array) as? [[String: AnyObject]] {
                     
                     completionHandler(success: true, data: makesDictionary, error: nil)
                 } else {
@@ -56,5 +56,26 @@ class EdmundsClient: NSObject {
         }
         
         task.resume()
+    }
+    
+    func getEdmundsDataForMenus(completionHandler: (success: Bool, data: [[String: AnyObject]]?, error: NSError?) -> Void) {
+        
+        let arguments = [
+            
+            Keys.DataView: "basic",
+            Keys.DataFormat: "json",
+            Keys.APIKey: Constants.API_Key
+        ]
+        
+        let urlString = Constants.Base_URL + Methods.GetMakes + MiGarageUtility.escapedParameters(arguments)
+        let url = NSURL(string: urlString)!
+        let request = NSURLRequest(URL: url)
+        
+        sendRequest(request) {
+            
+            success, data, error in
+            
+            completionHandler(success: success, data: data, error: error)
+        }
     }
 }

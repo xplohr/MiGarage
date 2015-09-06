@@ -23,6 +23,7 @@ extension EdmundsClient {
     
         static let DataView = "view"
         static let DataFormat = "fmt"
+        static let APIKey = "api_key"
     }
     
     struct JSONKeys {
