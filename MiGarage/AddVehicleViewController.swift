@@ -22,6 +22,7 @@ class AddVehicleViewController: UIViewController {
     
     var newVehicle: VehicleInfo? = VehicleInfo()
     var vehicleData: Vehicle?
+    var edmundsData: [[String: AnyObject]]?
     
     override func viewDidLoad() {
         
@@ -30,16 +31,34 @@ class AddVehicleViewController: UIViewController {
             newVehicle?.make = vehicleData?.make
             newVehicle?.model = vehicleData?.model
             newVehicle?.year = vehicleData?.year
-            newVehicle?.nickname = vehicleData?.nickname
-            newVehicle?.notes = vehicleData?.notes
+            
+            if !vehicleData!.nickname.isEmpty {
+                newVehicle?.nickname = vehicleData?.nickname
+            }
+            
+            if !vehicleData!.notes.isEmpty {
+                newVehicle?.notes = vehicleData?.notes
+            }
         }
         
         EdmundsClient.sharedInstance().getEdmundsDataForMenus() {
             
             success, data, error in
             
-            println("\(success)")
-            // Process data into menus
+            if success {
+                
+                self.edmundsData = data
+            } else {
+                
+                println("\(error): \(error?.userInfo)")
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    let alert = UIAlertView(title: "Error", message: "Whoops! There was an error retrieving the data from Edmunds.com. Please try again.", delegate: nil, cancelButtonTitle: "OK")
+                    alert.show()
+                    self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                }
+            }
         }
     }
     
@@ -61,6 +80,10 @@ class AddVehicleViewController: UIViewController {
         }
         
         newVehicle?.nickname = getNicknameValue()
+        
+        if newVehicle?.notes == nil {
+            newVehicle?.notes = ""
+        }
         
         let vehicleData = Vehicle(vehicleData: newVehicle!, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
         CoreDataStackManager.sharedInstance().saveContext()

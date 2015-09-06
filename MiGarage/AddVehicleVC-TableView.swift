@@ -10,6 +10,11 @@ import UIKit
 
 extension AddVehicleViewController: UITableViewDataSource, UITableViewDelegate {
     
+    enum AddVehicleCellPosition: Int {
+        
+        case Make = 0, Model, Year, Nickname, Notes
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 5
@@ -44,5 +49,58 @@ extension AddVehicleViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.AddVehicleMenu, sender: indexPath.row)
         }
+    }
+    
+    func setupTableCell(indexPath: NSIndexPath, cell: UITableViewCell) -> UITableViewCell {
+        
+        switch indexPath.row {
+            
+        case AddVehicleCellPosition.Make.rawValue:
+            cell.textLabel?.text = "Make"
+            if vehicleData != nil {
+                cell.detailTextLabel?.text = vehicleData?.make
+            } else {
+                cell.detailTextLabel?.text = "Select"
+            }
+            
+        case AddVehicleCellPosition.Model.rawValue:
+            cell.textLabel?.text = "Model"
+            if vehicleData != nil {
+                cell.detailTextLabel?.text = vehicleData?.model
+            } else {
+                cell.detailTextLabel?.text = "Select"
+                cell.hidden = true
+            }
+            
+        case AddVehicleCellPosition.Year.rawValue:
+            cell.textLabel?.text = "Year"
+            if vehicleData != nil {
+                cell.detailTextLabel?.text = vehicleData?.year.stringValue
+            } else {
+                cell.detailTextLabel?.text = "Select"
+                cell.hidden = true
+            }
+            
+        case AddVehicleCellPosition.Notes.rawValue:
+            cell.textLabel?.text = "Notes"
+            cell.detailTextLabel?.text = "Edit"
+            
+        default:
+            cell.textLabel?.text = ""
+            cell.detailTextLabel?.text = ""
+        }
+        
+        return cell
+    }
+    
+    func setupTextCell(indexPath: NSIndexPath, cell: UITableViewCell) -> UITableViewCell {
+        
+        cell.textLabel?.text = "Nickname"
+        if vehicleData != nil {
+            
+            cell.detailTextLabel?.text = vehicleData?.nickname
+        }
+        
+        return cell
     }
 }
