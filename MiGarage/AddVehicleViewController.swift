@@ -20,6 +20,8 @@ class AddVehicleViewController: UIViewController {
         var notes: String?
     }
     
+    @IBOutlet weak var loadingBackground: SpringImageView!
+    @IBOutlet weak var loadingView: SpringView!
     var newVehicle: VehicleInfo? = VehicleInfo()
     var vehicleData: Vehicle?
     var edmundsData: [[String: AnyObject]]?
@@ -41,6 +43,10 @@ class AddVehicleViewController: UIViewController {
             }
         }
         
+        // Animation code provided by Spring: https://github.com/MengTo/Spring
+        loadingView.animate()
+        loadingBackground.rotate360Degrees(repeatCount: 30.0)
+        
         EdmundsClient.sharedInstance().getEdmundsDataForMenus() {
             
             success, data, error in
@@ -48,6 +54,10 @@ class AddVehicleViewController: UIViewController {
             if success {
                 
                 self.edmundsData = data
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    self.loadingView.fallAnimation()
+                }
             } else {
                 
                 println("\(error): \(error?.userInfo)")
