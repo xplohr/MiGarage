@@ -272,6 +272,23 @@
                                     <outlet property="delegate" destination="23g-mr-ifq" id="7z0-93-DRn"/>
                                 </connections>
                             </tableView>
+                            <view alpha="0.49999999999999961" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="del-E6-2Aq" userLabel="GrayoutView" customClass="SpringView" customModule="MiGarage" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="pop"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scaleX">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scaleY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="curve" value="easeOut"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGN-pS-eyu" userLabel="LoadingView" customClass="SpringView" customModule="MiGarage" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
@@ -349,10 +366,10 @@
                                     <mask key="constraints">
                                         <exclude reference="Vnb-I0-NqX"/>
                                         <exclude reference="tNs-h5-CvK"/>
-                                        <exclude reference="D5A-pX-rBg"/>
-                                        <exclude reference="kOT-kK-afX"/>
                                         <exclude reference="G4u-Ie-qkL"/>
                                         <exclude reference="vfq-wN-QKd"/>
+                                        <exclude reference="D5A-pX-rBg"/>
+                                        <exclude reference="kOT-kK-afX"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -363,10 +380,10 @@
                                     <mask key="constraints">
                                         <include reference="Vnb-I0-NqX"/>
                                         <include reference="tNs-h5-CvK"/>
-                                        <include reference="D5A-pX-rBg"/>
-                                        <include reference="kOT-kK-afX"/>
                                         <include reference="G4u-Ie-qkL"/>
                                         <include reference="vfq-wN-QKd"/>
+                                        <include reference="D5A-pX-rBg"/>
+                                        <include reference="kOT-kK-afX"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -378,6 +395,8 @@
                             </constraint>
                             <constraint firstItem="nNw-Zi-wMy" firstAttribute="bottom" secondItem="SCg-rM-JfV" secondAttribute="top" id="8QW-hd-PU2"/>
                             <constraint firstItem="ZcG-Z0-PHa" firstAttribute="top" secondItem="TJC-Ff-mtV" secondAttribute="top" constant="20" symbolic="YES" id="I94-SD-XRH"/>
+                            <constraint firstItem="del-E6-2Aq" firstAttribute="top" secondItem="nNw-Zi-wMy" secondAttribute="top" id="KID-ko-Adp"/>
+                            <constraint firstItem="del-E6-2Aq" firstAttribute="leading" secondItem="nNw-Zi-wMy" secondAttribute="leading" id="PPj-xi-UC2"/>
                             <constraint firstAttribute="centerY" secondItem="vGN-pS-eyu" secondAttribute="centerY" constant="50" id="PXK-8c-EKm">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -385,13 +404,16 @@
                             <constraint firstItem="ZcG-Z0-PHa" firstAttribute="bottom" secondItem="SCg-rM-JfV" secondAttribute="top" id="VOo-39-p9e"/>
                             <constraint firstItem="nNw-Zi-wMy" firstAttribute="top" secondItem="aH7-Ig-jFZ" secondAttribute="bottom" id="WFO-qZ-egz"/>
                             <constraint firstItem="nNw-Zi-wMy" firstAttribute="leading" secondItem="TJC-Ff-mtV" secondAttribute="leading" id="iWC-B1-5OX"/>
+                            <constraint firstItem="del-E6-2Aq" firstAttribute="height" secondItem="nNw-Zi-wMy" secondAttribute="height" id="lxT-zX-GRd"/>
                             <constraint firstItem="ZcG-Z0-PHa" firstAttribute="trailing" secondItem="nNw-Zi-wMy" secondAttribute="trailing" id="o51-Ok-vtw"/>
+                            <constraint firstItem="del-E6-2Aq" firstAttribute="width" secondItem="nNw-Zi-wMy" secondAttribute="width" id="pGP-ZO-Lml"/>
                             <constraint firstItem="ZcG-Z0-PHa" firstAttribute="leading" secondItem="nNw-Zi-wMy" secondAttribute="leading" id="syF-8C-DP8"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ZcG-Z0-PHa"/>
                                 <exclude reference="nNw-Zi-wMy"/>
+                                <exclude reference="del-E6-2Aq"/>
                                 <exclude reference="vGN-pS-eyu"/>
                             </mask>
                             <mask key="constraints">
@@ -400,6 +422,10 @@
                                 <exclude reference="VOo-39-p9e"/>
                                 <exclude reference="o51-Ok-vtw"/>
                                 <exclude reference="syF-8C-DP8"/>
+                                <exclude reference="KID-ko-Adp"/>
+                                <exclude reference="PPj-xi-UC2"/>
+                                <exclude reference="lxT-zX-GRd"/>
+                                <exclude reference="pGP-ZO-Lml"/>
                                 <exclude reference="8QW-hd-PU2"/>
                                 <exclude reference="WFO-qZ-egz"/>
                                 <exclude reference="iWC-B1-5OX"/>
@@ -411,6 +437,7 @@
                             <mask key="subviews">
                                 <include reference="ZcG-Z0-PHa"/>
                                 <include reference="nNw-Zi-wMy"/>
+                                <include reference="del-E6-2Aq"/>
                                 <include reference="vGN-pS-eyu"/>
                             </mask>
                             <mask key="constraints">
@@ -419,6 +446,10 @@
                                 <include reference="VOo-39-p9e"/>
                                 <include reference="o51-Ok-vtw"/>
                                 <include reference="syF-8C-DP8"/>
+                                <include reference="KID-ko-Adp"/>
+                                <include reference="PPj-xi-UC2"/>
+                                <include reference="lxT-zX-GRd"/>
+                                <include reference="pGP-ZO-Lml"/>
                                 <include reference="8QW-hd-PU2"/>
                                 <include reference="WFO-qZ-egz"/>
                                 <include reference="iWC-B1-5OX"/>
@@ -440,6 +471,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="grayoutBackground" destination="del-E6-2Aq" id="W0s-f5-CA9"/>
                         <outlet property="loadingBackground" destination="p8l-2d-svQ" id="0Zk-DF-B9t"/>
                         <outlet property="loadingView" destination="vGN-pS-eyu" id="M8S-0u-PDy"/>
                         <outlet property="vehicleTable" destination="nNw-Zi-wMy" id="CwN-GS-PxV"/>

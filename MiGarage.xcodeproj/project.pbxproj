@@ -36,7 +36,7 @@
 		043D0DD81B86EC50005122BC /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBB1B86EC50005122BC /* TransitionManager.swift */; };
 		043D0DD91B86EC50005122BC /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBC1B86EC50005122BC /* TransitionZoom.swift */; };
 		043D0DDA1B86EC50005122BC /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBD1B86EC50005122BC /* UnwindSegue.swift */; };
-		047296DB1B9CF57C0058ABFF /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047296DA1B9CF57C0058ABFF /* UIViewExt.swift */; };
+		047296DB1B9CF57C0058ABFF /* UIView-Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047296DA1B9CF57C0058ABFF /* UIView-Animations.swift */; };
 		0478CFB51B9540E900F39D6D /* EdmundsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB41B9540E900F39D6D /* EdmundsClient.swift */; };
 		0478CFB71B95789700F39D6D /* EdmundsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB61B95789700F39D6D /* EdmundsConstants.swift */; };
 		0478CFB91B957F5C00F39D6D /* MiGarageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB81B957F5C00F39D6D /* MiGarageError.swift */; };
@@ -104,7 +104,7 @@
 		043D0DBB1B86EC50005122BC /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		043D0DBC1B86EC50005122BC /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		043D0DBD1B86EC50005122BC /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
-		047296DA1B9CF57C0058ABFF /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		047296DA1B9CF57C0058ABFF /* UIView-Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView-Animations.swift"; sourceTree = "<group>"; };
 		0478CFB41B9540E900F39D6D /* EdmundsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdmundsClient.swift; sourceTree = "<group>"; };
 		0478CFB61B95789700F39D6D /* EdmundsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdmundsConstants.swift; sourceTree = "<group>"; };
 		0478CFB81B957F5C00F39D6D /* MiGarageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiGarageError.swift; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 			children = (
 				04F8AF341B87DDE7007C632D /* VehicleListCell.swift */,
 				04D001551B8854E200F0393A /* VehicleTextCell.swift */,
-				047296DA1B9CF57C0058ABFF /* UIViewExt.swift */,
+				047296DA1B9CF57C0058ABFF /* UIView-Animations.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -484,7 +484,7 @@
 				043D0DD41B86EC50005122BC /* SpringLabel.swift in Sources */,
 				04D001511B88468200F0393A /* AddVehicleVC-Utility.swift in Sources */,
 				043D0DBE1B86EC50005122BC /* AsyncButton.swift in Sources */,
-				047296DB1B9CF57C0058ABFF /* UIViewExt.swift in Sources */,
+				047296DB1B9CF57C0058ABFF /* UIView-Animations.swift in Sources */,
 				04D001471B88251F00F0393A /* AddVehicleViewController.swift in Sources */,
 				043D0DBF1B86EC50005122BC /* AsyncImageView.swift in Sources */,
 				043D0DC71B86EC50005122BC /* DesignableTextView.swift in Sources */,

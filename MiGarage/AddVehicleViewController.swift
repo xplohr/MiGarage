@@ -20,6 +20,7 @@ class AddVehicleViewController: UIViewController {
         var notes: String?
     }
     
+    @IBOutlet weak var grayoutBackground: SpringView!
     @IBOutlet weak var loadingBackground: SpringImageView!
     @IBOutlet weak var loadingView: SpringView!
     var newVehicle: VehicleInfo? = VehicleInfo()
@@ -56,7 +57,8 @@ class AddVehicleViewController: UIViewController {
                 self.edmundsData = data
                 dispatch_async(dispatch_get_main_queue()) {
                     
-                    self.loadingView.fallAnimation()
+                    self.loadingView.fallAnimation(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
+                    self.grayoutBackground.fadeOut(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
                 }
             } else {
                 
