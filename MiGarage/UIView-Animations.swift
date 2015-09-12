@@ -11,6 +11,15 @@ import UIKit
 
 extension UIView {
     
+    struct AnimationSettings {
+    
+        var force = Float(1.0)
+        var duration = CFTimeInterval(1.0)
+        var repeatCount = Float(0.0)
+        var hideOnCompletion = true
+        var delay = CFTimeInterval(0.0)
+    }
+    
     // Extending UIView to create a rotating animation
     // Reference: https://www.andrewcbancroft.com/2014/10/15/rotate-animation-in-swift/
     // Modified by Che-Chuen Ho to repeat animations
@@ -64,5 +73,35 @@ extension UIView {
         self.layer.opacity = 0.0
         fadeAnimation.duration = duration
         self.layer.addAnimation(fadeAnimation, forKey: "fade")
+    }
+    
+    // adapted from Animation code provided by Spring: https://github.com/MengTo/Spring
+    func popIn(settings: AnimationSettings, completionHandler: ((result: AnyObject?) -> Void)?) {
+        
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "transform.scale"
+        animation.values = [0, -0.2*settings.force, 0.2*settings.force, -0.2*settings.force, 0]
+        animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+        //animation.timingFunction = getTimingFunction(curve)
+        animation.duration = CFTimeInterval(settings.duration)
+        animation.additive = true
+        animation.repeatCount = settings.repeatCount
+        animation.beginTime = CACurrentMediaTime() + CFTimeInterval(settings.delay)
+        layer.addAnimation(animation, forKey: "popIn")
+    }
+    
+    // adapted from Animation code provided by Spring: https://github.com/MengTo/Spring
+    func clickIn(settings: AnimationSettings, completionHandler: ((result: AnyObject?) -> Void)?) {
+        
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "transform.scale"
+        animation.values = [0, -0.2*settings.force, 0.2*settings.force, 0]
+        animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+        //animation.timingFunction = getTimingFunction(curve)
+        animation.duration = CFTimeInterval(settings.duration)
+        animation.additive = true
+        animation.repeatCount = settings.repeatCount
+        animation.beginTime = CACurrentMediaTime() + CFTimeInterval(settings.delay)
+        layer.addAnimation(animation, forKey: "clickIn")
     }
 }

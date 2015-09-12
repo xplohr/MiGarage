@@ -36,6 +36,7 @@
 		043D0DD81B86EC50005122BC /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBB1B86EC50005122BC /* TransitionManager.swift */; };
 		043D0DD91B86EC50005122BC /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBC1B86EC50005122BC /* TransitionZoom.swift */; };
 		043D0DDA1B86EC50005122BC /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBD1B86EC50005122BC /* UnwindSegue.swift */; };
+		044CD1321B9EB2F800B430CA /* VehicleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CD1311B9EB2F800B430CA /* VehicleDetailViewController.swift */; };
 		047296DB1B9CF57C0058ABFF /* UIView-Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047296DA1B9CF57C0058ABFF /* UIView-Animations.swift */; };
 		0478CFB51B9540E900F39D6D /* EdmundsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB41B9540E900F39D6D /* EdmundsClient.swift */; };
 		0478CFB71B95789700F39D6D /* EdmundsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB61B95789700F39D6D /* EdmundsConstants.swift */; };
@@ -104,6 +105,7 @@
 		043D0DBB1B86EC50005122BC /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		043D0DBC1B86EC50005122BC /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		043D0DBD1B86EC50005122BC /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		044CD1311B9EB2F800B430CA /* VehicleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleDetailViewController.swift; sourceTree = "<group>"; };
 		047296DA1B9CF57C0058ABFF /* UIView-Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView-Animations.swift"; sourceTree = "<group>"; };
 		0478CFB41B9540E900F39D6D /* EdmundsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdmundsClient.swift; sourceTree = "<group>"; };
 		0478CFB61B95789700F39D6D /* EdmundsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdmundsConstants.swift; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 				043D0DBD1B86EC50005122BC /* UnwindSegue.swift */,
 			);
 			path = Spring;
+			sourceTree = "<group>";
+		};
+		044CD1301B9EB2CD00B430CA /* VehicleDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				044CD1311B9EB2F800B430CA /* VehicleDetailViewController.swift */,
+			);
+			name = VehicleDetailViewController;
 			sourceTree = "<group>";
 		};
 		0478CFAF1B953D6400F39D6D /* Clients */ = {
@@ -332,6 +342,7 @@
 				04D001451B8821AA00F0393A /* AddVehicleViewController */,
 				04D0014A1B88429400F0393A /* AddVehicleMenuViewController */,
 				04D001521B884CD400F0393A /* AddVehicleTextViewController */,
+				044CD1301B9EB2CD00B430CA /* VehicleDetailViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -462,6 +473,7 @@
 				043D0DC11B86EC50005122BC /* BlurView.swift in Sources */,
 				043D0DDA1B86EC50005122BC /* UnwindSegue.swift in Sources */,
 				04D001541B884CFE00F0393A /* AddVehicleTextViewController.swift in Sources */,
+				044CD1321B9EB2F800B430CA /* VehicleDetailViewController.swift in Sources */,
 				043D0DCC1B86EC50005122BC /* LoadingView.swift in Sources */,
 				043D0DD51B86EC50005122BC /* SpringTextField.swift in Sources */,
 				043D0DD01B86EC50005122BC /* Spring.swift in Sources */,
