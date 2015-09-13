@@ -18,6 +18,8 @@ extension UIView {
         var repeatCount = Float(0.0)
         var hideOnCompletion = true
         var delay = CFTimeInterval(0.0)
+        var fromValue = 0.0
+        var toValue = 1.0
     }
     
     // Extending UIView to create a rotating animation
@@ -95,13 +97,43 @@ extension UIView {
         
         let animation = CAKeyframeAnimation()
         animation.keyPath = "transform.scale"
-        animation.values = [0, -0.2*settings.force, 0.2*settings.force, 0]
-        animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+        animation.values = [0, -0.2*settings.force, 0]
+        animation.keyTimes = [0, 0.5, 1]
         //animation.timingFunction = getTimingFunction(curve)
         animation.duration = CFTimeInterval(settings.duration)
         animation.additive = true
         animation.repeatCount = settings.repeatCount
         animation.beginTime = CACurrentMediaTime() + CFTimeInterval(settings.delay)
         layer.addAnimation(animation, forKey: "clickIn")
+    }
+    
+    func clickUp(settings: AnimationSettings, completionHandler: ((result: AnyObject?) -> Void)?) {
+        
+        let animation = CABasicAnimation(keyPath: "transform.scale")
+        animation.toValue = settings.toValue
+        animation.duration = settings.duration
+        layer.addAnimation(animation, forKey: "clickUp")
+    }
+    
+    func pauseAnimation() {
+        
+        if layer.speed > 0.0 {
+            let pausedTime = layer.convertTime(CACurrentMediaTime(), fromLayer: nil)
+            layer.speed = 0.0
+            layer.timeOffset = pausedTime
+        }
+    }
+    
+    func resumeAnimation() {
+        
+        if layer.speed == 0.0 {
+            let pausedTime = layer.timeOffset
+            layer.speed = 1.0
+            layer.timeOffset = 0.0
+            layer.beginTime = 0.0
+            
+            let timeSincePause = layer.convertTime(CACurrentMediaTime(), fromLayer: nil) - pausedTime
+            layer.beginTime = timeSincePause
+        }
     }
 }

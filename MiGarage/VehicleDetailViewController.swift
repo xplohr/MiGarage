@@ -25,38 +25,34 @@ class VehicleDetailViewController: UIViewController {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func odometerButton(didTouchUpInside: UIButton) {
+    @IBAction func odometerButtonDidTouchUpInside(sender: UIButton) {
         
-        var animationSettings = UIView.AnimationSettings()
-        animationSettings.duration = 0.5
-        odometerButton.clickIn(animationSettings, completionHandler: nil)
-        let alert = UIAlertView(title: "Odometer Button", message: "Edit Odometer Reading", delegate: nil, cancelButtonTitle: "OK")
-        alert.show()
+        /*let alert = UIAlertView(title: "Odometer Button", message: "Edit Odometer Reading", delegate: nil, cancelButtonTitle: "OK")
+        alert.show()*/
+        showOdometerEntryView(sender)
     }
     
-    @IBAction func maintenanceButton(didTouchUpInside: UIButton) {
+    @IBAction func buttonTouchDown(sender: UIButton) {
         
         var animationSettings = UIView.AnimationSettings()
         animationSettings.duration = 0.5
-        maintenanceButton.clickIn(animationSettings, completionHandler: nil)
+        sender.clickIn(animationSettings, completionHandler: nil)
+    }
+    
+    @IBAction func maintenanceButtonDidTouchUpInside(sender: UIButton) {
+        
         let alert = UIAlertView(title: "Maintenance Button", message: "Show Maintenance Calendar", delegate: nil, cancelButtonTitle: "OK")
         alert.show()
     }
     
-    @IBAction func repairLogButton(didTouchUpInside: UIButton) {
+    @IBAction func repairLogButtonDidTouchUpInside(sender: UIButton) {
         
-        var animationSettings = UIView.AnimationSettings()
-        animationSettings.duration = 0.5
-        repairLogButton.clickIn(animationSettings, completionHandler: nil)
         let alert = UIAlertView(title: "Repair Button", message: "Show Repair Log", delegate: nil, cancelButtonTitle: "OK")
         alert.show()
     }
     
-    @IBAction func notesButton(didTouchUpInside: UIButton) {
+    @IBAction func notesButtonDidTouchUpInside(sender: UIButton) {
         
-        var animationSettings = UIView.AnimationSettings()
-        animationSettings.duration = 0.5
-        notesButton.clickIn(animationSettings, completionHandler: nil)
         let alert = UIAlertView(title: "Notes Button", message: "Edit Notes", delegate: nil, cancelButtonTitle: "OK")
         alert.show()
     }

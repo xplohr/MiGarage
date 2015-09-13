@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040280FF1BA544400004563C /* OdometerEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040280FE1BA544400004563C /* OdometerEntryViewController.swift */; };
+		040281011BA545C10004563C /* VehicleDetailVC-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040281001BA545C10004563C /* VehicleDetailVC-Ext.swift */; };
 		043D0DBE1B86EC50005122BC /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DA01B86EC50005122BC /* AsyncButton.swift */; };
 		043D0DBF1B86EC50005122BC /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DA11B86EC50005122BC /* AsyncImageView.swift */; };
 		043D0DC01B86EC50005122BC /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DA21B86EC50005122BC /* AutoTextView.swift */; };
@@ -75,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040280FE1BA544400004563C /* OdometerEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OdometerEntryViewController.swift; sourceTree = "<group>"; };
+		040281001BA545C10004563C /* VehicleDetailVC-Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VehicleDetailVC-Ext.swift"; sourceTree = "<group>"; };
 		043D0DA01B86EC50005122BC /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		043D0DA11B86EC50005122BC /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		043D0DA21B86EC50005122BC /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				044CD1311B9EB2F800B430CA /* VehicleDetailViewController.swift */,
+				040280FE1BA544400004563C /* OdometerEntryViewController.swift */,
+				040281001BA545C10004563C /* VehicleDetailVC-Ext.swift */,
 			);
 			name = VehicleDetailViewController;
 			sourceTree = "<group>";
@@ -459,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040281011BA545C10004563C /* VehicleDetailVC-Ext.swift in Sources */,
 				0478CFB91B957F5C00F39D6D /* MiGarageError.swift in Sources */,
 				04D001441B87F45E00F0393A /* Vehicle.swift in Sources */,
 				04F8AF351B87DDE7007C632D /* VehicleListCell.swift in Sources */,
@@ -489,6 +496,7 @@
 				048A97C41B8143E200E3F263 /* MiGarage.xcdatamodeld in Sources */,
 				0478CFB71B95789700F39D6D /* EdmundsConstants.swift in Sources */,
 				04D0014C1B8842BE00F0393A /* AddVehicleMenuViewController.swift in Sources */,
+				040280FF1BA544400004563C /* OdometerEntryViewController.swift in Sources */,
 				043D0DD91B86EC50005122BC /* TransitionZoom.swift in Sources */,
 				043D0DC61B86EC50005122BC /* DesignableTextField.swift in Sources */,
 				04D001421B87F10700F0393A /* MiGarageUtility.swift in Sources */,
