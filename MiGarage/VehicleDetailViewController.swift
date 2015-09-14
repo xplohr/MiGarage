@@ -10,6 +10,8 @@ import UIKit
 
 class VehicleDetailViewController: UIViewController {
     
+    var vehicleData: Vehicle?
+    
     @IBOutlet weak var notesButton: UIButton!
     @IBOutlet weak var repairLogButton: UIButton!
     @IBOutlet weak var maintenanceButton: UIButton!
@@ -20,6 +22,16 @@ class VehicleDetailViewController: UIViewController {
     @IBOutlet weak var vehicleNameLabel: UILabel!
     @IBOutlet weak var odometerLabel: UILabel!
     
+    override func viewDidLoad() {
+        
+        if vehicleData != nil {
+            
+            vehicleNicknameLabel.text = vehicleData?.nameForLabel
+            vehicleNameLabel.text = vehicleData?.modelForLabel
+            odometerLabel.text = vehicleData?.odometer.stringValue
+        }
+    }
+    
     @IBAction func backButton(didTouchUpInside: UIButton) {
         
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
@@ -27,8 +39,6 @@ class VehicleDetailViewController: UIViewController {
     
     @IBAction func odometerButtonDidTouchUpInside(sender: UIButton) {
         
-        /*let alert = UIAlertView(title: "Odometer Button", message: "Edit Odometer Reading", delegate: nil, cancelButtonTitle: "OK")
-        alert.show()*/
         showOdometerEntryView(sender)
     }
     

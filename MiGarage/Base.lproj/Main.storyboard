@@ -88,7 +88,6 @@
                                         <connections>
                                             <outlet property="makeModelLabel" destination="YV0-kC-Ep1" id="ZoY-Y7-qJz"/>
                                             <outlet property="nameLabel" destination="Aag-qY-MF8" id="cED-vI-FNH"/>
-                                            <segue destination="dAQ-M9-AsU" kind="show" id="R7e-Je-359"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -156,6 +155,7 @@
                     <connections>
                         <outlet property="tableView" destination="ZN9-ZD-mX5" id="zpN-TE-EDs"/>
                         <segue destination="gNU-Nf-HpT" kind="presentation" identifier="showVehicleDetails" id="l0K-uY-OGK"/>
+                        <segue destination="dAQ-M9-AsU" kind="show" identifier="showVehicleDashboard" id="nH2-9x-pkY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -171,6 +171,7 @@
                         <viewControllerLayoutGuide type="bottom" id="nHd-su-P1u"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nHI-eD-fth">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Odometer Reading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Pi-m9-NiZ">
@@ -205,8 +206,7 @@
                                         <exclude reference="29K-RE-d6S"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="57" width="368" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="29K-RE-d6S"/>
                                     </mask>
@@ -223,8 +223,7 @@
                                         <exclude reference="WBR-Cj-iOA"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="95" width="65" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="WBR-Cj-iOA"/>
                                     </mask>
@@ -246,12 +245,14 @@
                                         <exclude reference="Tf2-ex-ACQ"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="338" y="95" width="46" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Tf2-ex-ACQ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="saveButtonDidTouchUpInside:" destination="9he-pY-BZH" eventType="touchUpInside" id="sCS-7b-Hfz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.79607843140000001" green="0.72549019609999998" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -274,13 +275,13 @@
                                 <exclude reference="oxh-6R-fft"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="25U-GA-ftw"/>
+                                <exclude reference="mCa-bs-x3v"/>
                                 <exclude reference="b8S-pJ-nUi"/>
                                 <exclude reference="rad-WG-Iqv"/>
                                 <exclude reference="ttF-WI-9S9"/>
                                 <exclude reference="AJ4-03-lrj"/>
                                 <exclude reference="zAo-c7-U7h"/>
-                                <exclude reference="25U-GA-ftw"/>
-                                <exclude reference="mCa-bs-x3v"/>
                                 <exclude reference="B18-gu-C1p"/>
                                 <exclude reference="sqI-o9-dtH"/>
                             </mask>
@@ -293,18 +294,21 @@
                                 <include reference="oxh-6R-fft"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="25U-GA-ftw"/>
+                                <include reference="mCa-bs-x3v"/>
                                 <include reference="b8S-pJ-nUi"/>
                                 <include reference="rad-WG-Iqv"/>
                                 <include reference="ttF-WI-9S9"/>
                                 <include reference="AJ4-03-lrj"/>
                                 <include reference="zAo-c7-U7h"/>
-                                <include reference="25U-GA-ftw"/>
-                                <include reference="mCa-bs-x3v"/>
                                 <include reference="B18-gu-C1p"/>
                                 <include reference="sqI-o9-dtH"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="odometerTextField" destination="lcm-cJ-dhC" id="ccU-zD-gE1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uA0-Cg-417" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,15 +16,15 @@ class Vehicle: NSManagedObject {
     @NSManaged var nickname: String
     @NSManaged var notes: String
     @NSManaged var year: NSNumber
+    @NSManaged var odometer: NSNumber
     
     lazy var nameForLabel: String = {
         
-        /*if !self.nickname.isEmpty {
+        if !self.nickname.isEmpty {
             return self.nickname
         } else {
             return "\(self.make)"
-        }*/
-        return "\(self.make)"
+        }
     }()
     
     lazy var modelForLabel: String = {
@@ -45,6 +45,7 @@ class Vehicle: NSManagedObject {
         make = vehicleData.make!
         model = vehicleData.model!
         year = vehicleData.year!
+        odometer = 0.0
         
         if vehicleData.nickname != nil {
             nickname = vehicleData.nickname!

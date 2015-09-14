@@ -8,11 +8,37 @@
 
 import UIKit
 
+protocol OdometerEntryViewControllerDelegate {
+    
+    func didSaveOdometerReading(sender: OdometerEntryViewController, value: String)
+}
+
 class OdometerEntryViewController: UIViewController {
     
+    @IBOutlet weak var odometerTextField: UITextField!
+    
+    var delegate: OdometerEntryViewControllerDelegate?
+    var vehicleData: Vehicle?
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if vehicleData != nil {
+            
+            odometerTextField.text = vehicleData?.odometer.stringValue
+        }
+        
+        odometerTextField.becomeFirstResponder()
+    }
     
     @IBAction func cancelButtonDidTouchUpInside(sender: UIButton) {
         
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func saveButtonDidTouchUpInside(sender: UIButton) {
+        
+        delegate?.didSaveOdometerReading(self, value: odometerTextField.text)
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }

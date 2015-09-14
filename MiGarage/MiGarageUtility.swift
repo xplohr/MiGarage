@@ -25,6 +25,7 @@ class MiGarageUtility {
         static let AddVehicleText = "showAddVehicleText"
         static let AddVehicleSelectedMenu = "selectedAddVehicleMenuItem"
         static let ShowNotesView = "showNotesField"
+        static let VehicleDash = "showVehicleDashboard"
     }
     
     /* Helper: Given a dictionary of parameters, convert to a String for a URL */

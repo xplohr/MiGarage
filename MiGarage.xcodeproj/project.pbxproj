@@ -200,8 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				044CD1311B9EB2F800B430CA /* VehicleDetailViewController.swift */,
-				040280FE1BA544400004563C /* OdometerEntryViewController.swift */,
 				040281001BA545C10004563C /* VehicleDetailVC-Ext.swift */,
+				040280FE1BA544400004563C /* OdometerEntryViewController.swift */,
 			);
 			name = VehicleDetailViewController;
 			sourceTree = "<group>";

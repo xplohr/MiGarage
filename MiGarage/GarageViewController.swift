@@ -47,6 +47,10 @@ class GarageViewController: UIViewController {
             let navController = segue.destinationViewController as!  UINavigationController
             let destination = navController.topViewController as! AddVehicleViewController
             destination.vehicleData = sender as? Vehicle
+        } else if (segue.identifier == MiGarageUtility.SegueIdentifiers.VehicleDash && sender != nil) {
+            
+            let destination = segue.destinationViewController as! VehicleDetailViewController
+            destination.vehicleData = sender as? Vehicle
         }
     }
 
