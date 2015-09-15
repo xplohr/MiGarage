@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		040280FF1BA544400004563C /* OdometerEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040280FE1BA544400004563C /* OdometerEntryViewController.swift */; };
 		040281011BA545C10004563C /* VehicleDetailVC-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040281001BA545C10004563C /* VehicleDetailVC-Ext.swift */; };
+		04278D331BA7ABFB00862B66 /* FlickrConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04278D321BA7ABFB00862B66 /* FlickrConstants.swift */; };
+		04278D351BA7AC1E00862B66 /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04278D341BA7AC1E00862B66 /* FlickrClient.swift */; };
+		04278D371BA7FB8C00862B66 /* NicknameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04278D361BA7FB8C00862B66 /* NicknameEntryViewController.swift */; };
 		043D0DBE1B86EC50005122BC /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DA01B86EC50005122BC /* AsyncButton.swift */; };
 		043D0DBF1B86EC50005122BC /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DA11B86EC50005122BC /* AsyncImageView.swift */; };
 		043D0DC01B86EC50005122BC /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DA21B86EC50005122BC /* AutoTextView.swift */; };
@@ -79,6 +82,9 @@
 /* Begin PBXFileReference section */
 		040280FE1BA544400004563C /* OdometerEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OdometerEntryViewController.swift; sourceTree = "<group>"; };
 		040281001BA545C10004563C /* VehicleDetailVC-Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VehicleDetailVC-Ext.swift"; sourceTree = "<group>"; };
+		04278D321BA7ABFB00862B66 /* FlickrConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrConstants.swift; sourceTree = "<group>"; };
+		04278D341BA7AC1E00862B66 /* FlickrClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
+		04278D361BA7FB8C00862B66 /* NicknameEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameEntryViewController.swift; sourceTree = "<group>"; };
 		043D0DA01B86EC50005122BC /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		043D0DA11B86EC50005122BC /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		043D0DA21B86EC50005122BC /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 				044CD1311B9EB2F800B430CA /* VehicleDetailViewController.swift */,
 				040281001BA545C10004563C /* VehicleDetailVC-Ext.swift */,
 				040280FE1BA544400004563C /* OdometerEntryViewController.swift */,
+				04278D361BA7FB8C00862B66 /* NicknameEntryViewController.swift */,
 			);
 			name = VehicleDetailViewController;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 		0478CFB11B953D7D00F39D6D /* Flickr */ = {
 			isa = PBXGroup;
 			children = (
+				04278D341BA7AC1E00862B66 /* FlickrClient.swift */,
+				04278D321BA7ABFB00862B66 /* FlickrConstants.swift */,
 			);
 			name = Flickr;
 			sourceTree = "<group>";
@@ -473,6 +482,7 @@
 				04F8AF3A1B87E369007C632D /* GarageVC-CoreData.swift in Sources */,
 				04F8AF3C1B87E73F007C632D /* CoreDataStackManager.swift in Sources */,
 				043D0DD31B86EC50005122BC /* SpringImageView.swift in Sources */,
+				04278D331BA7ABFB00862B66 /* FlickrConstants.swift in Sources */,
 				04F8AF381B87E103007C632D /* GarageVC-TableView.swift in Sources */,
 				043D0DC01B86EC50005122BC /* AutoTextView.swift in Sources */,
 				043D0DC91B86EC50005122BC /* ImageLoader.swift in Sources */,
@@ -481,6 +491,7 @@
 				043D0DDA1B86EC50005122BC /* UnwindSegue.swift in Sources */,
 				04D001541B884CFE00F0393A /* AddVehicleTextViewController.swift in Sources */,
 				044CD1321B9EB2F800B430CA /* VehicleDetailViewController.swift in Sources */,
+				04278D371BA7FB8C00862B66 /* NicknameEntryViewController.swift in Sources */,
 				043D0DCC1B86EC50005122BC /* LoadingView.swift in Sources */,
 				043D0DD51B86EC50005122BC /* SpringTextField.swift in Sources */,
 				043D0DD01B86EC50005122BC /* Spring.swift in Sources */,
@@ -488,6 +499,7 @@
 				048591761B93C7A00011AE33 /* AddVehicleVC-PopupView.swift in Sources */,
 				043D0DCF1B86EC50005122BC /* SoundPlayer.swift in Sources */,
 				0478CFB51B9540E900F39D6D /* EdmundsClient.swift in Sources */,
+				04278D351BA7AC1E00862B66 /* FlickrClient.swift in Sources */,
 				04D001491B8825D800F0393A /* AddVehicleVC-TableView.swift in Sources */,
 				043D0DC81B86EC50005122BC /* DesignableView.swift in Sources */,
 				043D0DC51B86EC50005122BC /* DesignableTabBarController.swift in Sources */,

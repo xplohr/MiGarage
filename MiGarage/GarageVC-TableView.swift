@@ -15,8 +15,8 @@ extension GarageViewController: UITableViewDataSource, UITableViewDelegate {
         let vehicle = fetchedResultsController.fetchedObjects![indexPath.row] as! Vehicle
         var cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier) as! VehicleListCell
         
-        cell.nameLabel.text = vehicle.nameForLabel
-        cell.makeModelLabel.text = vehicle.modelForLabel
+        cell.nameLabel.text = vehicle.getNameForLabel()
+        cell.makeModelLabel.text = vehicle.getModelForLabel()
         
         return cell
     }

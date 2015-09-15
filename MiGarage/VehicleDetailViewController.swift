@@ -26,8 +26,8 @@ class VehicleDetailViewController: UIViewController {
         
         if vehicleData != nil {
             
-            vehicleNicknameLabel.text = vehicleData?.nameForLabel
-            vehicleNameLabel.text = vehicleData?.modelForLabel
+            vehicleNicknameLabel.text = vehicleData?.getNameForLabel()
+            vehicleNameLabel.text = vehicleData?.getModelForLabel()
             odometerLabel.text = vehicleData?.odometer.stringValue
         }
     }
@@ -65,5 +65,10 @@ class VehicleDetailViewController: UIViewController {
         
         let alert = UIAlertView(title: "Notes Button", message: "Edit Notes", delegate: nil, cancelButtonTitle: "OK")
         alert.show()
+    }
+    
+    @IBAction func vehicleNameButtonDidTouchUpInside(sender: UIButton) {
+        
+        showNicknameEntryView(sender)
     }
 }

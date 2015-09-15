@@ -18,20 +18,6 @@ class Vehicle: NSManagedObject {
     @NSManaged var year: NSNumber
     @NSManaged var odometer: NSNumber
     
-    lazy var nameForLabel: String = {
-        
-        if !self.nickname.isEmpty {
-            return self.nickname
-        } else {
-            return "\(self.make)"
-        }
-    }()
-    
-    lazy var modelForLabel: String = {
-        
-        return "\(self.year) \(self.make) \(self.model)"
-    }()
-    
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         
         super.init(entity: entity, insertIntoManagedObjectContext: context)
@@ -56,4 +42,17 @@ class Vehicle: NSManagedObject {
         }
     }
 
+    func getNameForLabel() -> String {
+        
+        if !self.nickname.isEmpty {
+            return self.nickname
+        } else {
+            return "\(self.make)"
+        }
+    }
+    
+    func getModelForLabel() -> String {
+        
+        return "\(self.year) \(self.make) \(self.model)"
+    }
 }
