@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		040280FF1BA544400004563C /* OdometerEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040280FE1BA544400004563C /* OdometerEntryViewController.swift */; };
 		040281011BA545C10004563C /* VehicleDetailVC-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040281001BA545C10004563C /* VehicleDetailVC-Ext.swift */; };
+		0417EB781BAE832800363EF0 /* VehiclePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417EB771BAE832800363EF0 /* VehiclePhoto.swift */; };
+		0417EB7A1BAE842E00363EF0 /* DocumentsDirManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417EB791BAE842E00363EF0 /* DocumentsDirManager.swift */; };
 		04278D331BA7ABFB00862B66 /* FlickrConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04278D321BA7ABFB00862B66 /* FlickrConstants.swift */; };
 		04278D351BA7AC1E00862B66 /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04278D341BA7AC1E00862B66 /* FlickrClient.swift */; };
 		04278D371BA7FB8C00862B66 /* NicknameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04278D361BA7FB8C00862B66 /* NicknameEntryViewController.swift */; };
@@ -82,6 +84,8 @@
 /* Begin PBXFileReference section */
 		040280FE1BA544400004563C /* OdometerEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OdometerEntryViewController.swift; sourceTree = "<group>"; };
 		040281001BA545C10004563C /* VehicleDetailVC-Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VehicleDetailVC-Ext.swift"; sourceTree = "<group>"; };
+		0417EB771BAE832800363EF0 /* VehiclePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehiclePhoto.swift; path = ../VehiclePhoto.swift; sourceTree = "<group>"; };
+		0417EB791BAE842E00363EF0 /* DocumentsDirManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsDirManager.swift; sourceTree = "<group>"; };
 		04278D321BA7ABFB00862B66 /* FlickrConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrConstants.swift; sourceTree = "<group>"; };
 		04278D341BA7AC1E00862B66 /* FlickrClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
 		04278D361BA7FB8C00862B66 /* NicknameEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameEntryViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 				04F8AF3B1B87E73F007C632D /* CoreDataStackManager.swift */,
 				04D001411B87F10700F0393A /* MiGarageUtility.swift */,
 				0478CFB81B957F5C00F39D6D /* MiGarageError.swift */,
+				0417EB791BAE842E00363EF0 /* DocumentsDirManager.swift */,
 				04E824F61B85589C0014A081 /* Model */,
 				04E824F71B8558A20014A081 /* View */,
 				04E824F81B8558AB0014A081 /* Controller */,
@@ -336,6 +341,7 @@
 			children = (
 				048A97C21B8143E200E3F263 /* MiGarage.xcdatamodeld */,
 				04D001431B87F45E00F0393A /* Vehicle.swift */,
+				0417EB771BAE832800363EF0 /* VehiclePhoto.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -475,12 +481,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				040281011BA545C10004563C /* VehicleDetailVC-Ext.swift in Sources */,
+				0417EB781BAE832800363EF0 /* VehiclePhoto.swift in Sources */,
 				0478CFB91B957F5C00F39D6D /* MiGarageError.swift in Sources */,
 				04D001441B87F45E00F0393A /* Vehicle.swift in Sources */,
 				04F8AF351B87DDE7007C632D /* VehicleListCell.swift in Sources */,
 				043D0DC41B86EC50005122BC /* DesignableLabel.swift in Sources */,
 				04F8AF3A1B87E369007C632D /* GarageVC-CoreData.swift in Sources */,
 				04F8AF3C1B87E73F007C632D /* CoreDataStackManager.swift in Sources */,
+				0417EB7A1BAE842E00363EF0 /* DocumentsDirManager.swift in Sources */,
 				043D0DD31B86EC50005122BC /* SpringImageView.swift in Sources */,
 				04278D331BA7ABFB00862B66 /* FlickrConstants.swift in Sources */,
 				04F8AF381B87E103007C632D /* GarageVC-TableView.swift in Sources */,

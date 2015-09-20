@@ -17,6 +17,7 @@ class Vehicle: NSManagedObject {
     @NSManaged var notes: String
     @NSManaged var year: NSNumber
     @NSManaged var odometer: NSNumber
+    @NSManaged var photos: [VehiclePhoto]
     
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         
@@ -55,4 +56,26 @@ class Vehicle: NSManagedObject {
         
         return "\(self.year) \(self.make) \(self.model)"
     }
+    
+    func createPhotoEntries(data: [[String: AnyObject]]) {
+        
+        for photoInfo: [String: AnyObject] in data {
+            
+            let photoTitle = photoInfo[FlickrClient.JSONKeys.Photo_Title] as! String
+            let photoURL = photoInfo[FlickrClient.JSONKeys.Photo_URL] as! String
+            let photoID = photoInfo[FlickrClient.JSONKeys.Photo_ID] as! String
+            let dictionary: [String: AnyObject] = [
+            
+                VehiclePhoto.Keys.ImageID: photoID,
+                VehiclePhoto.Keys.Name: photoTitle,
+                VehiclePhoto.Keys.ImageURL: photoURL
+            ]
+            
+            let newPhoto = VehiclePhoto(values: dictionary, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
+        }
+        
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    // MARK: - Flickr methods
 }
