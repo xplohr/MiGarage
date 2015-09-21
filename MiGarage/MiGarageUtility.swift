@@ -17,6 +17,7 @@ class MiGarageUtility {
         static let AddVehicleCell = "vehicleInfoCell"
         static let AddVehicleMenuCell = "addVehicleMenuCell"
         static let VehiclePhotoCell = "vehiclePhotoCell"
+        static let FlickrPhotoCell = "flickrPhotoCell"
     }
     
     struct SegueIdentifiers {
@@ -27,6 +28,8 @@ class MiGarageUtility {
         static let AddVehicleSelectedMenu = "selectedAddVehicleMenuItem"
         static let ShowNotesView = "showNotesField"
         static let VehicleDash = "showVehicleDashboard"
+        static let FlickrGallery = "showFlickrGallery"
+        static let PhotoDetail = "showPhotoDetail"
     }
     
     /* Helper: Given a dictionary of parameters, convert to a String for a URL */

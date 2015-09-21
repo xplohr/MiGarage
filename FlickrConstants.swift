@@ -13,7 +13,7 @@ extension FlickrClient {
     struct BaseConstants {
     
         static let Base_URL = "https://api/flickr.com/services/rest/"
-        static let API_Key = ""
+        static let API_Key = "ac5134605ce4cd756c025913ed792ba1"
     }
     
     struct Methods {
@@ -21,12 +21,26 @@ extension FlickrClient {
         static let PhotoSearch = "flickr.photos.search"
     }
     
+    struct SearchArguments {
+    
+        static let GetExtraPhotoInfo = "extras"
+        static let ReturnDataFormat = "format"
+        static let SearchTags = "tags"
+        static let SearchTagsMode = "tag_mode"
+        static let FlickrMethod = "method"
+        static let FlickrAPI = "api_key"
+        static let ContentType = "content_type"
+        static let NoJSONCallback = "nojsoncallback"
+    }
+    
     struct Parameters {
     
         static let Extras = "url_m"
         static let Data_Format = "json"
         static let No_JSON_Callback = "1"
-        static let Photos_Only = "1"
+        static let ContentType_Photos_Only = "1"
+        static let SearchByTagsModeAll = "all"
+        static let SearchByTagsModeAny = "any"
     }
     
     struct JSONKeys {
