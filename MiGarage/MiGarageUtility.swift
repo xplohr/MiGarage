@@ -28,6 +28,7 @@ class MiGarageUtility {
         static let AddVehicleSelectedMenu = "selectedAddVehicleMenuItem"
         static let ShowNotesView = "showNotesField"
         static let VehicleDash = "showVehicleDashboard"
+        static let PhotoGallery = "showPhotoGallery"
         static let FlickrGallery = "showFlickrGallery"
         static let PhotoDetail = "showPhotoDetail"
     }

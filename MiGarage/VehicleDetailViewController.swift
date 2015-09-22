@@ -71,4 +71,19 @@ class VehicleDetailViewController: UIViewController {
         
         showNicknameEntryView(sender)
     }
+    
+    @IBAction func imageViewButtonDidTouchUpInside(sender: UIButton) {
+        
+        performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.PhotoGallery, sender: sender)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == MiGarageUtility.SegueIdentifiers.PhotoGallery {
+            
+            let navController = segue.destinationViewController as! UINavigationController
+            let destination = navController.topViewController as! PhotoGalleryViewController
+            destination.vehicle = vehicleData
+        }
+    }
 }

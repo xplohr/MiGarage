@@ -44,6 +44,11 @@
 		043D0DD91B86EC50005122BC /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBC1B86EC50005122BC /* TransitionZoom.swift */; };
 		043D0DDA1B86EC50005122BC /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D0DBD1B86EC50005122BC /* UnwindSegue.swift */; };
 		044CD1321B9EB2F800B430CA /* VehicleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CD1311B9EB2F800B430CA /* VehicleDetailViewController.swift */; };
+		044F5F6F1BB0E4B400622FEB /* PhotoGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F5F6E1BB0E4B400622FEB /* PhotoGalleryViewController.swift */; };
+		044F5F711BB0E4FA00622FEB /* PhotoGalleryVC-CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F5F701BB0E4FA00622FEB /* PhotoGalleryVC-CollectionView.swift */; };
+		044F5F731BB0EB4800622FEB /* VehiclePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F5F721BB0EB4800622FEB /* VehiclePhotoCell.swift */; };
+		044F5F751BB0ED8800622FEB /* PhotoVC-Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F5F741BB0ED8800622FEB /* PhotoVC-Utility.swift */; };
+		044F5F771BB115D200622FEB /* PhotoGalleryVC-CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F5F761BB115D200622FEB /* PhotoGalleryVC-CoreData.swift */; };
 		047296DB1B9CF57C0058ABFF /* UIView-Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047296DA1B9CF57C0058ABFF /* UIView-Animations.swift */; };
 		0478CFB51B9540E900F39D6D /* EdmundsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB41B9540E900F39D6D /* EdmundsClient.swift */; };
 		0478CFB71B95789700F39D6D /* EdmundsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB61B95789700F39D6D /* EdmundsConstants.swift */; };
@@ -120,6 +125,11 @@
 		043D0DBC1B86EC50005122BC /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		043D0DBD1B86EC50005122BC /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		044CD1311B9EB2F800B430CA /* VehicleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleDetailViewController.swift; sourceTree = "<group>"; };
+		044F5F6E1BB0E4B400622FEB /* PhotoGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewController.swift; sourceTree = "<group>"; };
+		044F5F701BB0E4FA00622FEB /* PhotoGalleryVC-CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoGalleryVC-CollectionView.swift"; sourceTree = "<group>"; };
+		044F5F721BB0EB4800622FEB /* VehiclePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclePhotoCell.swift; sourceTree = "<group>"; };
+		044F5F741BB0ED8800622FEB /* PhotoVC-Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoVC-Utility.swift"; sourceTree = "<group>"; };
+		044F5F761BB115D200622FEB /* PhotoGalleryVC-CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoGalleryVC-CoreData.swift"; sourceTree = "<group>"; };
 		047296DA1B9CF57C0058ABFF /* UIView-Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView-Animations.swift"; sourceTree = "<group>"; };
 		0478CFB41B9540E900F39D6D /* EdmundsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdmundsClient.swift; sourceTree = "<group>"; };
 		0478CFB61B95789700F39D6D /* EdmundsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdmundsConstants.swift; sourceTree = "<group>"; };
@@ -215,6 +225,17 @@
 				04278D361BA7FB8C00862B66 /* NicknameEntryViewController.swift */,
 			);
 			name = VehicleDetailViewController;
+			sourceTree = "<group>";
+		};
+		044F5F6D1BB0E49A00622FEB /* PhotoGalleryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				044F5F6E1BB0E4B400622FEB /* PhotoGalleryViewController.swift */,
+				044F5F701BB0E4FA00622FEB /* PhotoGalleryVC-CollectionView.swift */,
+				044F5F741BB0ED8800622FEB /* PhotoVC-Utility.swift */,
+				044F5F761BB115D200622FEB /* PhotoGalleryVC-CoreData.swift */,
+			);
+			name = PhotoGalleryViewController;
 			sourceTree = "<group>";
 		};
 		0478CFAF1B953D6400F39D6D /* Clients */ = {
@@ -352,6 +373,7 @@
 				04F8AF341B87DDE7007C632D /* VehicleListCell.swift */,
 				04D001551B8854E200F0393A /* VehicleTextCell.swift */,
 				047296DA1B9CF57C0058ABFF /* UIView-Animations.swift */,
+				044F5F721BB0EB4800622FEB /* VehiclePhotoCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -364,6 +386,7 @@
 				04D0014A1B88429400F0393A /* AddVehicleMenuViewController */,
 				04D001521B884CD400F0393A /* AddVehicleTextViewController */,
 				044CD1301B9EB2CD00B430CA /* VehicleDetailViewController */,
+				044F5F6D1BB0E49A00622FEB /* PhotoGalleryViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -488,11 +511,13 @@
 				043D0DC41B86EC50005122BC /* DesignableLabel.swift in Sources */,
 				04F8AF3A1B87E369007C632D /* GarageVC-CoreData.swift in Sources */,
 				04F8AF3C1B87E73F007C632D /* CoreDataStackManager.swift in Sources */,
+				044F5F731BB0EB4800622FEB /* VehiclePhotoCell.swift in Sources */,
 				0417EB7A1BAE842E00363EF0 /* DocumentsDirManager.swift in Sources */,
 				043D0DD31B86EC50005122BC /* SpringImageView.swift in Sources */,
 				04278D331BA7ABFB00862B66 /* FlickrConstants.swift in Sources */,
 				04F8AF381B87E103007C632D /* GarageVC-TableView.swift in Sources */,
 				043D0DC01B86EC50005122BC /* AutoTextView.swift in Sources */,
+				044F5F711BB0E4FA00622FEB /* PhotoGalleryVC-CollectionView.swift in Sources */,
 				043D0DC91B86EC50005122BC /* ImageLoader.swift in Sources */,
 				043D0DCE1B86EC50005122BC /* Misc.swift in Sources */,
 				043D0DC11B86EC50005122BC /* BlurView.swift in Sources */,
@@ -502,6 +527,7 @@
 				04278D371BA7FB8C00862B66 /* NicknameEntryViewController.swift in Sources */,
 				043D0DCC1B86EC50005122BC /* LoadingView.swift in Sources */,
 				043D0DD51B86EC50005122BC /* SpringTextField.swift in Sources */,
+				044F5F771BB115D200622FEB /* PhotoGalleryVC-CoreData.swift in Sources */,
 				043D0DD01B86EC50005122BC /* Spring.swift in Sources */,
 				048A97C61B8143E200E3F263 /* GarageViewController.swift in Sources */,
 				048591761B93C7A00011AE33 /* AddVehicleVC-PopupView.swift in Sources */,
@@ -518,6 +544,7 @@
 				04D0014C1B8842BE00F0393A /* AddVehicleMenuViewController.swift in Sources */,
 				040280FF1BA544400004563C /* OdometerEntryViewController.swift in Sources */,
 				043D0DD91B86EC50005122BC /* TransitionZoom.swift in Sources */,
+				044F5F751BB0ED8800622FEB /* PhotoVC-Utility.swift in Sources */,
 				043D0DC61B86EC50005122BC /* DesignableTextField.swift in Sources */,
 				04D001421B87F10700F0393A /* MiGarageUtility.swift in Sources */,
 				043D0DD81B86EC50005122BC /* TransitionManager.swift in Sources */,
@@ -532,6 +559,7 @@
 				043D0DD71B86EC50005122BC /* SpringView.swift in Sources */,
 				043D0DD61B86EC50005122BC /* SpringTextView.swift in Sources */,
 				043D0DCB1B86EC50005122BC /* KeyboardLayoutConstraint.swift in Sources */,
+				044F5F6F1BB0E4B400622FEB /* PhotoGalleryViewController.swift in Sources */,
 				043D0DD21B86EC50005122BC /* SpringButton.swift in Sources */,
 				043D0DD11B86EC50005122BC /* SpringAnimation.swift in Sources */,
 				043D0DC31B86EC50005122BC /* DesignableImageView.swift in Sources */,
