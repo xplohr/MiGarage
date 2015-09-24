@@ -62,6 +62,7 @@
 		048A97CE1B8143E200E3F263 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048A97CC1B8143E200E3F263 /* LaunchScreen.xib */; };
 		048A97DA1B8143E300E3F263 /* MiGarageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A97D91B8143E300E3F263 /* MiGarageTests.swift */; };
 		049E96381BB37F2A00D0CE3A /* PhotoGalleryVC-Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E96371BB37F2A00D0CE3A /* PhotoGalleryVC-Images.swift */; };
+		049E963B1BB3C40100D0CE3A /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E963A1BB3C40100D0CE3A /* PhotoDetailViewController.swift */; };
 		04D001421B87F10700F0393A /* MiGarageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D001411B87F10700F0393A /* MiGarageUtility.swift */; };
 		04D001441B87F45E00F0393A /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D001431B87F45E00F0393A /* Vehicle.swift */; };
 		04D001471B88251F00F0393A /* AddVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D001461B88251F00F0393A /* AddVehicleViewController.swift */; };
@@ -148,6 +149,7 @@
 		048A97D81B8143E300E3F263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048A97D91B8143E300E3F263 /* MiGarageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiGarageTests.swift; sourceTree = "<group>"; };
 		049E96371BB37F2A00D0CE3A /* PhotoGalleryVC-Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoGalleryVC-Images.swift"; sourceTree = "<group>"; };
+		049E963A1BB3C40100D0CE3A /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		04D001411B87F10700F0393A /* MiGarageUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiGarageUtility.swift; sourceTree = "<group>"; };
 		04D001431B87F45E00F0393A /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vehicle.swift; path = ../Vehicle.swift; sourceTree = "<group>"; };
 		04D001461B88251F00F0393A /* AddVehicleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVehicleViewController.swift; sourceTree = "<group>"; };
@@ -332,6 +334,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		049E96391BB3C3DF00D0CE3A /* PhotoDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				049E963A1BB3C40100D0CE3A /* PhotoDetailViewController.swift */,
+			);
+			name = PhotoDetailViewController;
+			sourceTree = "<group>";
+		};
 		04D001451B8821AA00F0393A /* AddVehicleViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +400,7 @@
 				04D001521B884CD400F0393A /* AddVehicleTextViewController */,
 				044CD1301B9EB2CD00B430CA /* VehicleDetailViewController */,
 				044F5F6D1BB0E49A00622FEB /* PhotoGalleryViewController */,
+				049E96391BB3C3DF00D0CE3A /* PhotoDetailViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -530,6 +541,7 @@
 				04278D371BA7FB8C00862B66 /* NicknameEntryViewController.swift in Sources */,
 				043D0DCC1B86EC50005122BC /* LoadingView.swift in Sources */,
 				043D0DD51B86EC50005122BC /* SpringTextField.swift in Sources */,
+				049E963B1BB3C40100D0CE3A /* PhotoDetailViewController.swift in Sources */,
 				044F5F771BB115D200622FEB /* PhotoGalleryVC-CoreData.swift in Sources */,
 				043D0DD01B86EC50005122BC /* Spring.swift in Sources */,
 				048A97C61B8143E200E3F263 /* GarageViewController.swift in Sources */,

@@ -18,6 +18,7 @@ class Vehicle: NSManagedObject {
     @NSManaged var year: NSNumber
     @NSManaged var odometer: NSNumber
     @NSManaged var photos: [VehiclePhoto]
+    @NSManaged var coverPhotoURL: String
     
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         
@@ -33,6 +34,7 @@ class Vehicle: NSManagedObject {
         model = vehicleData.model!
         year = vehicleData.year!
         odometer = 0.0
+        coverPhotoURL = ""
         
         if vehicleData.nickname != nil {
             nickname = vehicleData.nickname!
@@ -102,6 +104,12 @@ class Vehicle: NSManagedObject {
         ]
         
         let newPhoto = VehiclePhoto(values: photoInfo, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
+        
+        if photos.count == 1 {
+            
+            self.coverPhotoURL = imagePath
+        }
+        
         CoreDataStackManager.sharedInstance().saveContext()
     }
 }

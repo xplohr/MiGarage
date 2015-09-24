@@ -55,4 +55,17 @@ class PhotoGalleryViewController: UIViewController {
         
         showPhotoGalleryActionMenu()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == MiGarageUtility.SegueIdentifiers.PhotoDetail {
+            
+            let destination = segue.destinationViewController as! PhotoDetailViewController
+            destination.vehicleData = vehicle
+            
+            let photoCell = sender as! VehiclePhotoCell
+            let photoInfo = fetchedResultsController.objectAtIndexPath(collectionView.indexPathForCell(photoCell)!) as! VehiclePhoto
+            destination.vehicleImage = photoInfo
+        }
+    }
 }

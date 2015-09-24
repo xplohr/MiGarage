@@ -470,7 +470,7 @@
         <!--Photo Detail-->
         <scene sceneID="anq-Oy-Kcb">
             <objects>
-                <viewController title="Photo Detail" id="E6b-hR-fTV" sceneMemberID="viewController">
+                <viewController title="Photo Detail" id="E6b-hR-fTV" customClass="PhotoDetailViewController" customModule="MiGarage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5wx-iu-5ro"/>
                         <viewControllerLayoutGuide type="bottom" id="Y86-78-vfW"/>
@@ -479,59 +479,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xun-eU-e6B">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="Set as Cover Art" image="CoverArt" id="5nH-vH-dzS"/>
-                                    <tabBarItem title="Delete Photo" image="Trash" id="2jb-K9-cwh"/>
-                                </items>
-                            </tabBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cet-Yt-gRf">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvL-hG-yeH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="pim-by-tlL"/>
+                                    <barButtonItem title="Set as Cover Art" id="Cly-7b-tMP">
+                                        <connections>
+                                            <action selector="coverArtBarButtonDidTouchUpInside:" destination="E6b-hR-fTV" id="3ff-pS-cgv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="cVS-Lr-cmx"/>
+                                    <barButtonItem systemItem="trash" id="DwT-E1-cM9">
+                                        <connections>
+                                            <action selector="trashBarButtonDidTouchUpInside:" destination="E6b-hR-fTV" id="eIk-Wz-3Nw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Cet-Yt-gRf" firstAttribute="trailing" secondItem="Xun-eU-e6B" secondAttribute="trailing" id="HaI-HI-hT4"/>
-                            <constraint firstItem="Xun-eU-e6B" firstAttribute="leading" secondItem="hke-dv-hgk" secondAttribute="leading" id="KvL-OV-40f"/>
-                            <constraint firstItem="Xun-eU-e6B" firstAttribute="bottom" secondItem="Y86-78-vfW" secondAttribute="top" id="M34-si-5kv"/>
-                            <constraint firstItem="Cet-Yt-gRf" firstAttribute="bottom" secondItem="Xun-eU-e6B" secondAttribute="top" id="Rhy-1M-QkU"/>
-                            <constraint firstAttribute="trailing" secondItem="Xun-eU-e6B" secondAttribute="trailing" id="URb-CC-ybt"/>
-                            <constraint firstItem="Cet-Yt-gRf" firstAttribute="leading" secondItem="Xun-eU-e6B" secondAttribute="leading" id="Z4L-6s-TAQ"/>
-                            <constraint firstItem="Cet-Yt-gRf" firstAttribute="top" secondItem="hke-dv-hgk" secondAttribute="top" id="e17-dT-PGX"/>
+                            <constraint firstItem="Cet-Yt-gRf" firstAttribute="bottom" secondItem="Y86-78-vfW" secondAttribute="top" id="2Qr-HI-5Bu"/>
+                            <constraint firstItem="Cet-Yt-gRf" firstAttribute="top" secondItem="hke-dv-hgk" secondAttribute="top" id="6T8-pS-hfL"/>
+                            <constraint firstItem="uvL-hG-yeH" firstAttribute="leading" secondItem="Cet-Yt-gRf" secondAttribute="leading" id="9Ab-bd-OYd"/>
+                            <constraint firstAttribute="trailing" secondItem="Cet-Yt-gRf" secondAttribute="trailing" id="SMR-rJ-XJr"/>
+                            <constraint firstItem="uvL-hG-yeH" firstAttribute="bottom" secondItem="Y86-78-vfW" secondAttribute="top" id="s1Y-18-lSo"/>
+                            <constraint firstItem="uvL-hG-yeH" firstAttribute="trailing" secondItem="Cet-Yt-gRf" secondAttribute="trailing" id="yhW-k4-nVP"/>
+                            <constraint firstItem="Cet-Yt-gRf" firstAttribute="leading" secondItem="hke-dv-hgk" secondAttribute="leading" id="zrz-Hb-gxx"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="Xun-eU-e6B"/>
                                 <exclude reference="Cet-Yt-gRf"/>
+                                <exclude reference="uvL-hG-yeH"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="KvL-OV-40f"/>
-                                <exclude reference="M34-si-5kv"/>
-                                <exclude reference="URb-CC-ybt"/>
-                                <exclude reference="HaI-HI-hT4"/>
-                                <exclude reference="Rhy-1M-QkU"/>
-                                <exclude reference="Z4L-6s-TAQ"/>
-                                <exclude reference="e17-dT-PGX"/>
+                                <exclude reference="2Qr-HI-5Bu"/>
+                                <exclude reference="6T8-pS-hfL"/>
+                                <exclude reference="SMR-rJ-XJr"/>
+                                <exclude reference="zrz-Hb-gxx"/>
+                                <exclude reference="9Ab-bd-OYd"/>
+                                <exclude reference="s1Y-18-lSo"/>
+                                <exclude reference="yhW-k4-nVP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="Xun-eU-e6B"/>
                                 <include reference="Cet-Yt-gRf"/>
+                                <include reference="uvL-hG-yeH"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="KvL-OV-40f"/>
-                                <include reference="M34-si-5kv"/>
-                                <include reference="URb-CC-ybt"/>
-                                <include reference="HaI-HI-hT4"/>
-                                <include reference="Rhy-1M-QkU"/>
-                                <include reference="Z4L-6s-TAQ"/>
-                                <include reference="e17-dT-PGX"/>
+                                <include reference="2Qr-HI-5Bu"/>
+                                <include reference="6T8-pS-hfL"/>
+                                <include reference="SMR-rJ-XJr"/>
+                                <include reference="zrz-Hb-gxx"/>
+                                <include reference="9Ab-bd-OYd"/>
+                                <include reference="s1Y-18-lSo"/>
+                                <include reference="yhW-k4-nVP"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Cet-Yt-gRf" id="eCC-ef-R8W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7O5-Sr-nOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1785,13 +1797,11 @@
         <image name="Calendar" width="40" height="37"/>
         <image name="CarBlueprint" width="375" height="647"/>
         <image name="CarIcon" width="47" height="47"/>
-        <image name="CoverArt" width="32" height="32"/>
         <image name="EdmundsLoading" width="213" height="242"/>
         <image name="EdmundsLoadingBackground" width="351" height="351"/>
         <image name="Garage" width="375" height="647"/>
         <image name="Notepad" width="32" height="32"/>
         <image name="Odometer" width="75" height="70"/>
-        <image name="Trash" width="26" height="32"/>
         <image name="Wrench" width="30" height="30"/>
     </resources>
 </document>

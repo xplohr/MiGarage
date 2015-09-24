@@ -32,6 +32,18 @@ class VehicleDetailViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        coverPhotoImageView.image = DocumentsDirManager.sharedInstance().getImageFromPath(vehicleData!.coverPhotoURL)
+        if coverPhotoImageView.image != nil {
+            
+            coverPhotoUploadLabel.hidden = true
+        } else {
+            
+            coverPhotoUploadLabel.hidden = false
+        }
+    }
+    
     @IBAction func backButton(didTouchUpInside: UIButton) {
         
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
