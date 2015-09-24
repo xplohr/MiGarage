@@ -9,7 +9,7 @@
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VehiclePhoto" inverseName="vehicle" inverseEntity="VehiclePhoto" syncable="YES"/>
     </entity>
-    <entity name="VehiclePhoto" representedClassName="PRODUCT_MODULE_NAME.VehiclePhoto" syncable="YES">
+    <entity name="VehiclePhoto" representedClassName="MiGarage.VehiclePhoto" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="localImagePath" optional="YES" attributeType="String" syncable="YES"/>

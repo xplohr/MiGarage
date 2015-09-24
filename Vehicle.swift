@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Che-Chuen Ho. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 class Vehicle: NSManagedObject {
@@ -78,4 +78,30 @@ class Vehicle: NSManagedObject {
     }
     
     // MARK: - Flickr methods
+    
+    
+    // MARK: - VehiclePhoto methods
+    func addPhoto(image: UIImage, title: String?) {
+        
+        let id = NSUUID().UUIDString
+        
+        var imageTitle = title
+        if imageTitle == nil {
+            
+            imageTitle = id
+        }
+        
+        let imagePath = DocumentsDirManager.sharedInstance().writeImage(image, title: id)
+        
+        let photoInfo: [String: AnyObject] = [
+        
+            VehiclePhoto.Keys.ImageID: id,
+            VehiclePhoto.Keys.ImageURL: imagePath,
+            VehiclePhoto.Keys.Name: imageTitle!,
+            VehiclePhoto.Keys.Vehicle: self
+        ]
+        
+        let newPhoto = VehiclePhoto(values: photoInfo, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
 }

@@ -16,6 +16,7 @@ class VehiclePhoto: NSManagedObject {
         static let ImageID = "ID"
         static let Name = "name"
         static let ImageURL = "url"
+        static let Vehicle = "vehicle"
     }
     
     struct PhotoRecordState {
@@ -45,6 +46,7 @@ class VehiclePhoto: NSManagedObject {
         self.id = values[Keys.ImageID] as! String
         self.title = values[Keys.Name] as! String
         self.imageURL = values[Keys.ImageURL] as! String
+        self.vehicle = values[Keys.Vehicle] as! Vehicle
         self.state = PhotoRecordState.New
     }
     

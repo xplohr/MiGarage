@@ -47,10 +47,12 @@ class DocumentsDirManager: NSObject {
         UIImagePNGRepresentation(image!).writeToFile(writePath, atomically: true)
     }
     
-    func writeImage(image: UIImage, title: String) {
+    func writeImage(image: UIImage, title: String) -> String {
         
         let writePath = getImagePath(title)
         UIImagePNGRepresentation(image).writeToFile(writePath, atomically: true)
+        
+        return writePath
     }
     
     func getImageFromPath(path: String) -> UIImage? {

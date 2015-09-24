@@ -10,7 +10,11 @@ import UIKit
 import CoreData
 
 class PhotoGalleryViewController: UIViewController {
-        
+    
+    let imagePicker = UIImagePickerController()
+    
+    @IBOutlet var collectionView: UICollectionView!
+    
     var vehicle: Vehicle?
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
@@ -28,6 +32,18 @@ class PhotoGalleryViewController: UIViewController {
         super.viewDidLoad()
         fetchedResultsController.performFetch(nil)
         fetchedResultsController.delegate = self
+        imagePicker.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        fetchedResultsController.performFetch(nil)
+        collectionView.reloadData()
+        
+        if fetchedResultsController.fetchedObjects?.count == 0 {
+            
+            showPhotoGalleryActionMenu()
+        }
     }
     
     @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
