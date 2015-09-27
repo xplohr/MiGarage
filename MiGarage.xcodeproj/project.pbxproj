@@ -370,6 +370,13 @@
 			name = AddVehicleTextViewController;
 			sourceTree = "<group>";
 		};
+		04E12FD31BB8918500CCF215 /* FlickrGalleryViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FlickrGalleryViewController;
+			sourceTree = "<group>";
+		};
 		04E824F61B85589C0014A081 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +408,7 @@
 				044CD1301B9EB2CD00B430CA /* VehicleDetailViewController */,
 				044F5F6D1BB0E49A00622FEB /* PhotoGalleryViewController */,
 				049E96391BB3C3DF00D0CE3A /* PhotoDetailViewController */,
+				04E12FD31BB8918500CCF215 /* FlickrGalleryViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

@@ -516,13 +516,13 @@
                                 <exclude reference="uvL-hG-yeH"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9Ab-bd-OYd"/>
+                                <exclude reference="s1Y-18-lSo"/>
+                                <exclude reference="yhW-k4-nVP"/>
                                 <exclude reference="2Qr-HI-5Bu"/>
                                 <exclude reference="6T8-pS-hfL"/>
                                 <exclude reference="SMR-rJ-XJr"/>
                                 <exclude reference="zrz-Hb-gxx"/>
-                                <exclude reference="9Ab-bd-OYd"/>
-                                <exclude reference="s1Y-18-lSo"/>
-                                <exclude reference="yhW-k4-nVP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -531,13 +531,13 @@
                                 <include reference="uvL-hG-yeH"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="9Ab-bd-OYd"/>
+                                <include reference="s1Y-18-lSo"/>
+                                <include reference="yhW-k4-nVP"/>
                                 <include reference="2Qr-HI-5Bu"/>
                                 <include reference="6T8-pS-hfL"/>
                                 <include reference="SMR-rJ-XJr"/>
                                 <include reference="zrz-Hb-gxx"/>
-                                <include reference="9Ab-bd-OYd"/>
-                                <include reference="s1Y-18-lSo"/>
-                                <include reference="yhW-k4-nVP"/>
                             </mask>
                         </variation>
                     </view>
@@ -1212,12 +1212,12 @@
                                         <exclude reference="WOI-Qu-jEl"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="0ZT-hE-D4b"/>
+                                        <exclude reference="6Ll-hs-Img"/>
                                         <exclude reference="XfH-vv-Vfr"/>
                                         <exclude reference="c1m-h9-NLm"/>
                                         <exclude reference="jAE-vB-gdc"/>
                                         <exclude reference="s6K-5b-tdW"/>
-                                        <exclude reference="0ZT-hE-D4b"/>
-                                        <exclude reference="6Ll-hs-Img"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -1226,12 +1226,12 @@
                                         <include reference="WOI-Qu-jEl"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="0ZT-hE-D4b"/>
+                                        <include reference="6Ll-hs-Img"/>
                                         <include reference="XfH-vv-Vfr"/>
                                         <include reference="c1m-h9-NLm"/>
                                         <include reference="jAE-vB-gdc"/>
                                         <include reference="s6K-5b-tdW"/>
-                                        <include reference="0ZT-hE-D4b"/>
-                                        <include reference="6Ll-hs-Img"/>
                                     </mask>
                                 </variation>
                                 <connections>

@@ -18,6 +18,8 @@ class MiGarageError: NSObject {
     struct ErrorCodes {
     
         static let EdmundsMakesDictionaryError: Int = 100
+        static let FlickrDictionaryError: Int = 200
+        static let FlickrArrayError: Int = 210
     }
     
     static let Domain = "MiGarage"

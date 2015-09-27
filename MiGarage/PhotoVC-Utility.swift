@@ -18,7 +18,7 @@ extension PhotoGalleryViewController {
         let flickrAction = UIAlertAction(title: "Download from Flickr", style: UIAlertActionStyle.Default) {
             (_) in
             
-            
+            self.downloadFromFlickr()
         }
         action.addAction(flickrAction)
         
@@ -78,5 +78,17 @@ extension PhotoGalleryViewController {
         imagePicker.sourceType = .PhotoLibrary
         
         presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func downloadFromFlickr() {
+        
+        let tags = [vehicle!.year.stringValue, vehicle!.make, vehicle!.model]
+        
+        FlickrClient.sharedInstance().searchByTags(tags, inclusiveSearch: true) {
+            data, error in
+            
+            print("\(data)")
+            print("\(error)")
+        }
     }
 }
