@@ -1260,7 +1260,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="gpq-aI-4cJ" id="bKK-0Y-nun"/>
-                        <segue destination="lVi-CR-vlc" kind="show" identifier="showFlickrGallery" id="5zh-GB-2wu"/>
+                        <segue destination="lVi-CR-vlc" kind="show" identifier="showFlickrGallery" id="jGh-jw-3xT"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Unv-Iw-mTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1270,25 +1270,111 @@
         <!--Choose Flickr Photos-->
         <scene sceneID="xNB-qE-YtR">
             <objects>
-                <collectionViewController title="Choose Flickr Photos" id="lVi-CR-vlc" sceneMemberID="viewController">
+                <collectionViewController title="Choose Flickr Photos" id="lVi-CR-vlc" customClass="FlickrGalleryViewController" customModule="MiGarage" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="KMc-m7-KJJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ET2-py-0mC">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="ET2-py-0mC">
+                            <size key="itemSize" width="120" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="flickrPhotoCell" id="fh3-dk-rCe">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="flickrPhotoCell" id="fh3-dk-rCe" customClass="FlickrGalleryCell" customModule="MiGarage" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kqf-Th-au0" userLabel=" Photo Image View">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="120" id="AIf-Mp-w6N"/>
+                                                <constraint firstAttribute="width" constant="120" id="H58-Fd-GJK"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="AIf-Mp-w6N"/>
+                                                    <exclude reference="H58-Fd-GJK"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="AIf-Mp-w6N"/>
+                                                    <include reference="H58-Fd-GJK"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4nZ-6V-wjX">
+                                            <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="AWh-kA-s5A" userLabel="Selected Image View">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="9cX-fq-fTE"/>
+                                                <constraint firstAttribute="height" constant="30" id="eZt-k1-yCD"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="9cX-fq-fTE"/>
+                                                    <exclude reference="eZt-k1-yCD"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="9cX-fq-fTE"/>
+                                                    <include reference="eZt-k1-yCD"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="4nZ-6V-wjX" secondAttribute="centerY" constant="0.5" id="0DO-Mc-Kfy"/>
+                                    <constraint firstAttribute="centerX" secondItem="4nZ-6V-wjX" secondAttribute="centerX" constant="-0.5" id="2xE-e4-E7K"/>
+                                    <constraint firstAttribute="centerX" secondItem="kqf-Th-au0" secondAttribute="centerX" id="5JZ-mt-mFZ"/>
+                                    <constraint firstItem="AWh-kA-s5A" firstAttribute="leading" secondItem="fh3-dk-rCe" secondAttribute="leadingMargin" constant="74" id="GUF-44-sJn"/>
+                                    <constraint firstAttribute="centerY" secondItem="kqf-Th-au0" secondAttribute="centerY" id="IfI-ww-R5l"/>
+                                    <constraint firstItem="AWh-kA-s5A" firstAttribute="top" secondItem="fh3-dk-rCe" secondAttribute="topMargin" constant="74" id="hz9-gl-RLI"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="kqf-Th-au0"/>
+                                        <exclude reference="4nZ-6V-wjX"/>
+                                        <exclude reference="AWh-kA-s5A"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="5JZ-mt-mFZ"/>
+                                        <exclude reference="IfI-ww-R5l"/>
+                                        <exclude reference="0DO-Mc-Kfy"/>
+                                        <exclude reference="2xE-e4-E7K"/>
+                                        <exclude reference="GUF-44-sJn"/>
+                                        <exclude reference="hz9-gl-RLI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="kqf-Th-au0"/>
+                                        <include reference="4nZ-6V-wjX"/>
+                                        <include reference="AWh-kA-s5A"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="5JZ-mt-mFZ"/>
+                                        <include reference="IfI-ww-R5l"/>
+                                        <include reference="0DO-Mc-Kfy"/>
+                                        <include reference="2xE-e4-E7K"/>
+                                        <include reference="GUF-44-sJn"/>
+                                        <include reference="hz9-gl-RLI"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="activityIndicator" destination="4nZ-6V-wjX" id="fE9-bV-0Oo"/>
+                                    <outlet property="checkmarkImageView" destination="AWh-kA-s5A" id="bcr-qf-UVB"/>
+                                    <outlet property="imageView" destination="kqf-Th-au0" id="DT1-2U-i8C"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -1296,8 +1382,19 @@
                             <outlet property="delegate" destination="lVi-CR-vlc" id="10h-eE-oG2"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Flickr Gallery" id="SZf-lj-UGs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Mdu-LH-QzG">
+                            <connections>
+                                <action selector="saveButtonDidTouchUpInside:" destination="lVi-CR-vlc" id="Bw8-Kk-vTb"/>
+                                <segue destination="Bh2-d5-X6J" kind="unwind" unwindAction="unwindToViewController:" id="WDt-Gd-Tzj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fde-xK-FSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Bh2-d5-X6J" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-787.5" y="-1200.75"/>
         </scene>
@@ -1366,6 +1463,9 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="92" y="7" width="187" height="30"/>
+                                                    </variation>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1797,6 +1897,7 @@
         <image name="Calendar" width="40" height="37"/>
         <image name="CarBlueprint" width="375" height="647"/>
         <image name="CarIcon" width="47" height="47"/>
+        <image name="Checkmark" width="41" height="41"/>
         <image name="EdmundsLoading" width="213" height="242"/>
         <image name="EdmundsLoadingBackground" width="351" height="351"/>
         <image name="Garage" width="375" height="647"/>

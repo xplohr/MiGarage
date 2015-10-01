@@ -18,7 +18,10 @@ extension PhotoGalleryViewController {
         let flickrAction = UIAlertAction(title: "Download from Flickr", style: UIAlertActionStyle.Default) {
             (_) in
             
-            self.downloadFromFlickr()
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                self.performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.FlickrGallery, sender: nil)
+            }
         }
         action.addAction(flickrAction)
         
@@ -87,8 +90,29 @@ extension PhotoGalleryViewController {
         FlickrClient.sharedInstance().searchByTags(tags, inclusiveSearch: true) {
             data, error in
             
-            print("\(data)")
-            print("\(error)")
+            if let flickrError = error {
+                
+                print("Error downloading photos from Flickr: \(error), \(error?.description)")
+                let alert = UIAlertController(title: "Download Error", message: "Whoops! Somethign went wrong while downloading from Flickr. Please Try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let okButton = UIAlertAction(title: "OK", style: .Default) {
+                    (_) in
+                    
+                    
+                }
+                alert.addAction(okButton)
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            } else {
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    self.performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.FlickrGallery, sender: data)
+                }
+            }
         }
     }
 }

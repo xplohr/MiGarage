@@ -52,5 +52,6 @@ extension FlickrClient {
         static let Photo_Count = "total"
         static let Photo_ID = "id"
         static let Photo_Pages = "pages"
+        static let Photo_DownloadedImage = "image"
     }
 }

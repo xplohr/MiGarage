@@ -66,6 +66,11 @@ class PhotoGalleryViewController: UIViewController {
             let photoCell = sender as! VehiclePhotoCell
             let photoInfo = fetchedResultsController.objectAtIndexPath(collectionView.indexPathForCell(photoCell)!) as! VehiclePhoto
             destination.vehicleImage = photoInfo
+        } else if segue.identifier == MiGarageUtility.SegueIdentifiers.FlickrGallery {
+            
+            let destination = segue.destinationViewController as! FlickrGalleryViewController
+            //destination.flickrPhotos = sender as? [[String: AnyObject]]
+            destination.vehicle = vehicle!
         }
     }
 }
