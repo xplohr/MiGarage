@@ -31,6 +31,7 @@ class MiGarageUtility {
         static let PhotoGallery = "showPhotoGallery"
         static let FlickrGallery = "showFlickrGallery"
         static let PhotoDetail = "showPhotoDetail"
+        static let showVehiclePhotoGallery = "showVehiclePhotoGallery"
     }
     
     /* Helper: Given a dictionary of parameters, convert to a String for a URL */

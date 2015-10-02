@@ -1,20 +1,17 @@
 //
-//  PhotoGalleryViewController.swift
+//  PhotoGallery2ViewController.swift
 //  MiGarage
 //
-//  Created by Che-Chuen Ho on 9/21/15.
+//  Created by Che-Chuen Ho on 10/1/15.
 //  Copyright (c) 2015 Che-Chuen Ho. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class PhotoGalleryViewController: UIViewController {
+class PhotoGallery2ViewController: UICollectionViewController {
     
     let imagePicker = UIImagePickerController()
-    
-    @IBOutlet var collectionView: UICollectionView!
-    
     var vehicle: Vehicle?
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
@@ -25,7 +22,7 @@ class PhotoGalleryViewController: UIViewController {
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStackManager.sharedInstance().managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         
         return fetchedResultsController
-    }()
+        }()
     
     override func viewDidLoad() {
         
@@ -38,7 +35,7 @@ class PhotoGalleryViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         
         fetchedResultsController.performFetch(nil)
-        collectionView.reloadData()
+        collectionView?.reloadData()
         
         if fetchedResultsController.fetchedObjects?.count == 0 {
             
@@ -56,6 +53,18 @@ class PhotoGalleryViewController: UIViewController {
         showPhotoGalleryActionMenu()
     }
     
+    @IBAction func unwindFromFlickrGallery(segue: UIStoryboardSegue) {
+        
+        if let flickrGallery = segue.sourceViewController as? FlickrGalleryViewController {
+            
+            for (key, info) in flickrGallery.selectedPhotos {
+                
+                let image = info[FlickrClient.JSONKeys.Photo_DownloadedImage] as! UIImage
+                vehicle?.addPhoto(image, title: key)
+            }
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == MiGarageUtility.SegueIdentifiers.PhotoDetail {
@@ -64,12 +73,11 @@ class PhotoGalleryViewController: UIViewController {
             destination.vehicleData = vehicle
             
             let photoCell = sender as! VehiclePhotoCell
-            let photoInfo = fetchedResultsController.objectAtIndexPath(collectionView.indexPathForCell(photoCell)!) as! VehiclePhoto
+            let photoInfo = fetchedResultsController.objectAtIndexPath(collectionView!.indexPathForCell(photoCell)!) as! VehiclePhoto
             destination.vehicleImage = photoInfo
         } else if segue.identifier == MiGarageUtility.SegueIdentifiers.FlickrGallery {
             
             let destination = segue.destinationViewController as! FlickrGalleryViewController
-            //destination.flickrPhotos = sender as? [[String: AnyObject]]
             destination.vehicle = vehicle!
         }
     }

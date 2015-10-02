@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension PhotoGalleryViewController {
+extension PhotoGallery2ViewController {
     
     // MARK: - http://nshipster.com/uialertcontroller/
     func showPhotoGalleryActionMenu() {

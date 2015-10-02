@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension PhotoGalleryViewController: NSFetchedResultsControllerDelegate {
+extension PhotoGallery2ViewController: NSFetchedResultsControllerDelegate {
     
     
 }

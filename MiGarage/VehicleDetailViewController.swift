@@ -89,12 +89,17 @@ class VehicleDetailViewController: UIViewController {
         performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.PhotoGallery, sender: sender)
     }
     
+    @IBAction func unwindFromPhotoGallery(segue: UIStoryboardSegue) {
+        
+        
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == MiGarageUtility.SegueIdentifiers.PhotoGallery {
+        if segue.identifier == MiGarageUtility.SegueIdentifiers.showVehiclePhotoGallery {
             
             let navController = segue.destinationViewController as! UINavigationController
-            let destination = navController.topViewController as! PhotoGalleryViewController
+            let destination = navController.topViewController as! PhotoGallery2ViewController
             destination.vehicle = vehicleData
         }
     }

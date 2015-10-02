@@ -8,15 +8,15 @@
 
 import UIKit
 
-extension PhotoGalleryViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension PhotoGallery2ViewController {
     
     // MARK: - UICollectionViewDataSource
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if !fetchedResultsController.fetchedObjects!.isEmpty {
             
@@ -26,7 +26,7 @@ extension PhotoGalleryViewController: UICollectionViewDataSource, UICollectionVi
         return 0
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MiGarageUtility.ReuseIdentifiers.VehiclePhotoCell, forIndexPath: indexPath) as! VehiclePhotoCell
         

@@ -97,11 +97,26 @@ extension FlickrGalleryViewController {
             } else {
                 
                 self.flickrPhotos = data as [[String: AnyObject]]!
-                /*let subset = [self.flickrPhotos[0], self.flickrPhotos[1], self.flickrPhotos[2], self.flickrPhotos[3], self.flickrPhotos[4]]
-                self.flickrPhotos = subset*/
                 
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.collectionView?.reloadData()
+                if self.flickrPhotos.isEmpty {
+                    
+                    let alert = UIAlertController(title: "No Photos Found", message: "Sorry, we couldn't find any photos on Flickr that matches your vehicle.", preferredStyle: UIAlertControllerStyle.Alert)
+                    let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel) {
+                        (_) in
+                        
+                    }
+                    alert.addAction(okButton)
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+                } else {
+                
+                    dispatch_async(dispatch_get_main_queue()) {
+                        
+                        self.collectionView?.reloadData()
+                    }
                 }
             }
         }

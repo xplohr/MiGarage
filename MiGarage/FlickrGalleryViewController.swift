@@ -19,9 +19,4 @@ class FlickrGalleryViewController: UICollectionViewController {
         super.viewDidLoad()
         downloadFromFlickr()
     }
-    
-    @IBAction func saveButtonDidTouchUpInside(sender: UIBarButtonItem) {
-        
-        
-    }
 }

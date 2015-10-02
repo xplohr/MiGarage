@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension PhotoGalleryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension PhotoGallery2ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - UIImagePickerControllerDelegate
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
