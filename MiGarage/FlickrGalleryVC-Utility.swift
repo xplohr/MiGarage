@@ -81,7 +81,7 @@ extension FlickrGalleryViewController {
             if let flickrError = error {
                 
                 print("Error downloading photos from Flickr: \(error), \(error?.description)")
-                let alert = UIAlertController(title: "Download Error", message: "Whoops! Somethign went wrong while downloading from Flickr. Please Try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Download Error", message: "Whoops! Something went wrong while downloading from Flickr. Please Try again.", preferredStyle: UIAlertControllerStyle.Alert)
                 
                 let okButton = UIAlertAction(title: "OK", style: .Default) {
                     (_) in
@@ -97,6 +97,12 @@ extension FlickrGalleryViewController {
             } else {
                 
                 self.flickrPhotos = data as [[String: AnyObject]]!
+                /*let subset = [self.flickrPhotos[0], self.flickrPhotos[1], self.flickrPhotos[2], self.flickrPhotos[3], self.flickrPhotos[4]]
+                self.flickrPhotos = subset*/
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.collectionView?.reloadData()
+                }
             }
         }
     }

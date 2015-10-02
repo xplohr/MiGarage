@@ -1288,7 +1288,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kqf-Th-au0" userLabel=" Photo Image View">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kqf-Th-au0" userLabel=" Photo Image View">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="120" id="AIf-Mp-w6N"/>
@@ -1347,12 +1347,12 @@
                                         <exclude reference="AWh-kA-s5A"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="5JZ-mt-mFZ"/>
-                                        <exclude reference="IfI-ww-R5l"/>
                                         <exclude reference="0DO-Mc-Kfy"/>
                                         <exclude reference="2xE-e4-E7K"/>
                                         <exclude reference="GUF-44-sJn"/>
                                         <exclude reference="hz9-gl-RLI"/>
+                                        <exclude reference="5JZ-mt-mFZ"/>
+                                        <exclude reference="IfI-ww-R5l"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -1362,12 +1362,12 @@
                                         <include reference="AWh-kA-s5A"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="5JZ-mt-mFZ"/>
-                                        <include reference="IfI-ww-R5l"/>
                                         <include reference="0DO-Mc-Kfy"/>
                                         <include reference="2xE-e4-E7K"/>
                                         <include reference="GUF-44-sJn"/>
                                         <include reference="hz9-gl-RLI"/>
+                                        <include reference="5JZ-mt-mFZ"/>
+                                        <include reference="IfI-ww-R5l"/>
                                     </mask>
                                 </variation>
                                 <connections>
