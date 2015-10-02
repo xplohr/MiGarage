@@ -62,7 +62,19 @@ extension FlickrGalleryViewController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        // TODO: Show the checkmark on the cell
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! FlickrGalleryCell
+        cell.setCheckmark()
+        
+        let selectedInfo = flickrPhotos[indexPath.row]
+        let selectedKey = selectedInfo[FlickrClient.JSONKeys.Photo_ID] as! String
+        
+        if cell.checkmarkImageView.hidden {
+            
+            selectedPhotos[selectedKey] = nil
+        } else {
+            
+            selectedPhotos[selectedKey] = selectedInfo
+        }
     }
     
     override func scrollViewWillBeginDragging(scrollView: UIScrollView) {

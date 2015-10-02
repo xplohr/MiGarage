@@ -12,6 +12,7 @@ class FlickrGalleryViewController: UICollectionViewController {
     
     var flickrPhotos = [[String: AnyObject]]()
     var vehicle: Vehicle?
+    var selectedPhotos = [String: [String: AnyObject]]()
     
     override func viewDidLoad() {
         
