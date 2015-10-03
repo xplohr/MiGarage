@@ -355,6 +355,13 @@
 			name = PhotoDetailViewController;
 			sourceTree = "<group>";
 		};
+		04B42FED1BBF69E80014EB0A /* MaintenanceViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MaintenanceViewController;
+			sourceTree = "<group>";
+		};
 		04D001451B8821AA00F0393A /* AddVehicleViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +434,7 @@
 				044F5F6D1BB0E49A00622FEB /* PhotoGalleryViewController */,
 				049E96391BB3C3DF00D0CE3A /* PhotoDetailViewController */,
 				04E12FD31BB8918500CCF215 /* FlickrGalleryViewController */,
+				04B42FED1BBF69E80014EB0A /* MaintenanceViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

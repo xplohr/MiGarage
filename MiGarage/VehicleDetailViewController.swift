@@ -123,6 +123,10 @@ class VehicleDetailViewController: UIViewController {
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.topViewController as! PhotoGallery2ViewController
             destination.vehicle = vehicleData
+        } else if segue.identifier == MiGarageUtility.SegueIdentifiers.MaintenanceSchedule {
+            
+            let navController = segue.destinationViewController as! UINavigationController
+            
         }
     }
 }

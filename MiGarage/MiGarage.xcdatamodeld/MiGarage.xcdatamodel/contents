@@ -2,11 +2,16 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Vehicle" representedClassName="MiGarage.Vehicle" syncable="YES">
         <attribute name="coverPhotoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="engineCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="make" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="makeNicename" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modelNicename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modelYearID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="odometer" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="transmission" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VehiclePhoto" inverseName="vehicle" inverseEntity="VehiclePhoto" syncable="YES"/>
     </entity>
@@ -19,7 +24,7 @@
         <relationship name="vehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="photos" inverseEntity="Vehicle" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Vehicle" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Vehicle" positionX="-63" positionY="-18" width="128" height="240"/>
         <element name="VehiclePhoto" positionX="-63" positionY="27" width="128" height="135"/>
     </elements>
 </model>

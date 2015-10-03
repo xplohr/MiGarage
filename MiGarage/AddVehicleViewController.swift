@@ -14,8 +14,11 @@ class AddVehicleViewController: UIViewController {
     struct VehicleInfo {
     
         var make: String?
+        var makeNicename: String?
         var model: String?
+        var modelNicename: String?
         var year: NSNumber?
+        var modelYearID: String?
         var nickname: String?
         var notes: String?
     }

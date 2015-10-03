@@ -21,7 +21,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             return getModelsMenu()
             
         case AddVehicleCellPosition.Year.rawValue:
-            return ["2015", "2014", "2013", "2012", "2011", "2010", "2009"]
+            return getYearMenu()
             
         default:
             return []
