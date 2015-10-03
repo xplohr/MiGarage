@@ -9,7 +9,7 @@ The app pulls data from Edmunds.com to populate the Make, Model, and Year menus.
 
 <img src="https://github.com/xplohr/MiGarage/blob/master/Screenshots/01-AddVehicle.png" width="270px" height="480px" />
 
-Once the user creates an entry, the user would tap on the entry to open the Details screen. The user can then enter odometer readings, photos from Flickr or the device's Camera Roll or device's camera.
+Once the user creates an entry, the user would tap on the entry to open the Details screen. The user can then enter odometer readings, photos from Flickr or the device's Camera Roll or device's camera. The user can also change the nickname of the vehicle by tapping on the vehicle name bar.
 
 <img src="https://github.com/xplohr/MiGarage/blob/master/Screenshots/02-VehicleDetails.png" width="270px" height="480px" />
 
