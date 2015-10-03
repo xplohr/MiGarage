@@ -79,9 +79,6 @@ class Vehicle: NSManagedObject {
         CoreDataStackManager.sharedInstance().saveContext()
     }
     
-    // MARK: - Flickr methods
-    
-    
     // MARK: - VehiclePhoto methods
     func addPhoto(image: UIImage, title: String?) {
         
@@ -108,6 +105,23 @@ class Vehicle: NSManagedObject {
         if photos.count == 1 {
             
             self.coverPhotoURL = imagePath
+        }
+        
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    func removeAllPhotos() {
+        
+        let fetchRequest = NSFetchRequest(entityName: "VehiclePhoto")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        fetchRequest.predicate = NSPredicate(format: "vehicle == %@", self)
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStackManager.sharedInstance().managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.performFetch(nil)
+        
+        let collection = fetchedResultsController.fetchedObjects as! [VehiclePhoto]
+        for item in collection {
+            
+            CoreDataStackManager.sharedInstance().managedObjectContext!.deleteObject(item)
         }
         
         CoreDataStackManager.sharedInstance().saveContext()

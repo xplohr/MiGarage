@@ -79,6 +79,28 @@ class VehicleDetailViewController: UIViewController {
         alert.show()
     }
     
+    @IBAction func deleteButtonDidTouchUpInside(sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Confirm Delete", message: "Are you sure you want to delete this vehicle and all associated data? This action cannot be undone.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let yesButton = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Destructive) {
+            (_) in
+            
+            self.vehicleData?.removeAllPhotos()
+            CoreDataStackManager.sharedInstance().managedObjectContext!.deleteObject(self.vehicleData!)
+            CoreDataStackManager.sharedInstance().saveContext()
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        }
+        alert.addAction(yesButton)
+        
+        let noButton = UIAlertAction(title: "No", style: UIAlertActionStyle.Default) {
+            (_) in
+        }
+        alert.addAction(noButton)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func vehicleNameButtonDidTouchUpInside(sender: UIButton) {
         
         showNicknameEntryView(sender)
