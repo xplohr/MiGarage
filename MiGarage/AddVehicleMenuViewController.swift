@@ -10,15 +10,22 @@ import UIKit
 
 protocol AddVehicleMenuDelegate {
     
-    func didSelectMenuItem(addVehicleMenu: AddVehicleMenuViewController, vehicleInfo: String, selection: String)
+    func didSelectMenuItem(addVehicleMenu: AddVehicleMenuViewController, vehicleInfo: String, selection: String, details: [String: AnyObject])
 }
 
 class AddVehicleMenuViewController: UITableViewController {
     
-    var menuChoices: [String] = []
+    var menuChoices = [String: [String: AnyObject]]?()
     var delegate: AddVehicleMenuDelegate?
+    var sortedChoices: [String]?
     
     override func viewDidLoad() {
+        
+        sortedChoices = menuChoices!.keys.array
+        sortedChoices?.sort {
+            
+            $0 < $1
+        }
         
         tableView.reloadData()
     }

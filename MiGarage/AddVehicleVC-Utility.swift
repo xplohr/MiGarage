@@ -10,7 +10,7 @@ import UIKit
 
 extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
     
-    func setupMenuChoices(selection: Int) -> [String] {
+    func setupMenuChoices(selection: Int) -> [String: [String: AnyObject]]? {
         
         switch selection {
             
@@ -24,34 +24,35 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             return getYearMenu()
             
         default:
-            return []
+            return nil
         }
     }
     
-    func getMakesMenu() -> [String] {
+    func getMakesMenu() -> [String: [String: AnyObject]]? {
             
-        var menuChoices = [String]()
+        var menuChoices = [String: [String: AnyObject]]()
         
         if edmundsData != nil {
             
             for edmundsItem: [String: AnyObject] in edmundsData! {
                 
                 let name = edmundsItem[EdmundsClient.JSONKeys.Name] as! String
-                menuChoices.append(name)
+                let nicename = edmundsItem[EdmundsClient.JSONKeys.Nicename] as! String
+                menuChoices[name] = [EdmundsClient.JSONKeys.Nicename: nicename]
             }
         } else {
             
             let alert = UIAlertView(title: "Missing Data", message: "Sorry! We don't seem to have the proper data. Please try again.", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
-            menuChoices = []
+            return nil
         }
         
         return menuChoices
     }
     
-    func getModelsMenu() -> [String] {
+    func getModelsMenu() -> [String: [String:AnyObject]]? {
         
-        var menuChoices = [String]()
+        var menuChoices = [String: [String: AnyObject]]()
         
         if edmundsData != nil {
             
@@ -64,7 +65,8 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
                     for modelItem: [String: AnyObject] in modelList {
                         
                         let modelName = modelItem[EdmundsClient.JSONKeys.Name] as! String
-                        menuChoices.append(modelName)
+                        let modelNicename = modelItem[EdmundsClient.JSONKeys.Nicename] as! String
+                        menuChoices[modelName] = [EdmundsClient.JSONKeys.Nicename: modelNicename]
                     }
                     
                     break
@@ -74,15 +76,15 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             
             let alert = UIAlertView(title: "Missing Data", message: "Sorry! We don't seem to have the proper data. Please try again.", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
-            menuChoices = []
+            return nil
         }
         
         return menuChoices
     }
     
-    func getYearMenu() -> [String] {
+    func getYearMenu() -> [String: [String: AnyObject]]? {
         
-        var menuChoices = [String]()
+        var menuChoices = [String: [String: AnyObject]]()
         
         if edmundsData != nil {
             
@@ -100,8 +102,9 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
                             let yearList = modelItem[EdmundsClient.JSONKeys.Years_Array] as! [[String: AnyObject]]
                             for yearItem: [String: AnyObject] in yearList {
                                 
-                                let yearName = yearItem[EdmundsClient.JSONKeys.Years_Name] as! String
-                                menuChoices.append(yearName)
+                                let yearName = yearItem[EdmundsClient.JSONKeys.Years_Name] as! NSNumber
+                                let modelYearID = yearItem[EdmundsClient.JSONKeys.ID] as! NSNumber
+                                menuChoices[yearName.stringValue] = [EdmundsClient.JSONKeys.ID: modelYearID.stringValue]
                             }
                             
                             break
@@ -113,7 +116,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             
             let alert = UIAlertView(title: "Missing Data", message: "Sorry! We don't seem to have the proper data. Please try again.", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
-            menuChoices = []
+            return nil
         }
         
         return menuChoices
@@ -146,7 +149,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
     
     // MARK: - AddVehicleMenuDelegate
     
-    func didSelectMenuItem(addVehicleMenu: AddVehicleMenuViewController, vehicleInfo: String, selection: String) {
+    func didSelectMenuItem(addVehicleMenu: AddVehicleMenuViewController, vehicleInfo: String, selection: String, details: [String: AnyObject]) {
         
         switch vehicleInfo {
             
@@ -154,6 +157,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Make.rawValue, inSection: 0))!
             cell.detailTextLabel?.text = selection
             newVehicle?.make = selection
+            newVehicle?.makeNicename = details[EdmundsClient.JSONKeys.Nicename] as? String
             
             let nextCell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Model.rawValue, inSection: 0))!
             nextCell.hidden = false
@@ -162,6 +166,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Model.rawValue, inSection: 0))!
             cell.detailTextLabel?.text = selection
             newVehicle?.model = selection
+            newVehicle?.modelNicename = details[EdmundsClient.JSONKeys.Nicename] as? String
             
             let nextCell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Year.rawValue, inSection: 0))!
             nextCell.hidden = false
@@ -170,6 +175,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Year.rawValue, inSection: 0))!
             cell.detailTextLabel?.text = selection
             newVehicle?.year = selection.toInt()
+            newVehicle?.modelYearID = details[EdmundsClient.JSONKeys.ID] as? String
             
         default:
             break

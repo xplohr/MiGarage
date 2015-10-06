@@ -33,5 +33,7 @@ extension EdmundsClient {
         static let Models_Array = "models"
         static let Years_Array = "years"
         static let Years_Name = "year"
+        static let Nicename = "niceName"
+        static let ID = "id"
     }
 }
