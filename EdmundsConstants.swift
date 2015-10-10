@@ -17,6 +17,7 @@ extension EdmundsClient {
     struct Methods {
     
         static let GetMakes = "makes"
+        static let GetStyles = "styles"
     }
     
     struct Keys {
@@ -35,5 +36,14 @@ extension EdmundsClient {
         static let Years_Name = "year"
         static let Nicename = "niceName"
         static let ID = "id"
+        static let Styles_Array = "styles"
+        static let Engine_Array = "engine"
+        static let Engine_Size = "size"
+        static let Engine_Cylinders = "cylinder"
+        static let Engine_FuelType = "type"
+        static let Engine_Code = "code"
+        static let Transmission_Array = "transmission"
+        static let Transmission_Type = "transmissionType"
+        static let Transmission_Gears = "numberOfSpeeds"
     }
 }

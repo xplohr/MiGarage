@@ -69,12 +69,22 @@ extension UIView {
         self.layer.addAnimation(group, forKey: "fallingObject")
     }
     
+    func resetFallAnimation() {
+        
+        self.layer.position.y -= 1000
+    }
+    
     func fadeOut(duration: CFTimeInterval = 1.0, hideOnCompletion: Bool, completionHandler: ((result: AnyObject?) -> Void)?) {
         
         let fadeAnimation = CABasicAnimation(keyPath: "opacity")
         self.layer.opacity = 0.0
         fadeAnimation.duration = duration
         self.layer.addAnimation(fadeAnimation, forKey: "fade")
+    }
+    
+    func resetOpacity() {
+        
+        self.layer.opacity = 1.0
     }
     
     // adapted from Animation code provided by Spring: https://github.com/MengTo/Spring

@@ -15,7 +15,7 @@ protocol AddVehicleMenuDelegate {
 
 class AddVehicleMenuViewController: UITableViewController {
     
-    var menuChoices = [String: [String: AnyObject]]?()
+    var menuChoices: [String: [String: AnyObject]]?
     var delegate: AddVehicleMenuDelegate?
     var sortedChoices: [String]?
     

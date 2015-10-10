@@ -20,10 +20,12 @@ class Vehicle: NSManagedObject {
     @NSManaged var photos: [VehiclePhoto]
     @NSManaged var coverPhotoURL: String
     @NSManaged var engineCode: String
+    @NSManaged var engineType: String
     @NSManaged var makeNicename: String
     @NSManaged var modelNicename: String
     @NSManaged var modelYearID: String
     @NSManaged var transmission: String
+    @NSManaged var transmissionType: String
     
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         
@@ -43,6 +45,11 @@ class Vehicle: NSManagedObject {
         modelYearID = vehicleData.modelYearID!
         odometer = 0.0
         coverPhotoURL = ""
+        engineCode = vehicleData.engineCode!
+        engineType = vehicleData.engineType!
+        transmission = vehicleData.transCode!
+        transmissionType = vehicleData.transType!
+        
         
         if vehicleData.nickname != nil {
             nickname = vehicleData.nickname!
