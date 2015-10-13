@@ -10,7 +10,9 @@ extension EdmundsClient {
     
     struct Constants {
     
-        static let Base_URL = "https://api.edmunds.com/api/vehicle/v2/"
+        static let Base_URL = "https://api.edmunds.com/api/"
+        static let VehicleAPI = "vehicle/v2/"
+        static let MaintenanceAPI = "maintenance/actionrepository/"
         static let API_Key = "q2qy5bz6zz7xh5fbbcfcdzbc"
     }
     
@@ -18,6 +20,7 @@ extension EdmundsClient {
     
         static let GetMakes = "makes"
         static let GetStyles = "styles"
+        static let GetMaintenance = "findbymodelyearid"
     }
     
     struct Keys {
@@ -25,6 +28,7 @@ extension EdmundsClient {
         static let DataView = "view"
         static let DataFormat = "fmt"
         static let APIKey = "api_key"
+        static let ModelYearID = "modelyearid"
     }
     
     struct JSONKeys {
@@ -45,5 +49,11 @@ extension EdmundsClient {
         static let Transmission_Array = "transmission"
         static let Transmission_Type = "transmissionType"
         static let Transmission_Gears = "numberOfSpeeds"
+        static let MaintenanceItem_Engine = "engineCode"
+        static let MaintenanceItem_Transmission = "transmissionCode"
+        static let MaintenanceItem_IntMileage = "intervalMileage"
+        static let MaintenanceItem_Action = "action"
+        static let MaintenanceItem_Item = "item"
+        static let MaintenanceItem_Description = "itemDescription"
     }
 }

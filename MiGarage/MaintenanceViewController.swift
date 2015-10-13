@@ -42,7 +42,7 @@ class MaintenanceViewController: UITableViewController, NSFetchedResultsControll
             self.grayoutBackground.fadeOut(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
         } else {
             
-            // TODO: Load maintenance data
+            loadMaintenanceData()
         }
     }
 }

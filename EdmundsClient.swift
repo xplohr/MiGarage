@@ -70,7 +70,7 @@ class EdmundsClient: NSObject {
             Keys.APIKey: Constants.API_Key
         ]
         
-        let urlString = Constants.Base_URL + Methods.GetMakes + MiGarageUtility.escapedParameters(arguments)
+        let urlString = Constants.Base_URL + Constants.VehicleAPI + Methods.GetMakes + MiGarageUtility.escapedParameters(arguments)
         let url = NSURL(string: urlString)!
         let request = NSURLRequest(URL: url)
         
@@ -93,12 +93,32 @@ class EdmundsClient: NSObject {
         
         let vehicleURL = "\(vehicleInfo[JSONKeys.Makes_Array]!)/\(vehicleInfo[JSONKeys.Models_Array]!)/\(vehicleInfo[JSONKeys.Years_Array]!)/"
         
-        let urlString = Constants.Base_URL + vehicleURL +  Methods.GetStyles + MiGarageUtility.escapedParameters(arguments)
+        let urlString = Constants.Base_URL + Constants.VehicleAPI + vehicleURL +  Methods.GetStyles + MiGarageUtility.escapedParameters(arguments)
         let url = NSURL(string: urlString)!
         let request = NSURLRequest(URL: url)
         
         sendRequest(request) {
             
+            success, data, error in
+            
+            completionHandler(success: success, data: data, error: error)
+        }
+    }
+    
+    func getMaintenanceScheduleByVehicle(vehicleID: String, completionHandler: (success: Bool, data: [[String: AnyObject]]?, error: NSError?) -> Void) {
+        
+        let arguments = [
+            
+            Keys.ModelYearID: vehicleID,
+            Keys.DataFormat: "json",
+            Keys.APIKey: Constants.API_Key
+        ]
+        
+        let urlString = Constants.Base_URL + Constants.MaintenanceAPI + Methods.GetMaintenance + MiGarageUtility.escapedParameters(arguments)
+        let url = NSURL(string: urlString)!
+        let request = NSURLRequest(URL: url)
+        
+        sendRequest(request) {
             success, data, error in
             
             completionHandler(success: success, data: data, error: error)
