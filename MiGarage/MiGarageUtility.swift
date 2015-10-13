@@ -18,6 +18,7 @@ class MiGarageUtility {
         static let AddVehicleMenuCell = "addVehicleMenuCell"
         static let VehiclePhotoCell = "vehiclePhotoCell"
         static let FlickrPhotoCell = "flickrPhotoCell"
+        static let MaintenanceCell = "maintenanceCell"
     }
     
     struct SegueIdentifiers {

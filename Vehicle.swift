@@ -26,6 +26,7 @@ class Vehicle: NSManagedObject {
     @NSManaged var modelYearID: String
     @NSManaged var transmission: String
     @NSManaged var transmissionType: String
+    @NSManaged var maintenanceSched: [Maintenance]
     
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         
@@ -139,6 +140,24 @@ class Vehicle: NSManagedObject {
             CoreDataStackManager.sharedInstance().managedObjectContext!.deleteObject(item)
         }
         
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    // MARK: - Maintenance methods
+    func addMaintenanceItem(itemID: String, engineCode: String, transmission: String, mileage: Int, action: String, itemName: String, itemDescription: String) {
+        
+        let values = [
+            
+            Maintenance.Keys.ID: itemID,
+            Maintenance.Keys.Engine: engineCode,
+            Maintenance.Keys.Transmission: transmission,
+            Maintenance.Keys.IntervalMiles: mileage,
+            Maintenance.Keys.Action: action,
+            Maintenance.Keys.ItemName: itemName,
+            Maintenance.Keys.Description: itemDescription
+        ]
+        
+        let newMaintenanceItem = Maintenance(values: values, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
         CoreDataStackManager.sharedInstance().saveContext()
     }
 }
