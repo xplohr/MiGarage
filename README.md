@@ -14,6 +14,7 @@ Once the user creates an entry, the user would tap on the entry to open the Deta
 <img src="https://github.com/xplohr/MiGarage/blob/master/Screenshots/02-VehicleDetails.png" width="270px" height="480px" />
 
 Tapping on the Maintenance Calendar button will show upcoming and past maintenance items for the vehicle, as reported by Edmunds.com.
-[screenshot]
+
+<img src="https://github.com/xplohr/MiGarage/blog/master/Screenshots/03-Maintenance.png" width="270px" height="480px" />
 
 Have fun!
