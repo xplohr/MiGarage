@@ -63,20 +63,12 @@ class VehicleDetailViewController: UIViewController {
     
     @IBAction func maintenanceButtonDidTouchUpInside(sender: UIButton) {
         
-        let alert = UIAlertView(title: "Maintenance Button", message: "Show Maintenance Calendar", delegate: nil, cancelButtonTitle: "OK")
-        alert.show()
-    }
-    
-    @IBAction func repairLogButtonDidTouchUpInside(sender: UIButton) {
-        
-        let alert = UIAlertView(title: "Repair Button", message: "Show Repair Log", delegate: nil, cancelButtonTitle: "OK")
-        alert.show()
+        performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.MaintenanceSchedule, sender: nil)
     }
     
     @IBAction func notesButtonDidTouchUpInside(sender: UIButton) {
         
-        let alert = UIAlertView(title: "Notes Button", message: "Edit Notes", delegate: nil, cancelButtonTitle: "OK")
-        alert.show()
+        performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.DetailNotes, sender: nil)
     }
     
     @IBAction func deleteButtonDidTouchUpInside(sender: UIButton) {
@@ -126,7 +118,13 @@ class VehicleDetailViewController: UIViewController {
         } else if segue.identifier == MiGarageUtility.SegueIdentifiers.MaintenanceSchedule {
             
             let navController = segue.destinationViewController as! UINavigationController
+            let destination = navController.topViewController as! MaintenanceViewController
+            destination.vehicleInfo = vehicleData
+        } else if segue.identifier == MiGarageUtility.SegueIdentifiers.DetailNotes {
             
+            let destination = segue.destinationViewController as! AddVehicleTextViewController
+            destination.delegate = self
+            destination.vehicleNotes = vehicleData?.notes
         }
     }
 }

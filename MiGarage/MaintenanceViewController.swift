@@ -9,18 +9,20 @@
 import UIKit
 import CoreData
 
-class MaintenanceViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class MaintenanceViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var grayoutBackground: SpringView!
     @IBOutlet weak var loadingBackground: SpringImageView!
     @IBOutlet weak var loadingView: SpringView!
+    @IBOutlet weak var maintenanceTable: UITableView!
+    
     var vehicleInfo: Vehicle?
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
         let fetchRequest = NSFetchRequest(entityName: "Maintenance")
         let sortByID = NSSortDescriptor(key: "id", ascending: true)
         fetchRequest.sortDescriptors = [sortByID]
-        fetchRequest.predicate = NSPredicate(format: "engineCode == %@ AND (transmissionCode == %@ OR transmisstionCode == 'ALL'", self.vehicleInfo!.engineCode, self.vehicleInfo!.transmission)
+        fetchRequest.predicate = NSPredicate(format: "engineCode == %@ AND (transmissionCode == %@ OR transmissionCode == 'ALL')", self.vehicleInfo!.engineCode, self.vehicleInfo!.transmission)
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStackManager.sharedInstance().managedObjectContext!, sectionNameKeyPath: "intervalMileage", cacheName: nil)
         
@@ -36,13 +38,19 @@ class MaintenanceViewController: UITableViewController, NSFetchedResultsControll
         loadingBackground.rotate360Degrees(repeatCount: 30.0)
         
         fetchedResultsController.performFetch(nil)
-        if fetchedResultsController.fetchedObjects != nil {
+        if fetchedResultsController.fetchedObjects!.isEmpty {
+            
+            loadMaintenanceData()
+        } else {
             
             self.loadingView.fallAnimation(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
             self.grayoutBackground.fadeOut(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
-        } else {
-            
-            loadMaintenanceData()
         }
+        
+    }
+    
+    @IBAction func doneButtonDidTouchUpInside(sender: UIBarButtonItem) {
+        
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }

@@ -12,7 +12,7 @@ import CoreData
 class Maintenance: NSManagedObject {
 
     @NSManaged var action: String
-    @NSManaged var id: String
+    @NSManaged var id: NSNumber
     @NSManaged var intervalMileage: NSNumber
     @NSManaged var item: String
     @NSManaged var itemDescription: String
@@ -43,7 +43,7 @@ class Maintenance: NSManagedObject {
         super.init(entity: entity!, insertIntoManagedObjectContext: context)
         
         self.action = values[Keys.Action] as! String
-        self.id = values[Keys.ID] as! String
+        self.id = values[Keys.ID] as! Int
         self.intervalMileage = values[Keys.IntervalMiles] as! Int
         self.item = values[Keys.ItemName] as! String
         self.itemDescription = values[Keys.Description] as! String

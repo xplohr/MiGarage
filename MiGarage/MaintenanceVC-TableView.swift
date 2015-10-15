@@ -8,29 +8,61 @@
 
 import UIKit
 
-extension MaintenanceViewController {
+extension MaintenanceViewController: UITableViewDataSource, UITableViewDelegate {
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        let item = fetchedResultsController.fetchedObjects![indexPath.row] as! Maintenance
         var cell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.MaintenanceCell) as! UITableViewCell
+        cell.textLabel?.text = item.action
+        cell.detailTextLabel?.text = item.item
+        cell.accessoryType = UITableViewCellAccessoryType.DetailButton
         
+        if item.action == "Change" || item.action == "Flush/replace" {
+            
+            cell.imageView?.image = UIImage(named: "Fill")
+        } else if item.action == "Replace" {
+            
+            cell.imageView?.image = UIImage(named: "Replace")
+        }
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         
+        let item = fetchedResultsController.fetchedObjects![indexPath.row] as! Maintenance
+        let itemDetail = UIAlertController(title: item.item, message: item.itemDescription, preferredStyle: UIAlertControllerStyle.Alert)
+        let okButton = UIAlertAction(title: "Close", style: .Default) { (_) in }
+        itemDetail.addAction(okButton)
         
+        presentViewController(itemDetail, animated: true, completion: nil)
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         return fetchedResultsController.sections?.count ?? 0
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return fetchedResultsController.sections![section].numberOfObjects
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if let sectionInfo: AnyObject = fetchedResultsController.sections?[section] {
+            
+            return sectionInfo.name
+        } else {
+            
+            return nil
+        }
     }
     
 }

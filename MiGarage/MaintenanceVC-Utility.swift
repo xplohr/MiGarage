@@ -22,7 +22,7 @@ extension MaintenanceViewController {
                     
                     for itemData in maintData {
                         
-                        let itemID = itemData[EdmundsClient.JSONKeys.ID] as! String
+                        let itemID = itemData[EdmundsClient.JSONKeys.ID] as! Int
                         let engineCode = itemData[EdmundsClient.JSONKeys.MaintenanceItem_Engine] as! String
                         let transCode = itemData[EdmundsClient.JSONKeys.MaintenanceItem_Transmission] as! String
                         let mileage = itemData[EdmundsClient.JSONKeys.MaintenanceItem_IntMileage] as! Int
@@ -38,6 +38,8 @@ extension MaintenanceViewController {
                     
                     self.loadingView.fallAnimation(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
                     self.grayoutBackground.fadeOut(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
+                    self.fetchedResultsController.performFetch(nil)
+                    self.maintenanceTable.reloadData()
                 }
             } else {
                 

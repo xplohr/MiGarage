@@ -144,7 +144,7 @@ class Vehicle: NSManagedObject {
     }
     
     // MARK: - Maintenance methods
-    func addMaintenanceItem(itemID: String, engineCode: String, transmission: String, mileage: Int, action: String, itemName: String, itemDescription: String) {
+    func addMaintenanceItem(itemID: Int, engineCode: String, transmission: String, mileage: Int, action: String, itemName: String, itemDescription: String) {
         
         let values = [
             
@@ -154,7 +154,8 @@ class Vehicle: NSManagedObject {
             Maintenance.Keys.IntervalMiles: mileage,
             Maintenance.Keys.Action: action,
             Maintenance.Keys.ItemName: itemName,
-            Maintenance.Keys.Description: itemDescription
+            Maintenance.Keys.Description: itemDescription,
+            Maintenance.Keys.Vehicle: self
         ]
         
         let newMaintenanceItem = Maintenance(values: values, context: CoreDataStackManager.sharedInstance().managedObjectContext!)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension VehicleDetailViewController: UIPopoverPresentationControllerDelegate, OdometerEntryViewControllerDelegate, NicknameEntryViewControllerDelegate {
+extension VehicleDetailViewController: UIPopoverPresentationControllerDelegate, OdometerEntryViewControllerDelegate, NicknameEntryViewControllerDelegate, NotesViewDelegate {
     
     // Reference: http://gracefullycoded.com/display-a-popover-in-swift/
     func showOdometerEntryView(sender: UIButton) {
@@ -63,6 +63,13 @@ extension VehicleDetailViewController: UIPopoverPresentationControllerDelegate, 
         
         vehicleNicknameLabel.text = value
         vehicleData?.nickname = value
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    // MARK: - NotesViewDelegate
+    func didCompleteEditingNotes(notesView: AddVehicleTextViewController, newText: String?) {
+        
+        vehicleData?.notes = newText!
         CoreDataStackManager.sharedInstance().saveContext()
     }
 }

@@ -11,6 +11,7 @@ extension EdmundsClient {
     struct Constants {
     
         static let Base_URL = "https://api.edmunds.com/api/"
+        static let Base_URL_v1 = "https://api.edmunds.com/v1/api/"
         static let VehicleAPI = "vehicle/v2/"
         static let MaintenanceAPI = "maintenance/actionrepository/"
         static let API_Key = "q2qy5bz6zz7xh5fbbcfcdzbc"
@@ -49,6 +50,7 @@ extension EdmundsClient {
         static let Transmission_Array = "transmission"
         static let Transmission_Type = "transmissionType"
         static let Transmission_Gears = "numberOfSpeeds"
+        static let Maintenance_Array = "actionHolder"
         static let MaintenanceItem_Engine = "engineCode"
         static let MaintenanceItem_Transmission = "transmissionCode"
         static let MaintenanceItem_IntMileage = "intervalMileage"
