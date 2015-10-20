@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -12,14 +12,17 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Garage" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-KR-mRt">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <animations/>
                 </imageView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCH-Co-h66">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <animations/>
                     <items>
                         <navigationItem title="MiGarage" id="bmP-cI-6IA"/>
                     </items>
                 </navigationBar>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="YCH-Co-h66" firstAttribute="trailing" secondItem="fkh-KR-mRt" secondAttribute="trailing" id="2qX-Ei-taD"/>
@@ -38,13 +41,13 @@
                     <exclude reference="YCH-Co-h66"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="2qX-Ei-taD"/>
+                    <exclude reference="62x-27-jd8"/>
+                    <exclude reference="HLU-jU-UZZ"/>
                     <exclude reference="Nfo-ZS-3u6"/>
                     <exclude reference="NkP-cN-JuD"/>
                     <exclude reference="SdL-pM-Vh7"/>
                     <exclude reference="aRC-6Z-mGp"/>
-                    <exclude reference="2qX-Ei-taD"/>
-                    <exclude reference="62x-27-jd8"/>
-                    <exclude reference="HLU-jU-UZZ"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -53,13 +56,13 @@
                     <include reference="YCH-Co-h66"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="2qX-Ei-taD"/>
+                    <include reference="62x-27-jd8"/>
+                    <include reference="HLU-jU-UZZ"/>
                     <include reference="Nfo-ZS-3u6"/>
                     <include reference="NkP-cN-JuD"/>
                     <include reference="SdL-pM-Vh7"/>
                     <include reference="aRC-6Z-mGp"/>
-                    <include reference="2qX-Ei-taD"/>
-                    <include reference="62x-27-jd8"/>
-                    <include reference="HLU-jU-UZZ"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>

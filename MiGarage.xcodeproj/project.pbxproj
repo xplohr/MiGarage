@@ -49,6 +49,7 @@
 		044F5F731BB0EB4800622FEB /* VehiclePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F5F721BB0EB4800622FEB /* VehiclePhotoCell.swift */; };
 		044F5F751BB0ED8800622FEB /* PhotoVC-Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F5F741BB0ED8800622FEB /* PhotoVC-Utility.swift */; };
 		044F5F771BB115D200622FEB /* PhotoGalleryVC-CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F5F761BB115D200622FEB /* PhotoGalleryVC-CoreData.swift */; };
+		04512A961BCB7F1700261824 /* MaintenanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04512A951BCB7F1700261824 /* MaintenanceViewController.swift */; };
 		045D73181BB9144F00507982 /* FlickrGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D73171BB9144F00507982 /* FlickrGalleryViewController.swift */; };
 		045D731A1BB9170200507982 /* FlickrGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D73191BB9170200507982 /* FlickrGalleryCell.swift */; };
 		045D731C1BB9233E00507982 /* FlickrGalleryVC-CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D731B1BB9233E00507982 /* FlickrGalleryVC-CollectionView.swift */; };
@@ -56,6 +57,8 @@
 		0478CFB51B9540E900F39D6D /* EdmundsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB41B9540E900F39D6D /* EdmundsClient.swift */; };
 		0478CFB71B95789700F39D6D /* EdmundsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB61B95789700F39D6D /* EdmundsConstants.swift */; };
 		0478CFB91B957F5C00F39D6D /* MiGarageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478CFB81B957F5C00F39D6D /* MiGarageError.swift */; };
+		047B7F031BCCA0C600FCB6C7 /* Maintenance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B7F021BCCA0C600FCB6C7 /* Maintenance.swift */; };
+		047B7F051BCCB9DC00FCB6C7 /* MaintenanceVC-Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B7F041BCCB9DC00FCB6C7 /* MaintenanceVC-Utility.swift */; };
 		048591761B93C7A00011AE33 /* AddVehicleVC-PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048591751B93C7A00011AE33 /* AddVehicleVC-PopupView.swift */; };
 		048A97C11B8143E200E3F263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A97C01B8143E200E3F263 /* AppDelegate.swift */; };
 		048A97C41B8143E200E3F263 /* MiGarage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 048A97C21B8143E200E3F263 /* MiGarage.xcdatamodeld */; };
@@ -78,6 +81,7 @@
 		04D001511B88468200F0393A /* AddVehicleVC-Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D001501B88468200F0393A /* AddVehicleVC-Utility.swift */; };
 		04D001541B884CFE00F0393A /* AddVehicleTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D001531B884CFE00F0393A /* AddVehicleTextViewController.swift */; };
 		04D001561B8854E200F0393A /* VehicleTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D001551B8854E200F0393A /* VehicleTextCell.swift */; };
+		04DC8F9F1BCC77AB008FDCFF /* MaintenanceVC-TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC8F9E1BCC77AB008FDCFF /* MaintenanceVC-TableView.swift */; };
 		04F8AF351B87DDE7007C632D /* VehicleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8AF341B87DDE7007C632D /* VehicleListCell.swift */; };
 		04F8AF381B87E103007C632D /* GarageVC-TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8AF371B87E103007C632D /* GarageVC-TableView.swift */; };
 		04F8AF3A1B87E369007C632D /* GarageVC-CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8AF391B87E369007C632D /* GarageVC-CoreData.swift */; };
@@ -138,6 +142,7 @@
 		044F5F721BB0EB4800622FEB /* VehiclePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclePhotoCell.swift; sourceTree = "<group>"; };
 		044F5F741BB0ED8800622FEB /* PhotoVC-Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoVC-Utility.swift"; sourceTree = "<group>"; };
 		044F5F761BB115D200622FEB /* PhotoGalleryVC-CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoGalleryVC-CoreData.swift"; sourceTree = "<group>"; };
+		04512A951BCB7F1700261824 /* MaintenanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaintenanceViewController.swift; sourceTree = "<group>"; };
 		045D73171BB9144F00507982 /* FlickrGalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrGalleryViewController.swift; sourceTree = "<group>"; };
 		045D73191BB9170200507982 /* FlickrGalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrGalleryCell.swift; sourceTree = "<group>"; };
 		045D731B1BB9233E00507982 /* FlickrGalleryVC-CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlickrGalleryVC-CollectionView.swift"; sourceTree = "<group>"; };
@@ -145,6 +150,8 @@
 		0478CFB41B9540E900F39D6D /* EdmundsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdmundsClient.swift; sourceTree = "<group>"; };
 		0478CFB61B95789700F39D6D /* EdmundsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdmundsConstants.swift; sourceTree = "<group>"; };
 		0478CFB81B957F5C00F39D6D /* MiGarageError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiGarageError.swift; sourceTree = "<group>"; };
+		047B7F021BCCA0C600FCB6C7 /* Maintenance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maintenance.swift; sourceTree = "<group>"; };
+		047B7F041BCCB9DC00FCB6C7 /* MaintenanceVC-Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MaintenanceVC-Utility.swift"; sourceTree = "<group>"; };
 		048591751B93C7A00011AE33 /* AddVehicleVC-PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddVehicleVC-PopupView.swift"; sourceTree = "<group>"; };
 		048A97BB1B8143E200E3F263 /* MiGarage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiGarage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048A97BF1B8143E200E3F263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,6 +178,7 @@
 		04D001501B88468200F0393A /* AddVehicleVC-Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddVehicleVC-Utility.swift"; sourceTree = "<group>"; };
 		04D001531B884CFE00F0393A /* AddVehicleTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVehicleTextViewController.swift; sourceTree = "<group>"; };
 		04D001551B8854E200F0393A /* VehicleTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleTextCell.swift; sourceTree = "<group>"; };
+		04DC8F9E1BCC77AB008FDCFF /* MaintenanceVC-TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MaintenanceVC-TableView.swift"; sourceTree = "<group>"; };
 		04F8AF341B87DDE7007C632D /* VehicleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleListCell.swift; sourceTree = "<group>"; };
 		04F8AF371B87E103007C632D /* GarageVC-TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GarageVC-TableView.swift"; sourceTree = "<group>"; };
 		04F8AF391B87E369007C632D /* GarageVC-CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GarageVC-CoreData.swift"; sourceTree = "<group>"; };
@@ -355,6 +363,16 @@
 			name = PhotoDetailViewController;
 			sourceTree = "<group>";
 		};
+		04B42FED1BBF69E80014EB0A /* MaintenanceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04512A951BCB7F1700261824 /* MaintenanceViewController.swift */,
+				04DC8F9E1BCC77AB008FDCFF /* MaintenanceVC-TableView.swift */,
+				047B7F041BCCB9DC00FCB6C7 /* MaintenanceVC-Utility.swift */,
+			);
+			name = MaintenanceViewController;
+			sourceTree = "<group>";
+		};
 		04D001451B8821AA00F0393A /* AddVehicleViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +418,7 @@
 				048A97C21B8143E200E3F263 /* MiGarage.xcdatamodeld */,
 				04D001431B87F45E00F0393A /* Vehicle.swift */,
 				0417EB771BAE832800363EF0 /* VehiclePhoto.swift */,
+				047B7F021BCCA0C600FCB6C7 /* Maintenance.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -427,6 +446,7 @@
 				044F5F6D1BB0E49A00622FEB /* PhotoGalleryViewController */,
 				049E96391BB3C3DF00D0CE3A /* PhotoDetailViewController */,
 				04E12FD31BB8918500CCF215 /* FlickrGalleryViewController */,
+				04B42FED1BBF69E80014EB0A /* MaintenanceViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -582,6 +602,7 @@
 				043D0DC51B86EC50005122BC /* DesignableTabBarController.swift in Sources */,
 				04D0014F1B88436F00F0393A /* AddVehicleMenuVC-TableView.swift in Sources */,
 				043D0DC21B86EC50005122BC /* DesignableButton.swift in Sources */,
+				047B7F031BCCA0C600FCB6C7 /* Maintenance.swift in Sources */,
 				048A97C41B8143E200E3F263 /* MiGarage.xcdatamodeld in Sources */,
 				0478CFB71B95789700F39D6D /* EdmundsConstants.swift in Sources */,
 				04D0014C1B8842BE00F0393A /* AddVehicleMenuViewController.swift in Sources */,
@@ -596,6 +617,7 @@
 				04D001511B88468200F0393A /* AddVehicleVC-Utility.swift in Sources */,
 				043D0DBE1B86EC50005122BC /* AsyncButton.swift in Sources */,
 				0493E5001BBCB2B1007B5E80 /* FlickrGalleryImageDownloader.swift in Sources */,
+				04DC8F9F1BCC77AB008FDCFF /* MaintenanceVC-TableView.swift in Sources */,
 				045D73181BB9144F00507982 /* FlickrGalleryViewController.swift in Sources */,
 				047296DB1B9CF57C0058ABFF /* UIView-Animations.swift in Sources */,
 				04D001471B88251F00F0393A /* AddVehicleViewController.swift in Sources */,
@@ -607,10 +629,12 @@
 				043D0DD61B86EC50005122BC /* SpringTextView.swift in Sources */,
 				043D0DCB1B86EC50005122BC /* KeyboardLayoutConstraint.swift in Sources */,
 				0493E4FE1BBCB07C007B5E80 /* FlickrGalleryVC-Utility.swift in Sources */,
+				04512A961BCB7F1700261824 /* MaintenanceViewController.swift in Sources */,
 				045D731C1BB9233E00507982 /* FlickrGalleryVC-CollectionView.swift in Sources */,
 				043D0DD21B86EC50005122BC /* SpringButton.swift in Sources */,
 				043D0DD11B86EC50005122BC /* SpringAnimation.swift in Sources */,
 				043D0DC31B86EC50005122BC /* DesignableImageView.swift in Sources */,
+				047B7F051BCCB9DC00FCB6C7 /* MaintenanceVC-Utility.swift in Sources */,
 				048A97C11B8143E200E3F263 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

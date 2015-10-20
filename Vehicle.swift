@@ -19,6 +19,14 @@ class Vehicle: NSManagedObject {
     @NSManaged var odometer: NSNumber
     @NSManaged var photos: [VehiclePhoto]
     @NSManaged var coverPhotoURL: String
+    @NSManaged var engineCode: String
+    @NSManaged var engineType: String
+    @NSManaged var makeNicename: String
+    @NSManaged var modelNicename: String
+    @NSManaged var modelYearID: String
+    @NSManaged var transmission: String
+    @NSManaged var transmissionType: String
+    @NSManaged var maintenanceSched: [Maintenance]
     
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         
@@ -31,10 +39,18 @@ class Vehicle: NSManagedObject {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
         
         make = vehicleData.make!
+        makeNicename = vehicleData.makeNicename!
         model = vehicleData.model!
+        modelNicename = vehicleData.modelNicename!
         year = vehicleData.year!
+        modelYearID = vehicleData.modelYearID!
         odometer = 0.0
         coverPhotoURL = ""
+        engineCode = vehicleData.engineCode!
+        engineType = vehicleData.engineType!
+        transmission = vehicleData.transCode!
+        transmissionType = vehicleData.transType!
+        
         
         if vehicleData.nickname != nil {
             nickname = vehicleData.nickname!
@@ -124,6 +140,25 @@ class Vehicle: NSManagedObject {
             CoreDataStackManager.sharedInstance().managedObjectContext!.deleteObject(item)
         }
         
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    // MARK: - Maintenance methods
+    func addMaintenanceItem(itemID: Int, engineCode: String, transmission: String, mileage: Int, action: String, itemName: String, itemDescription: String) {
+        
+        let values = [
+            
+            Maintenance.Keys.ID: itemID,
+            Maintenance.Keys.Engine: engineCode,
+            Maintenance.Keys.Transmission: transmission,
+            Maintenance.Keys.IntervalMiles: mileage,
+            Maintenance.Keys.Action: action,
+            Maintenance.Keys.ItemName: itemName,
+            Maintenance.Keys.Description: itemDescription,
+            Maintenance.Keys.Vehicle: self
+        ]
+        
+        let newMaintenanceItem = Maintenance(values: values, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
         CoreDataStackManager.sharedInstance().saveContext()
     }
 }

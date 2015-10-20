@@ -12,8 +12,6 @@
 	<dict>
 		<key>5B4B8963308A1A8175968B5DE0921F7D641F8ED4</key>
 		<string>https://github.com/xplohr/MiGarage.git</string>
-		<key>71F5D8D885CFF6BD7151066D7BFF25CC48A5235E</key>
-		<string>https://github.com/MengTo/Spring.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MiGarage.xcodeproj</string>
@@ -21,8 +19,6 @@
 	<dict>
 		<key>5B4B8963308A1A8175968B5DE0921F7D641F8ED4</key>
 		<string>../..</string>
-		<key>71F5D8D885CFF6BD7151066D7BFF25CC48A5235E</key>
-		<string>../..MiGarage/Spring</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/xplohr/MiGarage.git</string>
@@ -39,14 +35,6 @@
 			<string>5B4B8963308A1A8175968B5DE0921F7D641F8ED4</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MiGarage</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>71F5D8D885CFF6BD7151066D7BFF25CC48A5235E</string>
-			<key>IDESourceControlWCCName</key>
-			<string>Spring</string>
 		</dict>
 	</array>
 </dict>

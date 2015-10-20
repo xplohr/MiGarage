@@ -43,6 +43,12 @@ class EdmundsClient: NSObject {
                 if let makesDictionary = parsedResults.valueForKey(JSONKeys.Makes_Array) as? [[String: AnyObject]] {
                     
                     completionHandler(success: true, data: makesDictionary, error: nil)
+                } else if let stylesDictionary = parsedResults.valueForKey(JSONKeys.Styles_Array) as? [[String: AnyObject]] {
+                    
+                    completionHandler(success: true, data: stylesDictionary, error: nil)
+                } else if let maintenanceDictionary = parsedResults.valueForKey(JSONKeys.Maintenance_Array) as? [[String: AnyObject]] {
+                    
+                    completionHandler(success: true, data: maintenanceDictionary, error: nil)
                 } else {
                     
                     completionHandler(success: false, data: nil, error: NSError(domain: MiGarageError.Domain, code: MiGarageError.ErrorCodes.EdmundsMakesDictionaryError, userInfo: [MiGarageError.UserInfoKeys.Description: "There was a problem retrieving the makes dictionary from Edmunds.com."]))
@@ -67,12 +73,55 @@ class EdmundsClient: NSObject {
             Keys.APIKey: Constants.API_Key
         ]
         
-        let urlString = Constants.Base_URL + Methods.GetMakes + MiGarageUtility.escapedParameters(arguments)
+        let urlString = Constants.Base_URL + Constants.VehicleAPI + Methods.GetMakes + MiGarageUtility.escapedParameters(arguments)
         let url = NSURL(string: urlString)!
         let request = NSURLRequest(URL: url)
         
         sendRequest(request) {
             
+            success, data, error in
+            
+            completionHandler(success: success, data: data, error: error)
+        }
+    }
+    
+    func getEdmundsEngineTransDataForMenus(vehicleInfo: [String: String], completionHandler: (success: Bool, data: [[String: AnyObject]]?, error: NSError?) -> Void) {
+        
+        let arguments = [
+            
+            Keys.DataView: "full",
+            Keys.DataFormat: "json",
+            Keys.APIKey: Constants.API_Key
+        ]
+        
+        let vehicleURL = "\(vehicleInfo[JSONKeys.Makes_Array]!)/\(vehicleInfo[JSONKeys.Models_Array]!)/\(vehicleInfo[JSONKeys.Years_Array]!)/"
+        
+        let urlString = Constants.Base_URL + Constants.VehicleAPI + vehicleURL +  Methods.GetStyles + MiGarageUtility.escapedParameters(arguments)
+        let url = NSURL(string: urlString)!
+        let request = NSURLRequest(URL: url)
+        
+        sendRequest(request) {
+            
+            success, data, error in
+            
+            completionHandler(success: success, data: data, error: error)
+        }
+    }
+    
+    func getMaintenanceScheduleByVehicle(vehicleID: String, completionHandler: (success: Bool, data: [[String: AnyObject]]?, error: NSError?) -> Void) {
+        
+        let arguments = [
+            
+            Keys.ModelYearID: vehicleID,
+            Keys.DataFormat: "json",
+            Keys.APIKey: Constants.API_Key
+        ]
+        
+        let urlString = Constants.Base_URL_v1 + Constants.MaintenanceAPI + Methods.GetMaintenance + MiGarageUtility.escapedParameters(arguments)
+        let url = NSURL(string: urlString)!
+        let request = NSURLRequest(URL: url)
+        
+        sendRequest(request) {
             success, data, error in
             
             completionHandler(success: success, data: data, error: error)

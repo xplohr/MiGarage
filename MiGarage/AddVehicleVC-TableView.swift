@@ -12,12 +12,12 @@ extension AddVehicleViewController: UITableViewDataSource, UITableViewDelegate {
     
     enum AddVehicleCellPosition: Int {
         
-        case Make = 0, Model, Year, Nickname, Notes
+        case Make = 0, Model, Year, Engine, Transmission, Nickname, Notes
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return 7
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -45,6 +45,15 @@ extension AddVehicleViewController: UITableViewDataSource, UITableViewDelegate {
             
         case AddVehicleCellPosition.Notes.rawValue:
             performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.ShowNotesView, sender: indexPath.row)
+            
+        case AddVehicleCellPosition.Engine.rawValue:
+            setupEngineTransMenus() {
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    self.performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.AddVehicleMenu, sender: indexPath.row)
+                }
+            }
             
         default:
             performSegueWithIdentifier(MiGarageUtility.SegueIdentifiers.AddVehicleMenu, sender: indexPath.row)
@@ -76,6 +85,24 @@ extension AddVehicleViewController: UITableViewDataSource, UITableViewDelegate {
             cell.textLabel?.text = "Year"
             if vehicleData != nil {
                 cell.detailTextLabel?.text = vehicleData?.year.stringValue
+            } else {
+                cell.detailTextLabel?.text = "Select"
+                cell.hidden = true
+            }
+            
+        case AddVehicleCellPosition.Engine.rawValue:
+            cell.textLabel?.text = "Engine Type"
+            if vehicleData != nil {
+                cell.detailTextLabel?.text = vehicleData?.engineType
+            } else {
+                cell.detailTextLabel?.text = "Select"
+                cell.hidden = true
+            }
+            
+        case AddVehicleCellPosition.Transmission.rawValue:
+            cell.textLabel?.text = "Transmission"
+            if vehicleData != nil {
+                cell.detailTextLabel?.text = vehicleData?.transmissionType
             } else {
                 cell.detailTextLabel?.text = "Select"
                 cell.hidden = true

@@ -14,10 +14,17 @@ class AddVehicleViewController: UIViewController {
     struct VehicleInfo {
     
         var make: String?
+        var makeNicename: String?
         var model: String?
+        var modelNicename: String?
         var year: NSNumber?
+        var modelYearID: String?
         var nickname: String?
         var notes: String?
+        var engineCode: String?
+        var engineType: String?
+        var transCode: String?
+        var transType: String?
     }
     
     @IBOutlet weak var grayoutBackground: SpringView!
@@ -26,6 +33,8 @@ class AddVehicleViewController: UIViewController {
     var newVehicle: VehicleInfo? = VehicleInfo()
     var vehicleData: Vehicle?
     var edmundsData: [[String: AnyObject]]?
+    var engineData = [String: [String: AnyObject]]()
+    var transmissionData = [String: [String: AnyObject]]()
     
     override func viewDidLoad() {
         
@@ -84,9 +93,11 @@ class AddVehicleViewController: UIViewController {
         
         if (newVehicle?.make == nil ||
             newVehicle?.model == nil ||
-            newVehicle?.year == nil) {
+            newVehicle?.year == nil ||
+            newVehicle?.engineCode == nil ||
+            newVehicle?.transCode == nil) {
                 
-            let alert = UIAlertView(title: "Missing Data", message: "Please make sure the Make, Model, and Year of the vehicle has proper selections.", delegate: nil, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Missing Data", message: "Please make sure the Make, Model, Year, Engine Type, and Transmission of the vehicle has proper selections.", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
             return
         }

@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="15A284" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Maintenance" representedClassName="MiGarage.Maintenance" syncable="YES">
+        <attribute name="action" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="engineCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="intervalMileage" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="item" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transmissionCode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="vehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="maintenance" inverseEntity="Vehicle" syncable="YES"/>
+    </entity>
     <entity name="Vehicle" representedClassName="MiGarage.Vehicle" syncable="YES">
         <attribute name="coverPhotoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="engineCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="engineType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="make" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="makeNicename" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modelNicename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modelYearID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="odometer" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="transmission" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transmissionType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="maintenance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Maintenance" inverseName="vehicle" inverseEntity="Maintenance" syncable="YES"/>
         <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VehiclePhoto" inverseName="vehicle" inverseEntity="VehiclePhoto" syncable="YES"/>
     </entity>
     <entity name="VehiclePhoto" representedClassName="MiGarage.VehiclePhoto" syncable="YES">
@@ -19,7 +37,8 @@
         <relationship name="vehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="photos" inverseEntity="Vehicle" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Vehicle" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Maintenance" positionX="-54" positionY="99" width="128" height="165"/>
+        <element name="Vehicle" positionX="-63" positionY="-18" width="128" height="285"/>
         <element name="VehiclePhoto" positionX="-63" positionY="27" width="128" height="135"/>
     </elements>
 </model>

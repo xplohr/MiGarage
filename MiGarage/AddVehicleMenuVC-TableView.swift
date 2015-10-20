@@ -13,15 +13,18 @@ extension AddVehicleMenuViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.AddVehicleMenuCell) as! UITableViewCell
+        if sortedChoices == nil {
+            return cell
+        }
         
-        cell.textLabel?.text = menuChoices[indexPath.row]
+        cell.textLabel?.text = sortedChoices![indexPath.row]
         
         return cell
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return menuChoices.count
+        return sortedChoices!.count
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -31,6 +34,7 @@ extension AddVehicleMenuViewController {
         var cell = tableView.cellForRowAtIndexPath(indexPath)!
         cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         
-        delegate?.didSelectMenuItem(self, vehicleInfo: title!, selection: menuChoices[indexPath.row])
+        let selectItem = sortedChoices![indexPath.row]
+        delegate?.didSelectMenuItem(self, vehicleInfo: title!, selection: selectItem, details: menuChoices![selectItem]!)
     }
 }
