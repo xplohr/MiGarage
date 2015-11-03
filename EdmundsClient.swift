@@ -50,13 +50,13 @@ class EdmundsClient: NSObject {
                 
                 if let makesDictionary = parsedResults.valueForKey(JSONKeys.Makes_Array) as? [[String: AnyObject]] {
                     
-                    completionHandler(success: true, data: makesDictionary, error: nil)
+                    completionHandler(success: true, data: makesDictionary, error: parsingError)
                 } else if let stylesDictionary = parsedResults.valueForKey(JSONKeys.Styles_Array) as? [[String: AnyObject]] {
                     
-                    completionHandler(success: true, data: stylesDictionary, error: nil)
+                    completionHandler(success: true, data: stylesDictionary, error: parsingError)
                 } else if let maintenanceDictionary = parsedResults.valueForKey(JSONKeys.Maintenance_Array) as? [[String: AnyObject]] {
                     
-                    completionHandler(success: true, data: maintenanceDictionary, error: nil)
+                    completionHandler(success: true, data: maintenanceDictionary, error: parsingError)
                 } else {
                     
                     completionHandler(success: false, data: nil, error: NSError(domain: MiGarageError.Domain, code: MiGarageError.ErrorCodes.EdmundsMakesDictionaryError, userInfo: [MiGarageError.UserInfoKeys.Description: "There was a problem retrieving the makes dictionary from Edmunds.com."]))

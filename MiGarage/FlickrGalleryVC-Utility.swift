@@ -12,7 +12,7 @@ extension FlickrGalleryViewController {
     
     func downloadImageInBackground(photoInfo: [String: AnyObject], indexPath: NSIndexPath) {
         
-        if let downloadOperation = OperationQueueManager.sharedInstance().downloadsInProgress[indexPath] {
+        if let _ = OperationQueueManager.sharedInstance().downloadsInProgress[indexPath] {
             
             return
         }
@@ -79,7 +79,7 @@ extension FlickrGalleryViewController {
         FlickrClient.sharedInstance().searchByTags(tags, inclusiveSearch: true) {
             data, error in
             
-            if let flickrError = error {
+            if let _ = error {
                 
                 print("Error downloading photos from Flickr: \(error), \(error?.description)", terminator: "")
                 let alert = UIAlertController(title: "Download Error", message: "Whoops! Something went wrong while downloading from Flickr. Please Try again.", preferredStyle: UIAlertControllerStyle.Alert)

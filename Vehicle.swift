@@ -89,7 +89,7 @@ class Vehicle: NSManagedObject {
                 VehiclePhoto.Keys.ImageURL: photoURL
             ]
             
-            let newPhoto = VehiclePhoto(values: dictionary, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
+            _ = VehiclePhoto(values: dictionary, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
         }
         
         CoreDataStackManager.sharedInstance().saveContext()
@@ -116,7 +116,7 @@ class Vehicle: NSManagedObject {
             VehiclePhoto.Keys.Vehicle: self
         ]
         
-        let newPhoto = VehiclePhoto(values: photoInfo, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
+        _ = VehiclePhoto(values: photoInfo, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
         
         if photos.count == 1 {
             
@@ -161,7 +161,7 @@ class Vehicle: NSManagedObject {
             Maintenance.Keys.Vehicle: self
         ]
         
-        let newMaintenanceItem = Maintenance(values: values, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
+        _ = Maintenance(values: values, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
         CoreDataStackManager.sharedInstance().saveContext()
     }
 }

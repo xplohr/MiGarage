@@ -171,7 +171,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
                         
                         let engineMenuItem = "\(engineSize)L \(engineCyl) cyl \(engineFuel)"
                         
-                        if let engineKey = self.engineData[engineMenuItem] {
+                        if let _ = self.engineData[engineMenuItem] {
                             // Key exists, do nothing
                         } else {
                             
@@ -184,7 +184,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
                         
                         let transmissionMenuItem = "\(transGears) speed \(transCode)"
                         
-                        if let transKey = self.transmissionData[transmissionMenuItem] {
+                        if let _ = self.transmissionData[transmissionMenuItem] {
                             // Key exists, do nothing
                         } else {
                             

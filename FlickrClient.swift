@@ -51,8 +51,8 @@ class FlickrClient: NSObject {
         for tag: String in tags {
             
             tagString += "%2C+"
-            let escapedValue = tag.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
-            let replaceSpaceValue = tag.stringByReplacingOccurrencesOfString(" ", withString: "%2C+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            let escapedValue = tag.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+            let replaceSpaceValue = escapedValue.stringByReplacingOccurrencesOfString(" ", withString: "%2C+", options: NSStringCompareOptions.LiteralSearch, range: nil)
             tagString += replaceSpaceValue
         }
         
@@ -91,7 +91,7 @@ class FlickrClient: NSObject {
                     
                     if let photoArray = photosDictionary.valueForKey(JSONKeys.Photo_Array) as? [[String: AnyObject]] {
                         
-                        completionHandler(data: photoArray, error: nil)
+                        completionHandler(data: photoArray, error: parsingError)
                     } else {
                         
                         completionHandler(data: nil, error: NSError(domain: MiGarageError.Domain, code: MiGarageError.ErrorCodes.FlickrArrayError, userInfo: [MiGarageError.UserInfoKeys.Description: "There was a problem retrieving the photos array from Flickr."]))
