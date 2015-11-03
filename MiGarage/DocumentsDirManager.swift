@@ -23,14 +23,14 @@ class DocumentsDirManager: NSObject {
     lazy var documentsDirectory: String = {
         
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask)
-        let directory = urls[0] as! NSURL
+        let directory = urls[0] 
         
         return directory.path!
     }()
     
     func getImagePath(title: String) -> String {
         
-        return documentsDirectory.stringByAppendingPathComponent("\(title).png")
+        return (documentsDirectory as NSString).stringByAppendingPathComponent("\(title).png")
     }
     
     func writeImageData(imageData: NSData, title: String) {
@@ -40,17 +40,17 @@ class DocumentsDirManager: NSObject {
         
         if image == nil {
             
-            println("Bad image data for \(title). Did not write to Documents.")
+            print("Bad image data for \(title). Did not write to Documents.")
             return
         }
         
-        UIImagePNGRepresentation(image!).writeToFile(writePath, atomically: true)
+        UIImagePNGRepresentation(image!)!.writeToFile(writePath, atomically: true)
     }
     
     func writeImage(image: UIImage, title: String) -> String {
         
         let writePath = getImagePath(title)
-        UIImagePNGRepresentation(image).writeToFile(writePath, atomically: true)
+        UIImagePNGRepresentation(image)!.writeToFile(writePath, atomically: true)
         
         return writePath
     }
@@ -69,7 +69,10 @@ class DocumentsDirManager: NSObject {
     
     func removeDocument(name: String) {
         
-        let pathToDelete = documentsDirectory.stringByAppendingPathComponent(name)
-        NSFileManager.defaultManager().removeItemAtPath(pathToDelete, error: nil)
+        let pathToDelete = (documentsDirectory as NSString).stringByAppendingPathComponent(name)
+        do {
+            try NSFileManager.defaultManager().removeItemAtPath(pathToDelete)
+        } catch _ {
+        }
     }
 }

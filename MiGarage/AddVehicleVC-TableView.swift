@@ -25,13 +25,13 @@ extension AddVehicleViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
             
         case AddVehicleCellPosition.Nickname.rawValue:
-            let textCell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.VehicleTextCell) as! UITableViewCell
-            return setupTextCell(indexPath, cell: textCell)
+            let textCell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.VehicleTextCell)
+            return setupTextCell(indexPath, cell: textCell!)
             
             
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.AddVehicleCell) as! UITableViewCell
-            return setupTableCell(indexPath, cell: cell)
+            let cell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.AddVehicleCell)
+            return setupTableCell(indexPath, cell: cell!)
             
         }
         

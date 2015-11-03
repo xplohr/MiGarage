@@ -72,12 +72,20 @@ class FlickrClient: NSObject {
             
             if let downloadError = error {
                 
-                print("Could not complete the Flickr request: \(downloadError)")
+                print("Could not complete the Flickr request: \(downloadError)", terminator: "")
                 completionHandler(data: nil, error: downloadError)
             } else {
                 
                 var parsingError: NSError? = nil
-                let parsedResults: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments, error: &parsingError)
+                let parsedResults: AnyObject?
+                do {
+                    parsedResults = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                } catch let error as NSError {
+                    parsingError = error
+                    parsedResults = nil
+                } catch {
+                    fatalError()
+                }
                 
                 if let photosDictionary = parsedResults?.valueForKey(JSONKeys.Photo_Dicionary) as? NSDictionary {
                     

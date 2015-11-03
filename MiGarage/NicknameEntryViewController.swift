@@ -37,7 +37,7 @@ class NicknameEntryViewController: UIViewController {
     
     @IBAction func saveButtonDidTouchUpInside(sender: UIButton) {
         
-        delegate?.didSaveNickname(self, value: nicknameTextField.text)
+        delegate?.didSaveNickname(self, value: nicknameTextField.text!)
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }

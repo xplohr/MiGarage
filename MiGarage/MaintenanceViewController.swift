@@ -35,16 +35,19 @@ class MaintenanceViewController: UIViewController, NSFetchedResultsControllerDel
         
         // Animation code provided by Spring: https://github.com/MengTo/Spring
         loadingView.animate()
-        loadingBackground.rotate360Degrees(repeatCount: 30.0)
+        loadingBackground.rotate360Degrees(30.0)
         
-        fetchedResultsController.performFetch(nil)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch _ {
+        }
         if fetchedResultsController.fetchedObjects!.isEmpty {
             
             loadMaintenanceData()
         } else {
             
-            self.loadingView.fallAnimation(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
-            self.grayoutBackground.fadeOut(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
+            self.loadingView.fallAnimation(0.25, hideOnCompletion: true, completionHandler: nil)
+            self.grayoutBackground.fadeOut(0.25, hideOnCompletion: true, completionHandler: nil)
         }
         
     }

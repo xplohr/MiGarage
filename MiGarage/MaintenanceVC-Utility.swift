@@ -36,14 +36,17 @@ extension MaintenanceViewController {
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     
-                    self.loadingView.fallAnimation(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
-                    self.grayoutBackground.fadeOut(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
-                    self.fetchedResultsController.performFetch(nil)
+                    self.loadingView.fallAnimation(0.25, hideOnCompletion: true, completionHandler: nil)
+                    self.grayoutBackground.fadeOut(0.25, hideOnCompletion: true, completionHandler: nil)
+                    do {
+                        try self.fetchedResultsController.performFetch()
+                    } catch _ {
+                    }
                     self.maintenanceTable.reloadData()
                 }
             } else {
                 
-                println("\(error): \(error?.userInfo)")
+                print("\(error): \(error?.userInfo)")
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     

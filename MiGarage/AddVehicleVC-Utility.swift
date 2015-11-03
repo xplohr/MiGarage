@@ -136,7 +136,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             self.grayoutBackground.hidden = false
             self.loadingView.resetFallAnimation()
             self.loadingView.animate()
-            self.loadingBackground.rotate360Degrees(repeatCount: 30.0)
+            self.loadingBackground.rotate360Degrees(30.0)
         }
         
         let vehicleInfo = [
@@ -152,8 +152,8 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             
             dispatch_async(dispatch_get_main_queue()) {
                 
-                self.loadingView.fallAnimation(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
-                self.grayoutBackground.fadeOut(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
+                self.loadingView.fallAnimation(0.25, hideOnCompletion: true, completionHandler: nil)
+                self.grayoutBackground.fadeOut(0.25, hideOnCompletion: true, completionHandler: nil)
             }
             
             if success {
@@ -196,7 +196,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
                 completionHandler()
             } else {
                 
-                println("\(error): \(error?.userInfo)")
+                print("\(error): \(error?.userInfo)")
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     
@@ -251,7 +251,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
         switch vehicleInfo {
             
         case "Make":
-            var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Make.rawValue, inSection: 0))!
+            let cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Make.rawValue, inSection: 0))!
             cell.detailTextLabel?.text = selection
             newVehicle?.make = selection
             newVehicle?.makeNicename = details[EdmundsClient.JSONKeys.Nicename] as? String
@@ -260,7 +260,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             nextCell.hidden = false
             
         case "Model":
-            var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Model.rawValue, inSection: 0))!
+            let cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Model.rawValue, inSection: 0))!
             cell.detailTextLabel?.text = selection
             newVehicle?.model = selection
             newVehicle?.modelNicename = details[EdmundsClient.JSONKeys.Nicename] as? String
@@ -269,16 +269,16 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             nextCell.hidden = false
             
         case "Year":
-            var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Year.rawValue, inSection: 0))!
+            let cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Year.rawValue, inSection: 0))!
             cell.detailTextLabel?.text = selection
-            newVehicle?.year = selection.toInt()
+            newVehicle?.year = Int(selection)
             newVehicle?.modelYearID = details[EdmundsClient.JSONKeys.ID] as? String
             
             let nextCell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Engine.rawValue, inSection: 0))!
             nextCell.hidden = false
             
         case "Engine Type":
-            var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Engine.rawValue, inSection: 0))
+            let cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Engine.rawValue, inSection: 0))
             cell?.detailTextLabel?.text = selection
             newVehicle?.engineType = selection
             newVehicle?.engineCode = details[EdmundsClient.JSONKeys.Engine_Code] as? String
@@ -287,7 +287,7 @@ extension AddVehicleViewController: AddVehicleMenuDelegate, NotesViewDelegate {
             nextCell.hidden = false
             
         case "Transmission":
-            var cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Transmission.rawValue, inSection: 0))
+            let cell = vehicleTable.cellForRowAtIndexPath(NSIndexPath(forItem: AddVehicleCellPosition.Transmission.rawValue, inSection: 0))
             cell?.detailTextLabel?.text = selection
             newVehicle?.transType = selection
             newVehicle?.transCode = details[EdmundsClient.JSONKeys.Transmission_Type] as? String

@@ -54,7 +54,7 @@ extension UIView {
         fallingView.duration = duration
         fallingView.removedOnCompletion = false
         
-        var group = CAAnimationGroup()
+        let group = CAAnimationGroup()
         group.animations = [rotateAnimation, fallingView]
         group.duration = duration
         
@@ -63,7 +63,7 @@ extension UIView {
             let hideAnimation = CABasicAnimation(keyPath: "hidden")
             self.layer.hidden = true
             
-            group.animations.append(hideAnimation)
+            group.animations?.append(hideAnimation)
         }
         
         self.layer.addAnimation(group, forKey: "fallingObject")

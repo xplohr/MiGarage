@@ -14,7 +14,7 @@ extension VehicleDetailViewController: UIPopoverPresentationControllerDelegate, 
     func showOdometerEntryView(sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var odometerEntryVC: OdometerEntryViewController = storyboard.instantiateViewControllerWithIdentifier("OdometerEntry") as! OdometerEntryViewController
+        let odometerEntryVC: OdometerEntryViewController = storyboard.instantiateViewControllerWithIdentifier("OdometerEntry") as! OdometerEntryViewController
         odometerEntryVC.modalPresentationStyle = .Popover
         odometerEntryVC.preferredContentSize = CGSizeMake(250.0, 110.0)
         odometerEntryVC.delegate = self
@@ -36,7 +36,7 @@ extension VehicleDetailViewController: UIPopoverPresentationControllerDelegate, 
     func showNicknameEntryView(sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var nicknameEntryVC: NicknameEntryViewController = storyboard.instantiateViewControllerWithIdentifier("NicknameEntry") as! NicknameEntryViewController
+        let nicknameEntryVC: NicknameEntryViewController = storyboard.instantiateViewControllerWithIdentifier("NicknameEntry") as! NicknameEntryViewController
         nicknameEntryVC.modalPresentationStyle = .Popover
         nicknameEntryVC.preferredContentSize = CGSizeMake(250.0, 110.0)
         nicknameEntryVC.delegate = self

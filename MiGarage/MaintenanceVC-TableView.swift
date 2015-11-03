@@ -13,7 +13,7 @@ extension MaintenanceViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let item = fetchedResultsController.fetchedObjects![indexPath.row] as! Maintenance
-        var cell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.MaintenanceCell) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(MiGarageUtility.ReuseIdentifiers.MaintenanceCell)!
         cell.textLabel?.text = item.action
         cell.detailTextLabel?.text = item.item
         cell.accessoryType = UITableViewCellAccessoryType.DetailButton

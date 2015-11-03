@@ -44,9 +44,10 @@ extension FlickrGalleryViewController {
         
         if !pathsArray.isEmpty {
             
-            var allPendingOperations = Set(OperationQueueManager.sharedInstance().downloadsInProgress.keys.array)
+            //let allPendingOperations = Set(OperationQueueManager.sharedInstance().downloadsInProgress.keys.array)
+            let allPendingOperations = Set(OperationQueueManager.sharedInstance().downloadsInProgress.keys)
             var toBeCancelled = allPendingOperations
-            let visiblePaths = Set(pathsArray as! [NSIndexPath])
+            let visiblePaths = Set(pathsArray )
             toBeCancelled.subtractInPlace(visiblePaths)
             
             var toBeStarted = visiblePaths
@@ -80,7 +81,7 @@ extension FlickrGalleryViewController {
             
             if let flickrError = error {
                 
-                print("Error downloading photos from Flickr: \(error), \(error?.description)")
+                print("Error downloading photos from Flickr: \(error), \(error?.description)", terminator: "")
                 let alert = UIAlertController(title: "Download Error", message: "Whoops! Something went wrong while downloading from Flickr. Please Try again.", preferredStyle: UIAlertControllerStyle.Alert)
                 
                 let okButton = UIAlertAction(title: "OK", style: .Default) {

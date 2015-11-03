@@ -55,7 +55,7 @@ class AddVehicleViewController: UIViewController {
         
         // Animation code provided by Spring: https://github.com/MengTo/Spring
         loadingView.animate()
-        loadingBackground.rotate360Degrees(repeatCount: 30.0)
+        loadingBackground.rotate360Degrees(30.0)
         
         EdmundsClient.sharedInstance().getEdmundsDataForMenus() {
             
@@ -66,12 +66,12 @@ class AddVehicleViewController: UIViewController {
                 self.edmundsData = data
                 dispatch_async(dispatch_get_main_queue()) {
                     
-                    self.loadingView.fallAnimation(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
-                    self.grayoutBackground.fadeOut(duration: 0.25, hideOnCompletion: true, completionHandler: nil)
+                    self.loadingView.fallAnimation(0.25, hideOnCompletion: true, completionHandler: nil)
+                    self.grayoutBackground.fadeOut(0.25, hideOnCompletion: true, completionHandler: nil)
                 }
             } else {
                 
-                println("\(error): \(error?.userInfo)")
+                print("\(error): \(error?.userInfo)")
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     
@@ -108,7 +108,7 @@ class AddVehicleViewController: UIViewController {
             newVehicle?.notes = ""
         }
         
-        let vehicleData = Vehicle(vehicleData: newVehicle!, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
+        _ = Vehicle(vehicleData: newVehicle!, context: CoreDataStackManager.sharedInstance().managedObjectContext!)
         CoreDataStackManager.sharedInstance().saveContext()
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }

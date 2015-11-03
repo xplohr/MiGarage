@@ -132,7 +132,10 @@ class Vehicle: NSManagedObject {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
         fetchRequest.predicate = NSPredicate(format: "vehicle == %@", self)
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStackManager.sharedInstance().managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultsController.performFetch(nil)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch _ {
+        }
         
         let collection = fetchedResultsController.fetchedObjects as! [VehiclePhoto]
         for item in collection {

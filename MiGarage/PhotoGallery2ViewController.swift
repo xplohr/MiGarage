@@ -27,14 +27,20 @@ class PhotoGallery2ViewController: UICollectionViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        fetchedResultsController.performFetch(nil)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch _ {
+        }
         fetchedResultsController.delegate = self
         imagePicker.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
         
-        fetchedResultsController.performFetch(nil)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch _ {
+        }
         collectionView?.reloadData()
         
         if fetchedResultsController.fetchedObjects?.count == 0 {

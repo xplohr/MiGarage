@@ -25,13 +25,19 @@ class GarageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchedResultsController.performFetch(nil)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch _ {
+        }
         fetchedResultsController.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
         
-        fetchedResultsController.performFetch(nil)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch _ {
+        }
         tableView.reloadData()
     }
 

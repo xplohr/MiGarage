@@ -37,7 +37,7 @@ class OdometerEntryViewController: UIViewController {
     
     @IBAction func saveButtonDidTouchUpInside(sender: UIButton) {
         
-        delegate?.didSaveOdometerReading(self, value: odometerTextField.text)
+        delegate?.didSaveOdometerReading(self, value: odometerTextField.text!)
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     

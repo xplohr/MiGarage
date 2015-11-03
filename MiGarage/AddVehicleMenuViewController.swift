@@ -21,11 +21,13 @@ class AddVehicleMenuViewController: UITableViewController {
     
     override func viewDidLoad() {
         
-        sortedChoices = menuChoices!.keys.array
-        sortedChoices?.sort {
+        /*sortedChoices = menuChoices!.keys.array
+        sortedChoices?.sortInPlace {
             
             $0 < $1
-        }
+        }*/
+        
+        sortedChoices = menuChoices?.keys.sort { $0 < $1 }
         
         tableView.reloadData()
     }

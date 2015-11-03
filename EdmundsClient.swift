@@ -33,12 +33,20 @@ class EdmundsClient: NSObject {
             
             if let error = downloadError {
                 
-                println("Could not complete the request: \(error)")
+                print("Could not complete the request: \(error)")
                 completionHandler(success: false, data: nil, error: error)
             } else {
                 
                 var parsingError: NSError?
-                let parsedResults: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
+                let parsedResults: AnyObject!
+                do {
+                    parsedResults = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+                } catch let error as NSError {
+                    parsingError = error
+                    parsedResults = nil
+                } catch {
+                    fatalError()
+                }
                 
                 if let makesDictionary = parsedResults.valueForKey(JSONKeys.Makes_Array) as? [[String: AnyObject]] {
                     
