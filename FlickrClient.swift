@@ -52,7 +52,7 @@ class FlickrClient: NSObject {
             
             tagString += "%2C+"
             let escapedValue = tag.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-            let replaceSpaceValue = escapedValue.stringByReplacingOccurrencesOfString(" ", withString: "%2C+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            let replaceSpaceValue = tag.stringByReplacingOccurrencesOfString(" ", withString: "%2C+", options: NSStringCompareOptions.LiteralSearch, range: nil)
             tagString += replaceSpaceValue
         }
         
